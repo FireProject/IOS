@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		09D975DBFD087BF9EABD3C21 /* Pods_IOS_IOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6814ECA26FFE1CA3467C934 /* Pods_IOS_IOSUITests.framework */; };
 		398E132225E3D14C00AE21A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */; };
+		398E136A25E3DF1C00AE21A8 /* SignInAndUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 398E136925E3DF1C00AE21A8 /* SignInAndUp.storyboard */; };
+		398E137725E3DFD400AE21A8 /* FireService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 398E137625E3DFD400AE21A8 /* FireService.storyboard */; };
 		39B3D63925E37F0B003C3756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3D63825E37F0B003C3756 /* AppDelegate.swift */; };
 		39B3D63B25E37F0B003C3756 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3D63A25E37F0B003C3756 /* SceneDelegate.swift */; };
 		39B3D63D25E37F0B003C3756 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3D63C25E37F0B003C3756 /* ViewController.swift */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		350E49AE96982DA21D194493 /* Pods-IOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTests.debug.xcconfig"; path = "Target Support Files/Pods-IOSTests/Pods-IOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		398E136925E3DF1C00AE21A8 /* SignInAndUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInAndUp.storyboard; sourceTree = "<group>"; };
+		398E137625E3DFD400AE21A8 /* FireService.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FireService.storyboard; sourceTree = "<group>"; };
 		39B3D63525E37F0B003C3756 /* IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B3D63825E37F0B003C3756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39B3D63A25E37F0B003C3756 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		398E136825E3DEF500AE21A8 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				39B3D63E25E37F0B003C3756 /* Main.storyboard */,
+				398E137625E3DFD400AE21A8 /* FireService.storyboard */,
+				39B3D64325E37F0B003C3756 /* LaunchScreen.storyboard */,
+				398E136925E3DF1C00AE21A8 /* SignInAndUp.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
 		39B3D62C25E37F0B003C3756 = {
 			isa = PBXGroup;
 			children = (
@@ -118,12 +133,11 @@
 		39B3D63725E37F0B003C3756 /* IOS */ = {
 			isa = PBXGroup;
 			children = (
+				398E136825E3DEF500AE21A8 /* StoryBoard */,
 				39B3D63825E37F0B003C3756 /* AppDelegate.swift */,
 				39B3D63A25E37F0B003C3756 /* SceneDelegate.swift */,
 				39B3D63C25E37F0B003C3756 /* ViewController.swift */,
-				39B3D63E25E37F0B003C3756 /* Main.storyboard */,
 				39B3D64125E37F0B003C3756 /* Assets.xcassets */,
-				39B3D64325E37F0B003C3756 /* LaunchScreen.storyboard */,
 				398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */,
 				39B3D64625E37F0B003C3756 /* Info.plist */,
 			);
@@ -158,7 +172,6 @@
 				350E49AE96982DA21D194493 /* Pods-IOSTests.debug.xcconfig */,
 				6CAFE1BA32725F3A7C581BA7 /* Pods-IOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -283,6 +296,8 @@
 				39B3D64525E37F0B003C3756 /* LaunchScreen.storyboard in Resources */,
 				398E132225E3D14C00AE21A8 /* GoogleService-Info.plist in Resources */,
 				39B3D64225E37F0B003C3756 /* Assets.xcassets in Resources */,
+				398E136A25E3DF1C00AE21A8 /* SignInAndUp.storyboard in Resources */,
+				398E137725E3DFD400AE21A8 /* FireService.storyboard in Resources */,
 				39B3D64025E37F0B003C3756 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
