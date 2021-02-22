@@ -11,6 +11,8 @@
 		398E132225E3D14C00AE21A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */; };
 		398E136A25E3DF1C00AE21A8 /* SignInAndUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 398E136925E3DF1C00AE21A8 /* SignInAndUp.storyboard */; };
 		398E137725E3DFD400AE21A8 /* FireService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 398E137625E3DFD400AE21A8 /* FireService.storyboard */; };
+		398E137D25E3FF4D00AE21A8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398E137C25E3FF4D00AE21A8 /* LoginController.swift */; };
+		398E138925E403A100AE21A8 /* FireServiceMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398E138825E403A100AE21A8 /* FireServiceMainController.swift */; };
 		39B3D63925E37F0B003C3756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3D63825E37F0B003C3756 /* AppDelegate.swift */; };
 		39B3D63B25E37F0B003C3756 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3D63A25E37F0B003C3756 /* SceneDelegate.swift */; };
 		39B3D63D25E37F0B003C3756 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3D63C25E37F0B003C3756 /* ViewController.swift */; };
@@ -45,6 +47,8 @@
 		398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		398E136925E3DF1C00AE21A8 /* SignInAndUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInAndUp.storyboard; sourceTree = "<group>"; };
 		398E137625E3DFD400AE21A8 /* FireService.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FireService.storyboard; sourceTree = "<group>"; };
+		398E137C25E3FF4D00AE21A8 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		398E138825E403A100AE21A8 /* FireServiceMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireServiceMainController.swift; sourceTree = "<group>"; };
 		39B3D63525E37F0B003C3756 /* IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B3D63825E37F0B003C3756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39B3D63A25E37F0B003C3756 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,22 @@
 			path = StoryBoard;
 			sourceTree = "<group>";
 		};
+		398E137B25E3FF2000AE21A8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				398E137C25E3FF4D00AE21A8 /* LoginController.swift */,
+				398E138825E403A100AE21A8 /* FireServiceMainController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		398E138425E401CC00AE21A8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		39B3D62C25E37F0B003C3756 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +153,8 @@
 		39B3D63725E37F0B003C3756 /* IOS */ = {
 			isa = PBXGroup;
 			children = (
+				398E138425E401CC00AE21A8 /* Model */,
+				398E137B25E3FF2000AE21A8 /* Controller */,
 				398E136825E3DEF500AE21A8 /* StoryBoard */,
 				39B3D63825E37F0B003C3756 /* AppDelegate.swift */,
 				39B3D63A25E37F0B003C3756 /* SceneDelegate.swift */,
@@ -427,6 +449,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				39B3D63D25E37F0B003C3756 /* ViewController.swift in Sources */,
+				398E138925E403A100AE21A8 /* FireServiceMainController.swift in Sources */,
+				398E137D25E3FF4D00AE21A8 /* LoginController.swift in Sources */,
 				39B3D63925E37F0B003C3756 /* AppDelegate.swift in Sources */,
 				39B3D63B25E37F0B003C3756 /* SceneDelegate.swift in Sources */,
 			);

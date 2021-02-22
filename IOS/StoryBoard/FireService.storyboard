@@ -8,24 +8,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Fire Service Main Controller-->
         <scene sceneID="3sx-Bz-Wc1">
             <objects>
-                <viewController id="hP2-DR-6KN" sceneMemberID="viewController">
+                <viewController id="hP2-DR-6KN" customClass="FireServiceMainController" customModule="IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yn9-b9-XK0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="service board" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3T6-nA-ktP">
-                                <rect key="frame" x="173" y="357" width="104" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ko-Iv-NPj">
+                                <rect key="frame" x="176" y="433" width="62" height="30"/>
+                                <state key="normal" title="LOGOUT"/>
+                                <connections>
+                                    <action selector="LogoutButton:" destination="hP2-DR-6KN" eventType="touchUpInside" id="bZq-TN-1y2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Pz-Ul-EGZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2ko-Iv-NPj" firstAttribute="centerY" secondItem="yn9-b9-XK0" secondAttribute="centerY" id="I6R-AF-eqc"/>
+                            <constraint firstItem="2ko-Iv-NPj" firstAttribute="centerX" secondItem="yn9-b9-XK0" secondAttribute="centerX" id="ZKd-rp-e6V"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tsl-Zk-sPR"/>
                 </viewController>
