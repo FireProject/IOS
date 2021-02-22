@@ -28,7 +28,7 @@ class LoginController: UIViewController {
             present(serviceView, animated: true, completion: nil)
         } else {
             let alert = UIAlertController(title: "로그인 실패", message: "이메일 혹은 비밀번호를 확인해 주세요", preferredStyle: UIAlertController.Style.alert)
-            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in}
+            let okAction = UIAlertAction(title: "확인", style: .default) { (action) in}
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
         }
