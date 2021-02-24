@@ -24,12 +24,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
          * 앱 시작시 자동 로그인
          */
         guard let email = UserDefaults.standard.string(forKey: "email"), let password = UserDefaults.standard.string(forKey: "password") else {
+            
             let storyboard = UIStoryboard(name: "SignInAndUp", bundle: nil)
             let intialViewController = storyboard.instantiateViewController(withIdentifier: "sign")
             self.window?.rootViewController = intialViewController
             return
         }
-        
+
         if signIn(userEmail: email, userPassword: password) == true {
             let storyboard = UIStoryboard(name: "FireService", bundle: nil)
             let intialViewController = storyboard.instantiateViewController(withIdentifier: "service")

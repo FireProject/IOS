@@ -11,29 +11,19 @@ import FirebaseAuth
 
 func signIn(userEmail id:String, userPassword pw:String ) -> Bool {
     let semaphore = DispatchSemaphore(value: 0)
-    let queue = DispatchQueue(label: "queue")
     var isLogined = false
     
     
-    /*
-     * error
-     */
-    Auth.auth().signIn(withEmail: id, password: pw) {(user,error) in
-        if error != nil {
-            semaphore.signal()
-            return
-        }
-        semaphore.signal()
-        print("1")
+    Auth.auth().signIn(withEmail: id, password: pw) {_,_ in
+        print("hi")
     }
     
     if let user = Auth.auth().currentUser {
-        print(user.email)
-        UserDefaults.standard.setValue("email", forKey: id)
-        UserDefaults.standard.setValue("password", forKey: pw)
+        UserDefaults.standard.set(id, forKey: "email")
+        UserDefaults.standard.set(pw, forKey: "password")
         isLogined = true
     }
-
+    
     return isLogined
 }
 
