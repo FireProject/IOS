@@ -16,37 +16,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ko-Iv-NPj">
-                                <rect key="frame" x="176" y="433" width="62" height="30"/>
-                                <state key="normal" title="LOGOUT"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uQ-Mz-43W">
+                                <rect key="frame" x="184" y="407" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="LogoutButton:" destination="hP2-DR-6KN" eventType="touchUpInside" id="bZq-TN-1y2"/>
+                                    <action selector="LogoutButton:" destination="hP2-DR-6KN" eventType="touchUpInside" id="hm3-Af-gH4"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Pz-Ul-EGZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="2ko-Iv-NPj" firstAttribute="centerY" secondItem="yn9-b9-XK0" secondAttribute="centerY" id="I6R-AF-eqc"/>
-                            <constraint firstItem="2ko-Iv-NPj" firstAttribute="centerX" secondItem="yn9-b9-XK0" secondAttribute="centerX" id="ZKd-rp-e6V"/>
-                        </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="채팅방" id="y4d-KE-VPC"/>
+                        <barButtonItem title="내 정보" id="pLc-Rr-tux" userLabel="내정보"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="tsl-Zk-sPR"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drO-su-b5l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lZI-14-TBs">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <prototypes>
+                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="72" id="YG5-3e-F4n">
+                            <rect key="frame" x="0.0" y="28" width="240" height="72"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YG5-3e-F4n" id="abA-C7-wOP">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="72"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </tableViewCellContentView>
+                            <connections>
+                                <segue destination="n1b-QN-wZ5" kind="show" id="F42-we-5g8"/>
+                            </connections>
+                        </tableViewCell>
+                    </prototypes>
+                </tableView>
             </objects>
             <point key="canvasLocation" x="1123.1884057971015" y="91.741071428571431"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="c3w-5g-us6">
+            <objects>
+                <viewController id="n1b-QN-wZ5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cwY-vh-a20">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yFw-kt-3W3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XvQ-3Z-6s5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HCg-cy-jDU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950" y="-9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MtE-ob-xKL">
             <objects>
-                <navigationController storyboardIdentifier="service" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yrx-kI-lKB" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="service" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" toolbarHidden="NO" id="yrx-kI-lKB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="82A-cj-W5O">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m5Y-BK-L8f">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="hP2-DR-6KN" kind="relationship" relationship="rootViewController" id="MCd-qZ-RlB"/>
                     </connections>

@@ -18,8 +18,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-        if let user = Auth.auth().currentUser {
-            print(user.email ?? "error")
+        
+        
+        /*
+         * 앱 시작시 자동 로그인
+         */
+        guard let email = UserDefaults.standard.string(forKey: "email"), let password = UserDefaults.standard.string(forKey: "password") else {
+            let storyboard = UIStoryboard(name: "SignInAndUp", bundle: nil)
+            let intialViewController = storyboard.instantiateViewController(withIdentifier: "sign")
+            self.window?.rootViewController = intialViewController
+            return
+        }
+        
+        if signIn(userEmail: email, userPassword: password) == true {
             let storyboard = UIStoryboard(name: "FireService", bundle: nil)
             let intialViewController = storyboard.instantiateViewController(withIdentifier: "service")
             self.window?.rootViewController = intialViewController
@@ -28,7 +39,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let intialViewController = storyboard.instantiateViewController(withIdentifier: "sign")
             self.window?.rootViewController = intialViewController
         }
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
