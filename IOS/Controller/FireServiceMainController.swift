@@ -15,11 +15,12 @@ class FireServiceMainController: UIViewController {
     
     @IBAction func LogoutButton(_ sender: Any) {
         let firebaseAuth = Auth.auth()
-    do {
-      try firebaseAuth.signOut()
-    } catch let signOutError as NSError {
-      print ("Error signing out: %@", signOutError)
-    }
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     
