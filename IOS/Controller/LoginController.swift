@@ -16,6 +16,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let email = UserDefaults.standard.string(forKey: "email"), let password = UserDefaults.standard.string(forKey: "password") {
+            print("tlqkf")
             emailTextField.text = email
             passwordTextField.text = password
             signInbutton.sendActions(for: .touchUpInside)
@@ -45,7 +46,11 @@ class LoginController: UIViewController {
                 let board = UIStoryboard(name: "FireService", bundle: nil)
                 let serviceView = board.instantiateViewController(identifier: "service")
                 serviceView.modalPresentationStyle = .fullScreen
+                UserDefaults.standard.setValue(email, forKey: "email")
+                UserDefaults.standard.setValue(password, forKey: "password")
+                //print(UserDefaults.standard.string(forKey: "email"))
                 self.present(serviceView, animated: true, completion: nil)
+    
             } else {
                 let alert = UIAlertController(title: "로그인 실패", message: "이메일 혹은 비밀번호를확인해 주세요", preferredStyle: UIAlertController.Style.alert)
                 let okAction = UIAlertAction(title: "확인", style: .default) { (action) in}

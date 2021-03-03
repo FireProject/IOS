@@ -33,19 +33,19 @@
                                                         <rect key="frame" x="0.0" y="64" width="319" height="51"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RY9-jh-fnU">
-                                                                <rect key="frame" x="0.0" y="0.0" width="64" height="51"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="79.5" height="51"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mb0-Rr-rOn">
-                                                                <rect key="frame" x="64" y="0.0" width="255" height="51"/>
+                                                                <rect key="frame" x="79.5" y="0.0" width="239.5" height="51"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                             </textField>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="RY9-jh-fnU" firstAttribute="width" secondItem="F8b-nO-XtL" secondAttribute="width" multiplier="0.2" id="fyR-Yr-eQ3"/>
+                                                            <constraint firstItem="RY9-jh-fnU" firstAttribute="width" secondItem="F8b-nO-XtL" secondAttribute="width" multiplier="0.25" id="fyR-Yr-eQ3"/>
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8f-uS-oI0">
@@ -56,19 +56,19 @@
                                                         <rect key="frame" x="0.0" y="141" width="319" height="51"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNg-pJ-sMY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="64" height="51"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="79.5" height="51"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WbA-fG-Lwz">
-                                                                <rect key="frame" x="64" y="0.0" width="255" height="51"/>
+                                                                <rect key="frame" x="79.5" y="0.0" width="239.5" height="51"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="vNg-pJ-sMY" firstAttribute="width" secondItem="UGj-r6-A7u" secondAttribute="width" multiplier="0.2" id="DGZ-rm-8nT"/>
+                                                            <constraint firstItem="vNg-pJ-sMY" firstAttribute="width" secondItem="UGj-r6-A7u" secondAttribute="width" multiplier="0.25" id="DGZ-rm-8nT"/>
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khb-hT-wt8">
@@ -204,7 +204,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cke-oN-NAo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
+            <point key="canvasLocation" x="435" y="115"/>
         </scene>
         <!--Sign Up Controller-->
         <scene sceneID="FYK-sN-w0f">
@@ -231,19 +231,19 @@
                                                         <rect key="frame" x="0.0" y="64" width="319" height="51"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0su-gB-E5B">
-                                                                <rect key="frame" x="0.0" y="0.0" width="64" height="51"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="79.5" height="51"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Shk-Xa-Rqn">
-                                                                <rect key="frame" x="64" y="0.0" width="255" height="51"/>
+                                                                <rect key="frame" x="79.5" y="0.0" width="239.5" height="51"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                             </textField>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="0su-gB-E5B" firstAttribute="width" secondItem="qso-A4-oYI" secondAttribute="width" multiplier="0.2" id="NvW-zy-fvh"/>
+                                                            <constraint firstItem="0su-gB-E5B" firstAttribute="width" secondItem="qso-A4-oYI" secondAttribute="width" multiplier="0.25" id="NvW-zy-fvh"/>
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tW-Bw-cqG">
@@ -254,19 +254,19 @@
                                                         <rect key="frame" x="0.0" y="141" width="319" height="51"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jO-pc-zuv">
-                                                                <rect key="frame" x="0.0" y="0.0" width="64" height="51"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="79.5" height="51"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lVD-Qd-R8y">
-                                                                <rect key="frame" x="64" y="0.0" width="255" height="51"/>
+                                                                <rect key="frame" x="79.5" y="0.0" width="239.5" height="51"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="9jO-pc-zuv" firstAttribute="width" secondItem="ncv-6k-7ZD" secondAttribute="width" multiplier="0.2" id="6eX-BM-zpm"/>
+                                                            <constraint firstItem="9jO-pc-zuv" firstAttribute="width" secondItem="ncv-6k-7ZD" secondAttribute="width" multiplier="0.25" id="6eX-BM-zpm"/>
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-O1-bGJ">
@@ -348,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGM-wv-s3N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845" y="115"/>
+            <point key="canvasLocation" x="1657" y="115"/>
         </scene>
     </scenes>
     <resources>
