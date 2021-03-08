@@ -7,7 +7,7 @@ target 'IOS' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
-
+  pod 'Firebase/Database'
   # Pods for IOS
 
   target 'IOSTests' do

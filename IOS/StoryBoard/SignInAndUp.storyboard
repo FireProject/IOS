@@ -191,6 +191,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ISk-J9-Amm">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cke-oN-NAo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="sign" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kft-or-ShQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a7W-4L-Pmn">
@@ -202,13 +203,13 @@
                         <segue destination="jVI-p7-qJR" kind="relationship" relationship="rootViewController" id="Gkj-pD-MnK"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cke-oN-NAo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="435" y="115"/>
         </scene>
         <!--Sign Up Controller-->
         <scene sceneID="FYK-sN-w0f">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qGM-wv-s3N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Aiz-FN-t6e" customClass="SignUpController" customModule="IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pLk-8J-IWP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -346,7 +347,6 @@
                         <outlet property="passwordTextField" destination="lVD-Qd-R8y" id="wte-rS-xqq"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qGM-wv-s3N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1657" y="115"/>
         </scene>

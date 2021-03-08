@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseAuth
-
+import Firebase
 class SignUpController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -33,6 +33,10 @@ class SignUpController: UIViewController {
             }
             
             if user != nil {
+                var ref: DatabaseReference!
+                ref = Database.database().reference()
+                ref.child("user").setValue(["uid":user?.user.uid])
+                
                 let board = UIStoryboard(name: "FireService", bundle: nil)
                 let serviceView = board.instantiateViewController(identifier: "service")
                 serviceView.modalPresentationStyle = .fullScreen
