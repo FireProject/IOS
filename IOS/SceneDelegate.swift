@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
        
 
-        let storyboard = UIStoryboard(name: "BurnungUpSignInUp", bundle: nil)
+        let storyboard = UIStoryboard(name: "BurningUpSignInUp", bundle: nil)
         let intialViewController = storyboard.instantiateViewController(withIdentifier: "LoginUI")
         self.window?.rootViewController = intialViewController
         window?.makeKeyAndVisible()

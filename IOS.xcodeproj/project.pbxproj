@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		09D975DBFD087BF9EABD3C21 /* Pods_IOS_IOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6814ECA26FFE1CA3467C934 /* Pods_IOS_IOSUITests.framework */; };
 		395E1BD125F653E800616684 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395E1BD025F653E800616684 /* LoginViewController.swift */; };
-		3983109C25F5034D00509D81 /* BurnungUpSignInUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3983109B25F5034D00509D81 /* BurnungUpSignInUp.storyboard */; };
+		395E1BD925F6613100616684 /* BurningUpMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 395E1BD825F6613100616684 /* BurningUpMain.storyboard */; };
+		395E1BDE25F6616400616684 /* SignInEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395E1BDD25F6616400616684 /* SignInEmailViewController.swift */; };
+		3983109C25F5034D00509D81 /* BurningUpSignInUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3983109B25F5034D00509D81 /* BurningUpSignInUp.storyboard */; };
 		398E132225E3D14C00AE21A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */; };
 		39B3D63925E37F0B003C3756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3D63825E37F0B003C3756 /* AppDelegate.swift */; };
 		39B3D63B25E37F0B003C3756 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3D63A25E37F0B003C3756 /* SceneDelegate.swift */; };
@@ -41,7 +43,9 @@
 /* Begin PBXFileReference section */
 		350E49AE96982DA21D194493 /* Pods-IOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTests.debug.xcconfig"; path = "Target Support Files/Pods-IOSTests/Pods-IOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		395E1BD025F653E800616684 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3983109B25F5034D00509D81 /* BurnungUpSignInUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BurnungUpSignInUp.storyboard; sourceTree = "<group>"; };
+		395E1BD825F6613100616684 /* BurningUpMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BurningUpMain.storyboard; sourceTree = "<group>"; };
+		395E1BDD25F6616400616684 /* SignInEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewController.swift; sourceTree = "<group>"; };
+		3983109B25F5034D00509D81 /* BurningUpSignInUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BurningUpSignInUp.storyboard; sourceTree = "<group>"; };
 		398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39B3D63525E37F0B003C3756 /* IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B3D63825E37F0B003C3756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				39B3D64325E37F0B003C3756 /* LaunchScreen.storyboard */,
-				3983109B25F5034D00509D81 /* BurnungUpSignInUp.storyboard */,
+				3983109B25F5034D00509D81 /* BurningUpSignInUp.storyboard */,
+				395E1BD825F6613100616684 /* BurningUpMain.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				395E1BD025F653E800616684 /* LoginViewController.swift */,
+				395E1BDD25F6616400616684 /* SignInEmailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,8 +311,9 @@
 			files = (
 				39B3D64525E37F0B003C3756 /* LaunchScreen.storyboard in Resources */,
 				398E132225E3D14C00AE21A8 /* GoogleService-Info.plist in Resources */,
+				395E1BD925F6613100616684 /* BurningUpMain.storyboard in Resources */,
 				39B3D64225E37F0B003C3756 /* Assets.xcassets in Resources */,
-				3983109C25F5034D00509D81 /* BurnungUpSignInUp.storyboard in Resources */,
+				3983109C25F5034D00509D81 /* BurningUpSignInUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				395E1BDE25F6616400616684 /* SignInEmailViewController.swift in Sources */,
 				39B3D63925E37F0B003C3756 /* AppDelegate.swift in Sources */,
 				395E1BD125F653E800616684 /* LoginViewController.swift in Sources */,
 				39B3D63B25E37F0B003C3756 /* SceneDelegate.swift in Sources */,
