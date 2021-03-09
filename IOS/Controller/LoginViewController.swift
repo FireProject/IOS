@@ -19,17 +19,24 @@ class LoginViewController : UIViewController , UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-          self.view.endEditing(true)
+        self.view.endEditing(true)
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField {
         case self.emailTextField:
-            self.emailTextField.text = ""
+            if self.emailTextField.text == "Email"{
+                self.emailTextField.text = ""
+            }
         case self.passwordTextField:
-            self.passwordTextField.isSecureTextEntry = true
-            self.passwordTextField.text = ""
+            if self.passwordTextField.text == "Password" {
+                self.passwordTextField.isSecureTextEntry = true
+                self.passwordTextField.text = ""
+            }
         default:
             print("error")
         }
@@ -50,7 +57,6 @@ class LoginViewController : UIViewController , UITextFieldDelegate {
         }
     }
     @IBAction func LoginButtonPressed(_ sender: Any) {
-        
         guard let email = emailTextField.text else {
             return
         }
@@ -61,6 +67,10 @@ class LoginViewController : UIViewController , UITextFieldDelegate {
             if error != nil {
                 return
             }
+            
+            let storyboard = UIStoryboard(name: "BurningUpMain", bundle: nil)
+            let pushController = storyboard.instantiateViewController(withIdentifier: "BurningUpMain")
+            self.navigationController?.pushViewController(pushController, animated: true)
         }
     }
     @IBAction func SignInButtonPressed(_ sender: Any) {
