@@ -51,7 +51,7 @@
                                                                     <color key="titleColor" systemColor="systemGray2Color"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <segue destination="r0F-Te-k6E" kind="push" id="U2R-7E-5WI"/>
+                                                                    <segue destination="r0F-Te-k6E" kind="push" id="MVD-a5-cja"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpv-ci-N48">
@@ -274,48 +274,54 @@
                                 <state key="normal" title="NEXT">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="NextButtonPressed:" destination="GfK-IL-2CD" eventType="touchUpInside" id="MZk-Z6-M04"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="lfi-uW-Yi0">
                                 <rect key="frame" x="0.0" y="224" width="414" height="448"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sh9-9M-Ssg">
-                                        <rect key="frame" x="83.5" y="0.0" width="247" height="224"/>
+                                        <rect key="frame" x="103.5" y="0.0" width="207" height="207"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TAO-t3-RWv">
-                                                <rect key="frame" x="0.0" y="0.0" width="247" height="224"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.fill" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAO-t3-RWv">
+                                                <rect key="frame" x="0.0" y="-4" width="207" height="213"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gn3-CG-Dx1">
-                                                <rect key="frame" x="0.0" y="0.0" width="247" height="224"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <connections>
                                                     <action selector="ImageChangeButtonPressed:" destination="GfK-IL-2CD" eventType="touchUpInside" id="arV-2I-cBk"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.3489862084" green="0.34904104470000002" blue="0.34897422789999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="gn3-CG-Dx1" secondAttribute="trailing" id="2LZ-j5-D14"/>
-                                            <constraint firstItem="gn3-CG-Dx1" firstAttribute="leading" secondItem="sh9-9M-Ssg" secondAttribute="leading" id="Do1-f7-DGN"/>
-                                            <constraint firstAttribute="bottom" secondItem="TAO-t3-RWv" secondAttribute="bottom" id="ECj-pD-RKA"/>
-                                            <constraint firstAttribute="trailing" secondItem="TAO-t3-RWv" secondAttribute="trailing" id="NFq-ld-l4m"/>
-                                            <constraint firstItem="TAO-t3-RWv" firstAttribute="leading" secondItem="sh9-9M-Ssg" secondAttribute="leading" id="SHy-7F-7Ag"/>
-                                            <constraint firstAttribute="bottom" secondItem="gn3-CG-Dx1" secondAttribute="bottom" id="Srv-PJ-CNV"/>
-                                            <constraint firstItem="gn3-CG-Dx1" firstAttribute="top" secondItem="sh9-9M-Ssg" secondAttribute="top" id="j5I-uf-YuL"/>
-                                            <constraint firstItem="TAO-t3-RWv" firstAttribute="top" secondItem="sh9-9M-Ssg" secondAttribute="top" id="rOt-q2-Td3"/>
+                                            <constraint firstItem="TAO-t3-RWv" firstAttribute="top" secondItem="sh9-9M-Ssg" secondAttribute="top" id="5Y7-C4-HB4"/>
+                                            <constraint firstAttribute="trailing" secondItem="gn3-CG-Dx1" secondAttribute="trailing" id="IZg-r6-ntN"/>
+                                            <constraint firstItem="gn3-CG-Dx1" firstAttribute="top" secondItem="sh9-9M-Ssg" secondAttribute="top" id="RvE-CM-4Vr"/>
+                                            <constraint firstItem="TAO-t3-RWv" firstAttribute="leading" secondItem="sh9-9M-Ssg" secondAttribute="leading" id="WBm-ke-Yrr"/>
+                                            <constraint firstItem="gn3-CG-Dx1" firstAttribute="leading" secondItem="sh9-9M-Ssg" secondAttribute="leading" id="dOS-0e-lLz"/>
+                                            <constraint firstAttribute="bottom" secondItem="gn3-CG-Dx1" secondAttribute="bottom" id="fro-NS-YE2"/>
+                                            <constraint firstAttribute="bottom" secondItem="TAO-t3-RWv" secondAttribute="bottom" id="fyi-kt-mLX"/>
+                                            <constraint firstAttribute="trailing" secondItem="TAO-t3-RWv" secondAttribute="trailing" id="igv-lS-f2n"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="닉네임" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Xf-Xq-fJb">
-                                        <rect key="frame" x="83" y="257" width="248" height="45"/>
+                                        <rect key="frame" x="83" y="240" width="248" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESy-5t-6iE">
-                                        <rect key="frame" x="87" y="335" width="240" height="113"/>
+                                        <rect key="frame" x="0.0" y="318" width="414" height="130"/>
                                         <color key="backgroundColor" red="0.34901960784313724" green="0.34903606770000001" blue="0.34897482400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="sh9-9M-Ssg" firstAttribute="height" secondItem="lfi-uW-Yi0" secondAttribute="height" multiplier="0.5" id="9VR-Ls-wSF"/>
-                                    <constraint firstItem="sh9-9M-Ssg" firstAttribute="width" secondItem="lfi-uW-Yi0" secondAttribute="width" multiplier="0.596618" id="rZY-Op-Sy4"/>
+                                    <constraint firstItem="sh9-9M-Ssg" firstAttribute="height" secondItem="lfi-uW-Yi0" secondAttribute="height" multiplier="0.462054" id="6gt-mv-tmy"/>
+                                    <constraint firstItem="sh9-9M-Ssg" firstAttribute="width" secondItem="lfi-uW-Yi0" secondAttribute="width" multiplier="0.5" id="Iro-I9-A06"/>
+                                    <constraint firstItem="ESy-5t-6iE" firstAttribute="width" secondItem="lfi-uW-Yi0" secondAttribute="width" id="mre-n3-bCd"/>
                                     <constraint firstItem="3Xf-Xq-fJb" firstAttribute="height" secondItem="lfi-uW-Yi0" secondAttribute="height" multiplier="0.1" id="uit-Vf-yqm"/>
                                     <constraint firstItem="3Xf-Xq-fJb" firstAttribute="width" secondItem="lfi-uW-Yi0" secondAttribute="width" multiplier="0.6" id="wxu-4S-FcC"/>
                                 </constraints>
@@ -342,6 +348,11 @@
                             <constraint firstItem="lfi-uW-Yi0" firstAttribute="centerY" secondItem="35R-FZ-IvX" secondAttribute="centerY" id="yrX-QU-87Q"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5rZ-8l-B5C"/>
+                    <connections>
+                        <outlet property="ProfileImage" destination="TAO-t3-RWv" id="J01-gg-vzA"/>
+                        <outlet property="nickNameTextField" destination="3Xf-Xq-fJb" id="g8t-gi-sch"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANX-sO-MMD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,7 +361,7 @@
         <!--Sign In Phone Certification View Controller-->
         <scene sceneID="m5Q-iO-9Am">
             <objects>
-                <viewController id="pDl-ps-y4h" customClass="SignInPhoneCertificationViewController" customModule="IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInPhoneCertification" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pDl-ps-y4h" customClass="SignInPhoneCertificationViewController" customModule="IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YT3-or-fVY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -374,6 +385,9 @@
                                 <state key="normal" title="완료">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="clearButtonPressed:" destination="pDl-ps-y4h" eventType="touchUpInside" id="2nJ-fO-5Dz"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="dz6-li-GZh">
                                 <rect key="frame" x="0.0" y="269" width="414" height="358"/>
@@ -399,9 +413,12 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usE-M9-j7O">
                                                 <rect key="frame" x="294.5" y="0.0" width="78.5" height="53.5"/>
                                                 <color key="backgroundColor" red="0.5019204021" green="0.50198346380000003" blue="0.50189900399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="인증 재요청">
+                                                <state key="normal" title="인증 요청">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="CertifiactionButtonPressed:" destination="pDl-ps-y4h" eventType="touchUpInside" id="uI4-E0-Phf"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -422,6 +439,9 @@
                                                 <state key="normal" title="인증확인">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="CheckCertificationButtonPressed:" destination="pDl-ps-y4h" eventType="touchUpInside" id="GYZ-JW-5fN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -464,6 +484,10 @@
                             <constraint firstItem="OLQ-TG-s5m" firstAttribute="top" secondItem="u7c-8x-GFe" secondAttribute="top" id="yCf-M5-imk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="certificationNumber" destination="bkw-j2-4yw" id="tXp-JO-Sgv"/>
+                        <outlet property="phoneNumber" destination="GXN-TK-ksr" id="jBG-DD-gsk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ef-rr-0y0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -577,6 +601,9 @@
                                                                 <state key="normal" title="인증 요청">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="tmpBUtton:" destination="XHn-2N-Erx" eventType="touchUpInside" id="agh-GY-4O2"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -660,6 +687,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CkG-VY-kD4"/>
+                    <connections>
+                        <outlet property="tmpText" destination="ydW-2A-ueu" id="q4b-JM-LQr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="owB-2F-lY8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -806,9 +836,7 @@
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

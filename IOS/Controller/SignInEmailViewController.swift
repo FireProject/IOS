@@ -13,6 +13,7 @@ class SignInEmailViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var rePasswordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTextField.delegate = self
@@ -88,6 +89,7 @@ class SignInEmailViewController: UIViewController,UITextFieldDelegate {
             user?.user.delete { error in
                 if error != nil {
                     print("fdsfasd")
+                    return
                 }
                 guard let nextView = self.storyboard?.instantiateViewController(identifier: "SignInImageNickname") else {return}
                 self.navigationController?.pushViewController(nextView, animated: true)
