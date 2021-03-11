@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
     
     @IBOutlet weak var profileImage: UIImageView!
@@ -72,9 +73,8 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
             let alert = UIAlertController(title: "오류", message: "닉네임을 입력해 주십쇼", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        } else {
-            guard let nextView = self.storyboard?.instantiateViewController(identifier: "SignInPhoneCertification") else {return}
-            self.navigationController?.pushViewController(nextView, animated: true)
         }
+        self.navigationController?.popToRootViewController(animated: true)
+        
     }
 }

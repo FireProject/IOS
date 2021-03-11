@@ -73,11 +73,13 @@ class SignInEmailViewController: UIViewController,UITextFieldDelegate {
             self.present(alert, animated: true, completion: nil)
             return
         }
+        
         if password != rePassword {
             let alert = UIAlertController(title: "오류", message: "두 비밀번호가 일치하지 않습니다.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+        
         Auth.auth().createUser(withEmail: email, password: password) { (user,error) in
             if error != nil {
                 let alert = UIAlertController(title: "오류", message: "이메일 혹은 비밀번호를 확인해 주세요", preferredStyle: .alert)
@@ -85,15 +87,10 @@ class SignInEmailViewController: UIViewController,UITextFieldDelegate {
                 self.present(alert, animated: true, completion: nil)
                 return
             }
-
-            user?.user.delete { error in
-                if error != nil {
-                    print("fdsfasd")
-                    return
-                }
-                guard let nextView = self.storyboard?.instantiateViewController(identifier: "SignInImageNickname") else {return}
-                self.navigationController?.pushViewController(nextView, animated: true)
-            }
+            
+            guard let nextView = self.storyboard?.instantiateViewController(identifier: "SignInImageNickname") else {return}
+            self.navigationController?.pushViewController(nextView, animated: true)
+            user?.user.sendEmailVerification(completion: nil)
             
         }
     }
