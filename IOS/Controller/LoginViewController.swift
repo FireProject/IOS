@@ -10,8 +10,6 @@ import UIKit
 import FirebaseAuth
 
 class LoginViewController : UIViewController , UITextFieldDelegate {
-    
-    
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     override func viewDidLoad() {
@@ -64,8 +62,25 @@ class LoginViewController : UIViewController , UITextFieldDelegate {
             return
         }
         Auth.auth().signIn(withEmail: email, password: password) { (user,error) in
-            if error != nil {
-                let alert = UIAlertController(title: "오류", message: "이메일 혹은 비밀번호를 확인해 주세요", preferredStyle: .alert)
+            
+            if let error = error  {
+                var errorMessage = ""
+                switch error ._code {
+                case AuthErrorCode.invalidEmail.rawValue:
+                    errorMessage = "이메일 형식을 확인해 주세요"
+                    break
+                case AuthErrorCode.userDisabled.rawValue:
+                    errorMessage = "해당계정은 사용이 중지되었습니다."
+                    break
+                case AuthErrorCode.wrongPassword.rawValue:
+                    errorMessage = "비밀번호 확인해주세요"
+                    break
+                default:
+                    errorMessage = "개발자에게 연락주세요"
+                    break
+                }
+                
+                let alert = UIAlertController(title: "오류", message: errorMessage, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 return
@@ -74,17 +89,14 @@ class LoginViewController : UIViewController , UITextFieldDelegate {
                 let alert = UIAlertController(title: "이메일 인증이 되지않았습니다.", message: "메일을 재전송 했습니다. 확인해 주세요.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-                user?.user.sendEmailVerification(completion: nil)
+                user?.user.sendEmailVerification(completion: {
+                    error in
+                })
                 return
             }
             let storyboard = UIStoryboard(name: "BurningUpMain", bundle: nil)
             let pushController = storyboard.instantiateViewController(withIdentifier: "BurningUpMain")
             self.navigationController?.pushViewController(pushController, animated: true)
         }
-    }
-    @IBAction func SignInButtonPressed(_ sender: Any) {
-        self.navigationController?.pushViewController(SignInEmailViewController(), animated: true)
-    }
-    @IBAction func SearchEmailPasswordButtonPressed(_ sender: Any) {
     }
 }
