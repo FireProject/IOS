@@ -7,9 +7,24 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 class BurningUpMainViewController : UIViewController {
+    var hasNickname = true
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.checkNickName()
     }
+    func checkNickName() {
+
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        
+    
+
+
+    }
+
 }
     

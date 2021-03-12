@@ -8,10 +8,13 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController : UIViewController , UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    var hasNickname = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.delegate = self
@@ -75,7 +78,11 @@ class LoginViewController : UIViewController , UITextFieldDelegate {
                 case AuthErrorCode.wrongPassword.rawValue:
                     errorMessage = "비밀번호 확인해주세요"
                     break
+                case AuthErrorCode.userNotFound.rawValue:
+                    errorMessage = "존재하지 않는 이메일입니다."
+                    break
                 default:
+                    print(error)
                     errorMessage = "개발자에게 연락주세요"
                     break
                 }
@@ -85,18 +92,23 @@ class LoginViewController : UIViewController , UITextFieldDelegate {
                 self.present(alert, animated: true, completion: nil)
                 return
             }
-            if user?.user.isEmailVerified == false {
+            guard let user = user?.user else {
+                return
+            }
+            if user.isEmailVerified == false {
                 let alert = UIAlertController(title: "이메일 인증이 되지않았습니다.", message: "메일을 재전송 했습니다. 확인해 주세요.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-                user?.user.sendEmailVerification(completion: {
+                user.sendEmailVerification(completion: {
                     error in
                 })
                 return
             }
+                
             let storyboard = UIStoryboard(name: "BurningUpMain", bundle: nil)
-            let pushController = storyboard.instantiateViewController(withIdentifier: "BurningUpMain")
-            self.navigationController?.pushViewController(pushController, animated: true)
+            let pushController = storyboard.instantiateViewController(withIdentifier: "BurningUpMainNavigation")
+            pushController.modalPresentationStyle = .fullScreen
+            self.present(pushController, animated: true, completion: nil)
         }
     }
 }

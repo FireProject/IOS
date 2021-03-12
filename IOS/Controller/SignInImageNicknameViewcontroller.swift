@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
     
     @IBOutlet weak var profileImage: UIImageView!
@@ -73,8 +74,23 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
             let alert = UIAlertController(title: "오류", message: "닉네임을 입력해 주십쇼", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            return
         }
         self.navigationController?.popToRootViewController(animated: true)
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
         
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        ref.child("users/\(user.uid)/nikname").setValue(nickName)
+       // ref.child("users/\(user.uid)/profile").setValue(self.profileImage.image)
+        ref.child("users/\(user.uid)/stateMessage").setValue("")
+        ref.child("users/\(user.uid)/friends").setValue([])
+        ref.child("users/\(user.uid)/roomId").setValue([])
+        let storyboard = UIStoryboard(name: "BurningUpMain", bundle: nil)
+        let pushController = storyboard.instantiateViewController(withIdentifier: "BurningUpMain")
+        pushController.modalPresentationStyle = .fullScreen
+        self.present(pushController, animated: true, completion: nil)
     }
 }
