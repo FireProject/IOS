@@ -105,6 +105,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39196FA025FE58BD00A4C66B /* SignInUp */ = {
+			isa = PBXGroup;
+			children = (
+				395E1BD025F653E800616684 /* LoginViewController.swift */,
+				395E1BDD25F6616400616684 /* SignInEmailViewController.swift */,
+				39500D5625F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift */,
+				39500D5125F7B38E0062EFAD /* ResetPasswordViewController.swift */,
+			);
+			path = SignInUp;
+			sourceTree = "<group>";
+		};
+		39196FA125FE58DD00A4C66B /* MainService */ = {
+			isa = PBXGroup;
+			children = (
+				39500D4C25F7ACC90062EFAD /* BurningUpMainViewController.swift */,
+			);
+			path = MainService;
+			sourceTree = "<group>";
+		};
 		398E136825E3DEF500AE21A8 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,11 +137,8 @@
 		398E137B25E3FF2000AE21A8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				395E1BD025F653E800616684 /* LoginViewController.swift */,
-				395E1BDD25F6616400616684 /* SignInEmailViewController.swift */,
-				39500D5625F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift */,
-				39500D5125F7B38E0062EFAD /* ResetPasswordViewController.swift */,
-				39500D4C25F7ACC90062EFAD /* BurningUpMainViewController.swift */,
+				39196FA125FE58DD00A4C66B /* MainService */,
+				39196FA025FE58BD00A4C66B /* SignInUp */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

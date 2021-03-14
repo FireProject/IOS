@@ -88,6 +88,7 @@ class SignInEmailViewController: UIViewController,UITextFieldDelegate {
                 self.present(alert, animated: true, completion: nil)
                 return
             }
+            
             user?.user.sendEmailVerification(completion: nil)
             guard let nextView = self.storyboard?.instantiateViewController(identifier: "SignInImageNickname") else {return}
             self.navigationController?.pushViewController(nextView, animated: true)

@@ -13,18 +13,10 @@ class BurningUpMainViewController : UIViewController {
     var hasNickname = true
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.checkNickName()
+        self.settingNavigationBarAndToolBar()
     }
-    func checkNickName() {
-
-        guard let user = Auth.auth().currentUser else {
-            return
-        }
+    func settingNavigationBarAndToolBar() {
         
-    
-
-
     }
-
 }
     

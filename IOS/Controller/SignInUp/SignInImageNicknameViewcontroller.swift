@@ -9,11 +9,12 @@ import Foundation
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nickNameTextField: UITextField!
-    
+    let storage = Storage.storage(url: "gs://fire-71c1d.appspot.com/")
     let picker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -83,11 +84,17 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         
         var ref: DatabaseReference!
         ref = Database.database().reference()
+        var data = Data()
+        data = (self.profileImage.image?.jpegData(compressionQuality: 0.8))!
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/png"
+        storage.reference().child(user.uid).putData(data, metadata: metaData)
+        
         ref.child("users/\(user.uid)/nikname").setValue(nickName)
-       // ref.child("users/\(user.uid)/profile").setValue(self.profileImage.image)
         ref.child("users/\(user.uid)/stateMessage").setValue("")
-        ref.child("users/\(user.uid)/friends").setValue([])
-        ref.child("users/\(user.uid)/roomId").setValue([])
+        ref.child("users/\(user.uid)/friends").setValue([1,2])
+        ref.child("users/\(user.uid)/roomId").setValue([1,2])
+        
         let storyboard = UIStoryboard(name: "BurningUpMain", bundle: nil)
         let pushController = storyboard.instantiateViewController(withIdentifier: "BurningUpMain")
         pushController.modalPresentationStyle = .fullScreen
