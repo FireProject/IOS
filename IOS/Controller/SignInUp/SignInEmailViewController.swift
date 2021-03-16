@@ -82,7 +82,6 @@ class SignInEmailViewController: UIViewController,UITextFieldDelegate {
         
         Auth.auth().createUser(withEmail: email, password: password) { (user,error) in
             if error != nil {
-                
                 let alert = UIAlertController(title: "오류", message: "이메일 혹은 비밀번호를 확인해 주세요", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)

@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,8 +16,25 @@
                     <view key="view" contentMode="scaleToFill" id="Ewg-9R-Csy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3T-6d-Zcu" userLabel="하지만" customClass="RoomSummaryView" customModule="IOS" customModuleProvider="target">
+                                <rect key="frame" x="20.5" y="93" width="373" height="224"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mYM-Qf-crc" appends="YES" id="Hny-w4-0KZ"/>
+                                    <outletCollection property="gestureRecognizers" destination="Rmv-rM-xaF" appends="YES" id="2Zw-ls-NNC"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="QA4-PO-t0q"/>
                         <color key="backgroundColor" red="0.3489862084" green="0.34904104470000002" blue="0.34897422789999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y3T-6d-Zcu" firstAttribute="width" secondItem="Ewg-9R-Csy" secondAttribute="width" multiplier="0.9" id="RVX-Ph-1bn"/>
+                            <constraint firstItem="Y3T-6d-Zcu" firstAttribute="centerX" secondItem="Ewg-9R-Csy" secondAttribute="centerX" id="d0y-eW-bri"/>
+                            <constraint firstItem="Y3T-6d-Zcu" firstAttribute="height" secondItem="Ewg-9R-Csy" secondAttribute="height" multiplier="0.25" id="fy5-ab-S6H"/>
+                            <constraint firstItem="Y3T-6d-Zcu" firstAttribute="top" secondItem="QA4-PO-t0q" secondAttribute="top" constant="5" id="tZg-D9-Wwn"/>
+                        </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem id="vnm-nf-cwy">
@@ -25,7 +43,7 @@
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="t0C-47-2Ln"/>
                         <barButtonItem style="plain" id="Eoq-1a-iJm">
-                            <imageReference key="image" image="house.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                            <imageReference key="image" image="house.fill" catalog="system" symbolScale="large"/>
                             <imageReference key="largeContentSizeImage" image="house.fill" catalog="system" symbolScale="small"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
@@ -38,14 +56,30 @@
                         <barButtonItem key="leftBarButtonItem" id="pWR-F7-zHT">
                             <imageReference key="image" image="line.horizontal.3" catalog="system" symbolScale="large"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="LeftMenuButtonPressed:" destination="nOy-fW-oJZ" id="fZI-xR-Qvt"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="q2v-Iw-kEz">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="roomSummaryView" destination="Y3T-6d-Zcu" id="do8-hj-gmP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsC-fQ-Rns" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="mYM-Qf-crc">
+                    <connections>
+                        <action selector="LeftGestureAction:" destination="nOy-fW-oJZ" id="xL8-R8-74K"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Rmv-rM-xaF">
+                    <connections>
+                        <action selector="RightGestureAction:" destination="nOy-fW-oJZ" id="rz0-56-jvp"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="707.24637681159425" y="-6.6964285714285712"/>
         </scene>
@@ -81,5 +115,8 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -492,12 +492,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqa-h7-WYz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="413.04347826086962" y="124.55357142857142"/>
+            <point key="canvasLocation" x="575" y="125"/>
         </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="FireImage" width="80" height="80"/>
+        <image name="FireImage" width="80.5" height="80.5"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
