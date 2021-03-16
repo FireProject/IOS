@@ -66,6 +66,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="MainView" destination="Ewg-9R-Csy" id="9vY-cG-8Tb"/>
                         <outlet property="roomSummaryView" destination="Y3T-6d-Zcu" id="do8-hj-gmP"/>
                     </connections>
                 </viewController>

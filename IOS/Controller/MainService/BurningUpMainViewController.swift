@@ -10,8 +10,9 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 class BurningUpMainViewController : UIViewController {
-
+    var sideMenuView: SideMenuView? = nil
     @IBOutlet weak var roomSummaryView: UIView!
+    @IBOutlet var MainView: UIView!
     var hasNickname = true
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,15 +20,27 @@ class BurningUpMainViewController : UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        
+        sideMenuView?.removeFromSuperview()
+        sideMenuView = nil
     }
     func settingNavigationBarAndToolBar() {
         
     }
 
     @IBAction func LeftMenuButtonPressed(_ sender: Any) {
-        let frame = CGRect(x: 0, y: 0, width: 100, height: 300)
-        self.view.addSubview(SideMenuView(frame: frame))
+        if sideMenuView != nil {
+            sideMenuView?.removeFromSuperview()
+            sideMenuView = nil
+            return
+        }
+        sideMenuView = SideMenuView()
+        self.view.addSubview(sideMenuView!)
+        sideMenuView?.translatesAutoresizingMaskIntoConstraints = false
+        sideMenuView?.parentViewController = self
+        self.view.addConstraint(NSLayoutConstraint(item: sideMenuView!, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1.0, constant: 0.0))
+        sideMenuView?.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        sideMenuView?.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor, multiplier: 1.0).isActive = true
+        self.view.addConstraint(NSLayoutConstraint(item: sideMenuView!, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 0.6, constant: 0.0))
     }
     
     @IBAction func LeftGestureAction(_ sender: UIGestureRecognizer) {
@@ -35,5 +48,7 @@ class BurningUpMainViewController : UIViewController {
     @IBAction func RightGestureAction(_ sender: UIGestureRecognizer) {
         
     }
+    
+    
 }
     

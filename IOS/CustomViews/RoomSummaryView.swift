@@ -24,5 +24,7 @@ class RoomSummaryView: UIView {
         guard let view = loadView(nibName: "RoomSummaryView") else { return }
         view.frame = self.bounds
         self.addSubview(view)
+        
+        
     }
 }
