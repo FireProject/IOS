@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,13 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FireImage" translatesAutoresizingMaskIntoConstraints="NO" id="bNB-Q1-FF8">
-                                <rect key="frame" x="20" y="419" width="374" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEAM FIRE PROJECT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yD7-dj-t3K">
+                                <rect key="frame" x="0.0" y="772.5" width="414" height="89.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sv-IF-wNz">
+                                <rect key="frame" x="0.0" y="358.5" width="414" height="179"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" backgroundImage="MainLogo"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.3489862084" green="0.34904104470000002" blue="0.34897422789999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0sv-IF-wNz" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.2" id="3C8-Si-FMN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0sv-IF-wNz" secondAttribute="trailing" id="4Td-NE-owM"/>
+                            <constraint firstItem="yD7-dj-t3K" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.1" id="H8W-i4-Ukw"/>
+                            <constraint firstItem="0sv-IF-wNz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PY1-FF-Cdk"/>
+                            <constraint firstItem="0sv-IF-wNz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="S1g-qs-tYh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yD7-dj-t3K" secondAttribute="bottom" id="X6q-Py-kga"/>
+                            <constraint firstItem="0sv-IF-wNz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eOo-ok-NLh"/>
+                            <constraint firstItem="yD7-dj-t3K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jCk-7e-FJn"/>
+                            <constraint firstItem="yD7-dj-t3K" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lsy-ij-vbA"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -30,6 +49,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FireImage" width="80.5" height="80.5"/>
+        <image name="MainLogo" width="81.5" height="27"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

@@ -11,6 +11,7 @@ import FirebaseDatabase
 import FirebaseAuth
 class BurningUpMainViewController : UIViewController {
     var sideMenuView: SideMenuView? = nil
+    @IBOutlet weak var MemoView: MemoView!
     @IBOutlet weak var roomSummaryView: UIView!
     @IBOutlet var MainView: UIView!
     var hasNickname = true
@@ -22,6 +23,7 @@ class BurningUpMainViewController : UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         sideMenuView?.removeFromSuperview()
         sideMenuView = nil
+        self.view.endEditing(true)
     }
     func settingNavigationBarAndToolBar() {
         

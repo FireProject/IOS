@@ -22,7 +22,7 @@ class LoginViewController : UIViewController , UITextFieldDelegate {
         super.viewDidLoad()
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        passwordTextField.isSecureTextEntry = true
+
         AutoLogin()
     }
     
@@ -40,7 +40,7 @@ class LoginViewController : UIViewController , UITextFieldDelegate {
         guard let email = UserDefaults.standard.string(forKey: "Email") else { return }
         
         guard let password = UserDefaults.standard.string(forKey: "Password") else { return }
-        
+        passwordTextField.isSecureTextEntry = true
         self.emailTextField.text = email
         self.passwordTextField.text = password
         self.loginButton.sendActions(for: .allEvents)
