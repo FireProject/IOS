@@ -30,6 +30,8 @@
 		39BA70052600DB38009CB3CE /* SideMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39BA70042600DB38009CB3CE /* SideMenuView.xib */; };
 		39BA700A2600DB46009CB3CE /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA70092600DB46009CB3CE /* SideMenuView.swift */; };
 		39BA700F2600DD2D009CB3CE /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA700E2600DD2D009CB3CE /* ViewExtension.swift */; };
+		39BCBA792602290600273D5B /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39BCBA782602290600273D5B /* HomeView.xib */; };
+		39BCBA7E2602291400273D5B /* HomewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BCBA7D2602291400273D5B /* HomewView.swift */; };
 		A7BEAAB987480238A640E0E6 /* Pods_IOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42240BD9E2F1FE728ED85FBD /* Pods_IOSTests.framework */; };
 		D91B46FBF9994392118BF373 /* Pods_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BD3033B37D0EBAC613D34E /* Pods_IOS.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +83,8 @@
 		39BA70042600DB38009CB3CE /* SideMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuView.xib; sourceTree = "<group>"; };
 		39BA70092600DB46009CB3CE /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		39BA700E2600DD2D009CB3CE /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		39BCBA782602290600273D5B /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		39BCBA7D2602291400273D5B /* HomewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomewView.swift; sourceTree = "<group>"; };
 		42240BD9E2F1FE728ED85FBD /* Pods_IOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BD3033B37D0EBAC613D34E /* Pods_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAFE1BA32725F3A7C581BA7 /* Pods-IOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTests.release.xcconfig"; path = "Target Support Files/Pods-IOSTests/Pods-IOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 				39BA70042600DB38009CB3CE /* SideMenuView.xib */,
 				399A95172601C2CE00241661 /* MemoView.swift */,
 				399A951C2601C2D700241661 /* MemoView.xib */,
+				39BCBA782602290600273D5B /* HomeView.xib */,
+				39BCBA7D2602291400273D5B /* HomewView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 			files = (
 				39B3D64525E37F0B003C3756 /* LaunchScreen.storyboard in Resources */,
 				398E132225E3D14C00AE21A8 /* GoogleService-Info.plist in Resources */,
+				39BCBA792602290600273D5B /* HomeView.xib in Resources */,
 				39BA70052600DB38009CB3CE /* SideMenuView.xib in Resources */,
 				39A1118B25FF22AF00A54A5C /* RoomSummaryView.xib in Resources */,
 				395E1BD925F6613100616684 /* BurningUpMain.storyboard in Resources */,
@@ -501,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39BCBA7E2602291400273D5B /* HomewView.swift in Sources */,
 				395E1BDE25F6616400616684 /* SignInEmailViewController.swift in Sources */,
 				39500D8925F7B8DB0062EFAD /* UserClass.swift in Sources */,
 				39BA700A2600DB46009CB3CE /* SideMenuView.swift in Sources */,

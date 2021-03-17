@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="455" height="807"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="As6-FY-hSK" customClass="MemoView" customModule="IOS" customModuleProvider="target">
+                    <rect key="frame" x="22.5" y="252.5" width="410" height="201.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="or4-8x-3Fc">
+                    <rect key="frame" x="22.5" y="459" width="410" height="177.5"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fM-nV-BSa" userLabel="하지만" customClass="RoomSummaryView" customModule="IOS" customModuleProvider="target">
+                    <rect key="frame" x="22.5" y="5" width="410" height="242.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <gestureRecognizers/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="9fM-nV-BSa" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.900966" id="4jz-KW-xfc"/>
+                <constraint firstItem="9fM-nV-BSa" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.300223" id="6c9-om-cHZ"/>
+                <constraint firstItem="As6-FY-hSK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="JiY-JM-PVZ"/>
+                <constraint firstItem="or4-8x-3Fc" firstAttribute="top" secondItem="As6-FY-hSK" secondAttribute="bottom" constant="5" id="LR0-14-Z8K"/>
+                <constraint firstItem="9fM-nV-BSa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NIf-xG-5Ty"/>
+                <constraint firstItem="As6-FY-hSK" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.900966" id="PmC-X1-17S"/>
+                <constraint firstItem="or4-8x-3Fc" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.900966" id="YcT-4l-lju"/>
+                <constraint firstItem="or4-8x-3Fc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ng6-fn-TTx"/>
+                <constraint firstItem="or4-8x-3Fc" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.219866" id="u7P-v2-4o3"/>
+                <constraint firstItem="As6-FY-hSK" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.25" id="vtu-L8-jqx"/>
+                <constraint firstItem="9fM-nV-BSa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="weK-5p-2Sx"/>
+                <constraint firstItem="As6-FY-hSK" firstAttribute="top" secondItem="9fM-nV-BSa" secondAttribute="bottom" constant="5" id="yDt-EH-BO6"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-135.50724637681159" y="104.79910714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="MainLogo" width="81.5" height="27"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
