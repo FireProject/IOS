@@ -17,6 +17,8 @@
 		395E1BDE25F6616400616684 /* SignInEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395E1BDD25F6616400616684 /* SignInEmailViewController.swift */; };
 		3983109C25F5034D00509D81 /* BurningUpSignInUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3983109B25F5034D00509D81 /* BurningUpSignInUp.storyboard */; };
 		398E132225E3D14C00AE21A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */; };
+		399A95182601C2CE00241661 /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399A95172601C2CE00241661 /* MemoView.swift */; };
+		399A951D2601C2D700241661 /* MemoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 399A951C2601C2D700241661 /* MemoView.xib */; };
 		39A1117B25FF226D00A54A5C /* RoomSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1117A25FF226D00A54A5C /* RoomSummaryView.swift */; };
 		39A1118B25FF22AF00A54A5C /* RoomSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A1118A25FF22AF00A54A5C /* RoomSummaryView.xib */; };
 		39B3D63925E37F0B003C3756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3D63825E37F0B003C3756 /* AppDelegate.swift */; };
@@ -60,6 +62,8 @@
 		395E1BDD25F6616400616684 /* SignInEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewController.swift; sourceTree = "<group>"; };
 		3983109B25F5034D00509D81 /* BurningUpSignInUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BurningUpSignInUp.storyboard; sourceTree = "<group>"; };
 		398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		399A95172601C2CE00241661 /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
+		399A951C2601C2D700241661 /* MemoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoView.xib; sourceTree = "<group>"; };
 		39A1117A25FF226D00A54A5C /* RoomSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomSummaryView.swift; sourceTree = "<group>"; };
 		39A1118A25FF22AF00A54A5C /* RoomSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomSummaryView.xib; sourceTree = "<group>"; };
 		39B3D63525E37F0B003C3756 /* IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,11 +168,13 @@
 		39A1117925FF21D700A54A5C /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				39BA700E2600DD2D009CB3CE /* ViewExtension.swift */,
 				39A1117A25FF226D00A54A5C /* RoomSummaryView.swift */,
 				39A1118A25FF22AF00A54A5C /* RoomSummaryView.xib */,
-				39BA70042600DB38009CB3CE /* SideMenuView.xib */,
 				39BA70092600DB46009CB3CE /* SideMenuView.swift */,
-				39BA700E2600DD2D009CB3CE /* ViewExtension.swift */,
+				39BA70042600DB38009CB3CE /* SideMenuView.xib */,
+				399A95172601C2CE00241661 /* MemoView.swift */,
+				399A951C2601C2D700241661 /* MemoView.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -366,6 +372,7 @@
 				39A1118B25FF22AF00A54A5C /* RoomSummaryView.xib in Resources */,
 				395E1BD925F6613100616684 /* BurningUpMain.storyboard in Resources */,
 				39B3D64225E37F0B003C3756 /* Assets.xcassets in Resources */,
+				399A951D2601C2D700241661 /* MemoView.xib in Resources */,
 				3983109C25F5034D00509D81 /* BurningUpSignInUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +511,7 @@
 				395E1BD125F653E800616684 /* LoginViewController.swift in Sources */,
 				39500D5725F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift in Sources */,
 				39B3D63B25E37F0B003C3756 /* SceneDelegate.swift in Sources */,
+				399A95182601C2CE00241661 /* MemoView.swift in Sources */,
 				39A1117B25FF226D00A54A5C /* RoomSummaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
