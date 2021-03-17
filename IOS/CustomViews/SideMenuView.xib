@@ -16,12 +16,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHh-2R-DWk">
                     <rect key="frame" x="0.0" y="0.0" width="221" height="133"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="헤헹" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAl-Kw-Xoc">
-                            <rect key="frame" x="0.0" y="0.0" width="221" height="33"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="누구누구님 환영스" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxN-8B-so2">
                             <rect key="frame" x="0.0" y="99.5" width="221" height="33.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -31,23 +25,27 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FireImage" translatesAutoresizingMaskIntoConstraints="NO" id="SN3-RG-5is">
                             <rect key="frame" x="62" y="33" width="97" height="66.5"/>
                         </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="5YA-Fh-ld5">
+                            <rect key="frame" x="0.0" y="0.0" width="221" height="33"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="5YA-Fh-ld5" firstAttribute="leading" secondItem="LHh-2R-DWk" secondAttribute="leading" id="0Ob-qk-FUZ"/>
                         <constraint firstItem="TxN-8B-so2" firstAttribute="leading" secondItem="LHh-2R-DWk" secondAttribute="leading" id="55B-t4-vlk"/>
                         <constraint firstItem="SN3-RG-5is" firstAttribute="width" secondItem="LHh-2R-DWk" secondAttribute="width" multiplier="0.436842" id="6LO-RD-6gz"/>
                         <constraint firstItem="TxN-8B-so2" firstAttribute="top" secondItem="SN3-RG-5is" secondAttribute="bottom" id="9HH-hm-YPS"/>
-                        <constraint firstItem="mAl-Kw-Xoc" firstAttribute="leading" secondItem="LHh-2R-DWk" secondAttribute="leading" id="Dva-Cw-TOr"/>
+                        <constraint firstItem="5YA-Fh-ld5" firstAttribute="top" secondItem="LHh-2R-DWk" secondAttribute="top" id="9LG-1O-MH7"/>
+                        <constraint firstItem="5YA-Fh-ld5" firstAttribute="height" secondItem="LHh-2R-DWk" secondAttribute="height" multiplier="0.25" id="AoK-oG-pVc"/>
                         <constraint firstItem="SN3-RG-5is" firstAttribute="centerY" secondItem="LHh-2R-DWk" secondAttribute="centerY" id="GN8-CH-en1"/>
-                        <constraint firstItem="mAl-Kw-Xoc" firstAttribute="top" secondItem="LHh-2R-DWk" secondAttribute="top" id="SgI-Wc-nU6"/>
-                        <constraint firstItem="SN3-RG-5is" firstAttribute="top" secondItem="mAl-Kw-Xoc" secondAttribute="bottom" id="Woa-Fw-D63"/>
+                        <constraint firstItem="SN3-RG-5is" firstAttribute="top" secondItem="5YA-Fh-ld5" secondAttribute="bottom" id="JDt-ww-RC7"/>
                         <constraint firstAttribute="bottom" secondItem="TxN-8B-so2" secondAttribute="bottom" id="Y1C-P6-bsS"/>
                         <constraint firstItem="SN3-RG-5is" firstAttribute="height" secondItem="LHh-2R-DWk" secondAttribute="height" multiplier="0.5" id="ZDF-lS-8DF"/>
+                        <constraint firstAttribute="trailing" secondItem="5YA-Fh-ld5" secondAttribute="trailing" id="adv-wl-cwl"/>
                         <constraint firstItem="TxN-8B-so2" firstAttribute="height" secondItem="LHh-2R-DWk" secondAttribute="height" multiplier="0.25" id="dKq-gB-8io"/>
-                        <constraint firstItem="mAl-Kw-Xoc" firstAttribute="height" secondItem="LHh-2R-DWk" secondAttribute="height" multiplier="0.25" id="j4h-X3-G9Y"/>
                         <constraint firstItem="SN3-RG-5is" firstAttribute="centerX" secondItem="LHh-2R-DWk" secondAttribute="centerX" id="jOi-h1-sJC"/>
+                        <constraint firstItem="5YA-Fh-ld5" firstAttribute="centerX" secondItem="LHh-2R-DWk" secondAttribute="centerX" id="mx2-2M-8ch"/>
                         <constraint firstAttribute="trailing" secondItem="TxN-8B-so2" secondAttribute="trailing" id="q58-9D-Err"/>
-                        <constraint firstAttribute="trailing" secondItem="mAl-Kw-Xoc" secondAttribute="trailing" id="t2J-9j-IYr"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULJ-cI-foR">
@@ -119,10 +117,11 @@
                 <constraint firstItem="8sH-Oa-GIK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xtq-ep-dMC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-220" y="-52"/>
+            <point key="canvasLocation" x="-492.02898550724643" y="-84.040178571428569"/>
         </view>
     </objects>
     <resources>
         <image name="FireImage" width="80.5" height="80.5"/>
+        <image name="MainLogo" width="81.5" height="27"/>
     </resources>
 </document>
