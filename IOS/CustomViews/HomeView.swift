@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
-class HomewView: UIView {
+class HomeView: UIView {
 
     
     override init(frame:CGRect) {
@@ -26,7 +26,7 @@ class HomewView: UIView {
     
     private func setup() {
         backgroundColor = .clear
-        guard let view = loadView(nibName: "HomewView") else { return }
+        guard let view = loadView(nibName: "HomeView") else { return }
         view.frame = self.bounds
         self.addSubview(view)
     }
