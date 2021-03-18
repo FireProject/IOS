@@ -73,6 +73,7 @@ class BurningUpMainViewController : UIViewController {
         }
         self.viewMode = .Friends
         self.removeAllSubViews()
+        self.setFriendsView()
     }
     
     func removeAllSubViews() {
@@ -80,6 +81,15 @@ class BurningUpMainViewController : UIViewController {
     }
     
     //view Chage Func
+    func setFriendsView() {
+        let friendsView = FriendsView()
+        self.view.addSubview(friendsView)
+        friendsView.translatesAutoresizingMaskIntoConstraints = false
+        friendsView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        friendsView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        friendsView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        friendsView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+    }
     func setHomeView() {
         let homeView = HomeView()
         self.view.addSubview(homeView)
@@ -88,7 +98,6 @@ class BurningUpMainViewController : UIViewController {
         homeView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         homeView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         homeView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        
     }
 }
     

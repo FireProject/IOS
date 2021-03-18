@@ -92,8 +92,8 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         
         ref.child("users/\(user.uid)/nikname").setValue(nickName)
         ref.child("users/\(user.uid)/stateMessage").setValue("")
-        ref.child("users/\(user.uid)/friends").setValue([1,2])
-        ref.child("users/\(user.uid)/roomId").setValue([1,2])
+        ref.child("users/\(user.uid)/friends").setValue(["1","2"])
+        ref.child("users/\(user.uid)/roomId").setValue(["1","2"])
         
         let storyboard = UIStoryboard(name: "BurningUpMain", bundle: nil)
         let pushController = storyboard.instantiateViewController(withIdentifier: "BurningUpMain")

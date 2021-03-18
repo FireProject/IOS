@@ -11,7 +11,7 @@
 		39500D4D25F7ACC90062EFAD /* BurningUpMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39500D4C25F7ACC90062EFAD /* BurningUpMainViewController.swift */; };
 		39500D5225F7B38E0062EFAD /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39500D5125F7B38E0062EFAD /* ResetPasswordViewController.swift */; };
 		39500D5725F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39500D5625F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift */; };
-		39500D8925F7B8DB0062EFAD /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39500D8825F7B8DB0062EFAD /* UserClass.swift */; };
+		39500D8925F7B8DB0062EFAD /* UserFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39500D8825F7B8DB0062EFAD /* UserFunction.swift */; };
 		395E1BD125F653E800616684 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395E1BD025F653E800616684 /* LoginViewController.swift */; };
 		395E1BD925F6613100616684 /* BurningUpMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 395E1BD825F6613100616684 /* BurningUpMain.storyboard */; };
 		395E1BDE25F6616400616684 /* SignInEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395E1BDD25F6616400616684 /* SignInEmailViewController.swift */; };
@@ -32,6 +32,8 @@
 		39BA700F2600DD2D009CB3CE /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA700E2600DD2D009CB3CE /* ViewExtension.swift */; };
 		39BCBA792602290600273D5B /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39BCBA782602290600273D5B /* HomeView.xib */; };
 		39BCBA7E2602291400273D5B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BCBA7D2602291400273D5B /* HomeView.swift */; };
+		39BCBA86260242C000273D5B /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BCBA85260242C000273D5B /* FriendsView.swift */; };
+		39BCBA8B260242CC00273D5B /* FriendsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39BCBA8A260242CC00273D5B /* FriendsView.xib */; };
 		A7BEAAB987480238A640E0E6 /* Pods_IOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42240BD9E2F1FE728ED85FBD /* Pods_IOSTests.framework */; };
 		D91B46FBF9994392118BF373 /* Pods_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BD3033B37D0EBAC613D34E /* Pods_IOS.framework */; };
 /* End PBXBuildFile section */
@@ -58,7 +60,7 @@
 		39500D4C25F7ACC90062EFAD /* BurningUpMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurningUpMainViewController.swift; sourceTree = "<group>"; };
 		39500D5125F7B38E0062EFAD /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		39500D5625F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInImageNicknameViewcontroller.swift; sourceTree = "<group>"; };
-		39500D8825F7B8DB0062EFAD /* UserClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
+		39500D8825F7B8DB0062EFAD /* UserFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFunction.swift; sourceTree = "<group>"; };
 		395E1BD025F653E800616684 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		395E1BD825F6613100616684 /* BurningUpMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BurningUpMain.storyboard; sourceTree = "<group>"; };
 		395E1BDD25F6616400616684 /* SignInEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,8 @@
 		39BA700E2600DD2D009CB3CE /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		39BCBA782602290600273D5B /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		39BCBA7D2602291400273D5B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		39BCBA85260242C000273D5B /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
+		39BCBA8A260242CC00273D5B /* FriendsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsView.xib; sourceTree = "<group>"; };
 		42240BD9E2F1FE728ED85FBD /* Pods_IOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BD3033B37D0EBAC613D34E /* Pods_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAFE1BA32725F3A7C581BA7 /* Pods-IOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTests.release.xcconfig"; path = "Target Support Files/Pods-IOSTests/Pods-IOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,7 +168,7 @@
 		398E138425E401CC00AE21A8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				39500D8825F7B8DB0062EFAD /* UserClass.swift */,
+				39500D8825F7B8DB0062EFAD /* UserFunction.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -181,6 +185,8 @@
 				399A951C2601C2D700241661 /* MemoView.xib */,
 				39BCBA782602290600273D5B /* HomeView.xib */,
 				39BCBA7D2602291400273D5B /* HomeView.swift */,
+				39BCBA85260242C000273D5B /* FriendsView.swift */,
+				39BCBA8A260242CC00273D5B /* FriendsView.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39BCBA8B260242CC00273D5B /* FriendsView.xib in Resources */,
 				39B3D64525E37F0B003C3756 /* LaunchScreen.storyboard in Resources */,
 				398E132225E3D14C00AE21A8 /* GoogleService-Info.plist in Resources */,
 				39BCBA792602290600273D5B /* HomeView.xib in Resources */,
@@ -508,9 +515,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39BCBA86260242C000273D5B /* FriendsView.swift in Sources */,
 				39BCBA7E2602291400273D5B /* HomeView.swift in Sources */,
 				395E1BDE25F6616400616684 /* SignInEmailViewController.swift in Sources */,
-				39500D8925F7B8DB0062EFAD /* UserClass.swift in Sources */,
+				39500D8925F7B8DB0062EFAD /* UserFunction.swift in Sources */,
 				39BA700A2600DB46009CB3CE /* SideMenuView.swift in Sources */,
 				39500D4D25F7ACC90062EFAD /* BurningUpMainViewController.swift in Sources */,
 				39500D5225F7B38E0062EFAD /* ResetPasswordViewController.swift in Sources */,
