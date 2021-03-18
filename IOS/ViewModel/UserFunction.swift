@@ -22,7 +22,7 @@ class BurningUpUser {
     init(user: NSDictionary) {
         
         guard let friends = user["friends"] as? [String],
-              let nickname = user["nikname"] as? String,
+              let nickname = user["nickname"] as? String,
               let roomId = user["roomId"] as? [String],
               let stateMessage = user["stateMessage"] as? String else {
             

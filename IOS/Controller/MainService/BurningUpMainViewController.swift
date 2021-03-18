@@ -18,6 +18,7 @@ class BurningUpMainViewController : UIViewController {
     var sideMenuView: SideMenuView? = nil
     var viewMode:ViewEnum = .Home
     
+    @IBOutlet weak var LeftUpButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewMode = .Home
@@ -75,6 +76,7 @@ class BurningUpMainViewController : UIViewController {
         self.viewMode = .Friends
         self.removeAllSubViews()
         self.setFriendsView()
+        self.navigationController?.toolbar.largeContentImage = nil
     }
     
     func removeAllSubViews() {

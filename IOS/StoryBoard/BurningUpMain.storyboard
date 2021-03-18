@@ -48,7 +48,7 @@
                             <imageReference key="image" image="line.horizontal.3" catalog="system" symbolScale="large"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="LeftMenuButtonPressed:" destination="nOy-fW-oJZ" id="fZI-xR-Qvt"/>
+                                <action selector="LeftMenuButtonPressed:" destination="nOy-fW-oJZ" id="6eb-iR-zIo"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="q2v-Iw-kEz">
@@ -56,10 +56,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="LeftUpButton" destination="pWR-F7-zHT" id="k4r-SW-U3u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsC-fQ-Rns" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="707.24637681159425" y="-6.6964285714285712"/>
+            <point key="canvasLocation" x="567" y="-79"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hef-Ct-izl">
