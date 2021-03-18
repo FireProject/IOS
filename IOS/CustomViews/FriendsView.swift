@@ -60,13 +60,8 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
         
         view.addSubview(underLine)
         underLine.translatesAutoresizingMaskIntoConstraints = false
-        
-        guard let user = Auth.auth().currentUser else {
-            
-            return view
-        }
-        
-        
+        //dump(userData)
+    
         NSLayoutConstraint.activate([
             /*profileImg.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             profileImg.widthAnchor.constraint(equalToConstant: 60),

@@ -22,6 +22,7 @@ class BurningUpMainViewController : UIViewController {
         super.viewDidLoad()
         self.viewMode = .Home
         self.setHomeView()
+        userSetting()
     }
     
     //뷰 터치시 메뉴뷰 사라지게끔

@@ -141,19 +141,7 @@ class LoginViewController : UIViewController , UITextFieldDelegate {
             
             UserDefaults.standard.set(email, forKey: "Email")
             UserDefaults.standard.set(password, forKey: "Password")
-            
-            var ref: DatabaseReference!
-            ref = Database.database().reference()
-            
-            ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-              // Get user value
-              let value = snapshot.value as? NSDictionary
-              let username = value?["nickname"] as? String ?? ""
-              print(username)
-              }) { (error) in
-                print("teafd")
-                print(error.localizedDescription)
-            }
+
             
             
             //실제서비스 뷰 이동

@@ -90,14 +90,15 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         metaData.contentType = "image/png"
         storage.reference().child(user.uid).putData(data, metadata: metaData)
         
-        ref.child("users/\(user.uid)/nikname").setValue(nickName)
+        ref.child("users/\(user.uid)/nickname").setValue(nickName)
         ref.child("users/\(user.uid)/stateMessage").setValue("")
         ref.child("users/\(user.uid)/friends").setValue(["1","2"])
         ref.child("users/\(user.uid)/roomId").setValue(["1","2"])
-        
-        let storyboard = UIStoryboard(name: "BurningUpMain", bundle: nil)
+        self.navigationController?.popToRootViewController(animated: true)
+       /* let storyboard = UIStoryboard(name: "BurningUpMain", bundle: nil)
         let pushController = storyboard.instantiateViewController(withIdentifier: "BurningUpMain")
         pushController.modalPresentationStyle = .fullScreen
-        self.present(pushController, animated: true, completion: nil)
+        self.present(pushController, animated: true, completion: nil)*/
+        
     }
 }
