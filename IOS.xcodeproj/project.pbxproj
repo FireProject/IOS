@@ -34,6 +34,12 @@
 		39BCBA7E2602291400273D5B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BCBA7D2602291400273D5B /* HomeView.swift */; };
 		39BCBA86260242C000273D5B /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BCBA85260242C000273D5B /* FriendsView.swift */; };
 		39BCBA8B260242CC00273D5B /* FriendsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39BCBA8A260242CC00273D5B /* FriendsView.xib */; };
+		39CE7A13260473D100BD3CB7 /* HomeTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE7A12260473D100BD3CB7 /* HomeTopBar.swift */; };
+		39CE7A18260473DB00BD3CB7 /* HomeTopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39CE7A17260473DB00BD3CB7 /* HomeTopBar.xib */; };
+		39CE7A1D260477EA00BD3CB7 /* FriendsTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE7A1C260477EA00BD3CB7 /* FriendsTopBar.swift */; };
+		39CE7A22260477F200BD3CB7 /* FriendsTopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39CE7A21260477F200BD3CB7 /* FriendsTopBar.xib */; };
+		39CE7A272604780E00BD3CB7 /* ChattingTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE7A262604780E00BD3CB7 /* ChattingTopBar.swift */; };
+		39CE7A2C2604781500BD3CB7 /* ChattingTopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39CE7A2B2604781500BD3CB7 /* ChattingTopBar.xib */; };
 		A7BEAAB987480238A640E0E6 /* Pods_IOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42240BD9E2F1FE728ED85FBD /* Pods_IOSTests.framework */; };
 		D91B46FBF9994392118BF373 /* Pods_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BD3033B37D0EBAC613D34E /* Pods_IOS.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +95,12 @@
 		39BCBA7D2602291400273D5B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		39BCBA85260242C000273D5B /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		39BCBA8A260242CC00273D5B /* FriendsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsView.xib; sourceTree = "<group>"; };
+		39CE7A12260473D100BD3CB7 /* HomeTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopBar.swift; sourceTree = "<group>"; };
+		39CE7A17260473DB00BD3CB7 /* HomeTopBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTopBar.xib; sourceTree = "<group>"; };
+		39CE7A1C260477EA00BD3CB7 /* FriendsTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTopBar.swift; sourceTree = "<group>"; };
+		39CE7A21260477F200BD3CB7 /* FriendsTopBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTopBar.xib; sourceTree = "<group>"; };
+		39CE7A262604780E00BD3CB7 /* ChattingTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingTopBar.swift; sourceTree = "<group>"; };
+		39CE7A2B2604781500BD3CB7 /* ChattingTopBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingTopBar.xib; sourceTree = "<group>"; };
 		42240BD9E2F1FE728ED85FBD /* Pods_IOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BD3033B37D0EBAC613D34E /* Pods_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAFE1BA32725F3A7C581BA7 /* Pods-IOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTests.release.xcconfig"; path = "Target Support Files/Pods-IOSTests/Pods-IOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,10 +195,16 @@
 				39BA70042600DB38009CB3CE /* SideMenuView.xib */,
 				399A95172601C2CE00241661 /* MemoView.swift */,
 				399A951C2601C2D700241661 /* MemoView.xib */,
-				39BCBA782602290600273D5B /* HomeView.xib */,
 				39BCBA7D2602291400273D5B /* HomeView.swift */,
+				39BCBA782602290600273D5B /* HomeView.xib */,
 				39BCBA85260242C000273D5B /* FriendsView.swift */,
 				39BCBA8A260242CC00273D5B /* FriendsView.xib */,
+				39CE7A12260473D100BD3CB7 /* HomeTopBar.swift */,
+				39CE7A17260473DB00BD3CB7 /* HomeTopBar.xib */,
+				39CE7A1C260477EA00BD3CB7 /* FriendsTopBar.swift */,
+				39CE7A21260477F200BD3CB7 /* FriendsTopBar.xib */,
+				39CE7A262604780E00BD3CB7 /* ChattingTopBar.swift */,
+				39CE7A2B2604781500BD3CB7 /* ChattingTopBar.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -378,6 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39CE7A2C2604781500BD3CB7 /* ChattingTopBar.xib in Resources */,
 				39BCBA8B260242CC00273D5B /* FriendsView.xib in Resources */,
 				39B3D64525E37F0B003C3756 /* LaunchScreen.storyboard in Resources */,
 				398E132225E3D14C00AE21A8 /* GoogleService-Info.plist in Resources */,
@@ -387,7 +406,9 @@
 				395E1BD925F6613100616684 /* BurningUpMain.storyboard in Resources */,
 				39B3D64225E37F0B003C3756 /* Assets.xcassets in Resources */,
 				399A951D2601C2D700241661 /* MemoView.xib in Resources */,
+				39CE7A22260477F200BD3CB7 /* FriendsTopBar.xib in Resources */,
 				3983109C25F5034D00509D81 /* BurningUpSignInUp.storyboard in Resources */,
+				39CE7A18260473DB00BD3CB7 /* HomeTopBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,15 +537,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				39BCBA86260242C000273D5B /* FriendsView.swift in Sources */,
+				39CE7A1D260477EA00BD3CB7 /* FriendsTopBar.swift in Sources */,
 				39BCBA7E2602291400273D5B /* HomeView.swift in Sources */,
 				395E1BDE25F6616400616684 /* SignInEmailViewController.swift in Sources */,
 				39500D8925F7B8DB0062EFAD /* UserFunction.swift in Sources */,
+				39CE7A13260473D100BD3CB7 /* HomeTopBar.swift in Sources */,
 				39BA700A2600DB46009CB3CE /* SideMenuView.swift in Sources */,
 				39500D4D25F7ACC90062EFAD /* BurningUpMainViewController.swift in Sources */,
 				39500D5225F7B38E0062EFAD /* ResetPasswordViewController.swift in Sources */,
 				39B3D63925E37F0B003C3756 /* AppDelegate.swift in Sources */,
 				39BA700F2600DD2D009CB3CE /* ViewExtension.swift in Sources */,
 				395E1BD125F653E800616684 /* LoginViewController.swift in Sources */,
+				39CE7A272604780E00BD3CB7 /* ChattingTopBar.swift in Sources */,
 				39500D5725F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift in Sources */,
 				39B3D63B25E37F0B003C3756 /* SceneDelegate.swift in Sources */,
 				399A95182601C2CE00241661 /* MemoView.swift in Sources */,
