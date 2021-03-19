@@ -115,9 +115,14 @@ class BurningUpMainViewController : UIViewController {
         self.view.addSubview(topBar)
         self.view.addSubview(homeView)
         
-        
+        topBar.translatesAutoresizingMaskIntoConstraints = false
         homeView.translatesAutoresizingMaskIntoConstraints = false
-        homeView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        topBar.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        topBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        topBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        topBar.heightAnchor.constraint(equalTo: self.view.heightAnchor,multiplier: 0.1).isActive = true
+        
+        homeView.topAnchor.constraint(equalTo: topBar.bottomAnchor).isActive = true
         homeView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         homeView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         homeView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
