@@ -12,6 +12,7 @@ import FirebaseStorage
 import FirebaseDatabase
 
 class FriendsTopBar: UIView {
+    weak var navgationController: UINavigationController!
     override init(frame:CGRect) {
         super.init(frame: frame)
         setup()
@@ -26,6 +27,9 @@ class FriendsTopBar: UIView {
         guard let view = loadView(nibName: "FriendsTopBar") else { return }
         view.frame = self.bounds
         self.addSubview(view)
+    }
+    func setNavigationController(navigationController: UINavigationController) {
+        self.navgationController = navigationController
     }
 }
 

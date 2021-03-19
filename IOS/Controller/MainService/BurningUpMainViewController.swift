@@ -33,7 +33,12 @@ class BurningUpMainViewController : UIViewController {
         sideMenuView = nil
         self.view.endEditing(true)
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     //toolbar 왼쪽상단 버튼
     @objc func LeftMenuButtonPressed(_ sender: Any) {
         if sideMenuView != nil {

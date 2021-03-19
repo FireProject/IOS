@@ -12,6 +12,7 @@ import FirebaseStorage
 import FirebaseDatabase
 
 class HomeTopBar: UIView {
+    weak var parentView: UIView!
     override init(frame:CGRect) {
         super.init(frame: frame)
         setup()
@@ -26,5 +27,8 @@ class HomeTopBar: UIView {
         guard let view = loadView(nibName: "HomeTopBar") else { return }
         view.frame = self.bounds
         self.addSubview(view)
+    }
+    func setParentView(view:UIView) {
+        self.parentView = view
     }
 }
