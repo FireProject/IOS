@@ -85,10 +85,20 @@ class BurningUpMainViewController : UIViewController {
     
     //view Chage Func
     func setFriendsView() {
+        let topBar = FriendsTopBar()
         let friendsView = FriendsView()
+        self.view.addSubview(topBar)
         self.view.addSubview(friendsView)
+        
+        topBar.translatesAutoresizingMaskIntoConstraints = false
         friendsView.translatesAutoresizingMaskIntoConstraints = false
-        friendsView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        
+        topBar.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        topBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        topBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        topBar.heightAnchor.constraint(equalTo: self.view.heightAnchor,multiplier: 0.1).isActive = true
+        
+        friendsView.topAnchor.constraint(equalTo: topBar.bottomAnchor).isActive = true
         friendsView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         friendsView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         friendsView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
