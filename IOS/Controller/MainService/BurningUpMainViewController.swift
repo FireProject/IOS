@@ -59,6 +59,7 @@ class BurningUpMainViewController : UIViewController {
         }
         self.viewMode = .Chatting
         self.removeAllSubViews()
+        self.setChattingView()
     }
     @IBAction func HomeViewButtonPressed(_ sender: Any) {
         if self.viewMode == .Home{
@@ -102,21 +103,18 @@ class BurningUpMainViewController : UIViewController {
         friendsView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         friendsView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         friendsView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        let leftBarButton: UIBarButtonItem = UIBarButtonItem(image: nil, style: .plain, target: self, action: nil)
-        leftBarButton.isEnabled = false
-        leftBarButton.title = "친구"
-        leftBarButton.tintColor = .white
-        navigationItem.leftBarButtonItem = leftBarButton
-
-        
-        
-        let rightBarButton: UIBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ChattingRoomImage"), style: .plain, target: self, action: nil)
-        rightBarButton.tintColor = .white
-        navigationItem.rightBarButtonItem = rightBarButton
-        
     }
     func setChattingView() {
+        let topBar = ChattingTopBar()
+        self.view.addSubview(topBar)
         
+        topBar.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        topBar.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        topBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        topBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        topBar.heightAnchor.constraint(equalTo: self.view.heightAnchor,multiplier: 0.1).isActive = true
     }
     
     func setHomeView() {
@@ -136,15 +134,6 @@ class BurningUpMainViewController : UIViewController {
         homeView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         homeView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         homeView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        
-        let leftBarButton: UIBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "FriendsImage"), style: .plain, target: self, action: #selector(LeftMenuButtonPressed))
-        
-        navigationItem.leftBarButtonItem = leftBarButton
-        navigationItem.leftBarButtonItem?.tintColor = .white
-        
-        let rightBarButton: UIBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "SearchImage"), style: .plain, target: self, action: nil)
-        navigationItem.rightBarButtonItem = rightBarButton
-        navigationItem.rightBarButtonItem?.tintColor = .white
     }
 }
     

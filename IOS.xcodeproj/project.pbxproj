@@ -34,6 +34,8 @@
 		39BCBA7E2602291400273D5B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BCBA7D2602291400273D5B /* HomeView.swift */; };
 		39BCBA86260242C000273D5B /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BCBA85260242C000273D5B /* FriendsView.swift */; };
 		39BCBA8B260242CC00273D5B /* FriendsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39BCBA8A260242CC00273D5B /* FriendsView.xib */; };
+		39C7622426048BF20046EF3C /* ChattingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39C7622326048BF20046EF3C /* ChattingView.xib */; };
+		39C7622926048BF80046EF3C /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C7622826048BF80046EF3C /* ChattingView.swift */; };
 		39CE7A13260473D100BD3CB7 /* HomeTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE7A12260473D100BD3CB7 /* HomeTopBar.swift */; };
 		39CE7A18260473DB00BD3CB7 /* HomeTopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39CE7A17260473DB00BD3CB7 /* HomeTopBar.xib */; };
 		39CE7A1D260477EA00BD3CB7 /* FriendsTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE7A1C260477EA00BD3CB7 /* FriendsTopBar.swift */; };
@@ -95,6 +97,8 @@
 		39BCBA7D2602291400273D5B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		39BCBA85260242C000273D5B /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		39BCBA8A260242CC00273D5B /* FriendsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsView.xib; sourceTree = "<group>"; };
+		39C7622326048BF20046EF3C /* ChattingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingView.xib; sourceTree = "<group>"; };
+		39C7622826048BF80046EF3C /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
 		39CE7A12260473D100BD3CB7 /* HomeTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopBar.swift; sourceTree = "<group>"; };
 		39CE7A17260473DB00BD3CB7 /* HomeTopBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTopBar.xib; sourceTree = "<group>"; };
 		39CE7A1C260477EA00BD3CB7 /* FriendsTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTopBar.swift; sourceTree = "<group>"; };
@@ -199,6 +203,8 @@
 				39BCBA782602290600273D5B /* HomeView.xib */,
 				39BCBA85260242C000273D5B /* FriendsView.swift */,
 				39BCBA8A260242CC00273D5B /* FriendsView.xib */,
+				39C7622826048BF80046EF3C /* ChattingView.swift */,
+				39C7622326048BF20046EF3C /* ChattingView.xib */,
 				39CE7A12260473D100BD3CB7 /* HomeTopBar.swift */,
 				39CE7A17260473DB00BD3CB7 /* HomeTopBar.xib */,
 				39CE7A1C260477EA00BD3CB7 /* FriendsTopBar.swift */,
@@ -406,6 +412,7 @@
 				395E1BD925F6613100616684 /* BurningUpMain.storyboard in Resources */,
 				39B3D64225E37F0B003C3756 /* Assets.xcassets in Resources */,
 				399A951D2601C2D700241661 /* MemoView.xib in Resources */,
+				39C7622426048BF20046EF3C /* ChattingView.xib in Resources */,
 				39CE7A22260477F200BD3CB7 /* FriendsTopBar.xib in Resources */,
 				3983109C25F5034D00509D81 /* BurningUpSignInUp.storyboard in Resources */,
 				39CE7A18260473DB00BD3CB7 /* HomeTopBar.xib in Resources */,
@@ -538,6 +545,7 @@
 			files = (
 				39BCBA86260242C000273D5B /* FriendsView.swift in Sources */,
 				39CE7A1D260477EA00BD3CB7 /* FriendsTopBar.swift in Sources */,
+				39C7622926048BF80046EF3C /* ChattingView.swift in Sources */,
 				39BCBA7E2602291400273D5B /* HomeView.swift in Sources */,
 				395E1BDE25F6616400616684 /* SignInEmailViewController.swift in Sources */,
 				39500D8925F7B8DB0062EFAD /* UserFunction.swift in Sources */,
