@@ -31,6 +31,9 @@ class FriendsTopBar: UIView {
     func setNavigationController(navigationController: UINavigationController) {
         self.navgationController = navigationController
     }
+    @IBAction func plusFriendsAction(_ sender: Any) {
+        
+    }
 }
 
 

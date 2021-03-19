@@ -40,6 +40,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2h-qI-IyT">
                             <rect key="frame" x="14.5" y="17.5" width="29.5" height="34.5"/>
                             <state key="normal" backgroundImage="PlusFriendsImage"/>
+                            <connections>
+                                <action selector="plusFriendsAction:" destination="-1" eventType="touchUpInside" id="0tq-pw-ahg"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
