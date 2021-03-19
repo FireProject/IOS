@@ -106,15 +106,23 @@ class BurningUpMainViewController : UIViewController {
     }
     func setChattingView() {
         let topBar = ChattingTopBar()
+        let chattingView = ChattingView()
+       
         self.view.addSubview(topBar)
+        self.view.addSubview(chattingView)
         
         topBar.translatesAutoresizingMaskIntoConstraints = false
-        
+        chattingView.translatesAutoresizingMaskIntoConstraints = false
         
         topBar.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         topBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         topBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         topBar.heightAnchor.constraint(equalTo: self.view.heightAnchor,multiplier: 0.1).isActive = true
+        
+        chattingView.topAnchor.constraint(equalTo: topBar.bottomAnchor).isActive = true
+        chattingView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        chattingView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        chattingView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
     
     func setHomeView() {

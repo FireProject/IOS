@@ -19,15 +19,20 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V4T-ZY-idy">
                     <rect key="frame" x="0.0" y="46" width="58.5" height="69"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="친구" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RII-2x-prk">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RII-2x-prk">
                             <rect key="frame" x="0.0" y="0.0" width="58.5" height="69"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="RII-2x-prk" firstAttribute="leading" secondItem="V4T-ZY-idy" secondAttribute="leading" id="6rY-6S-xDM"/>
+                        <constraint firstAttribute="bottom" secondItem="RII-2x-prk" secondAttribute="bottom" id="Gqb-qs-6ne"/>
+                        <constraint firstAttribute="trailing" secondItem="RII-2x-prk" secondAttribute="trailing" id="arH-2n-DOE"/>
+                        <constraint firstItem="RII-2x-prk" firstAttribute="top" secondItem="V4T-ZY-idy" secondAttribute="top" id="boV-yJ-KzI"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nrd-g4-jrN">
                     <rect key="frame" x="331.5" y="46" width="58.5" height="69"/>

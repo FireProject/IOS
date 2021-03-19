@@ -16,7 +16,8 @@ import FirebaseDatabase
  * note : 본인보여주는 셀만 underLine이 있기를 원함
  */
 class ChattingView: UIView,UITableViewDelegate, UITableViewDataSource {
- 
+    @IBOutlet weak var chattingTable: UITableView!
+    
     
     override init(frame:CGRect) {
         super.init(frame: frame)
@@ -32,6 +33,8 @@ class ChattingView: UIView,UITableViewDelegate, UITableViewDataSource {
         guard let view = loadView(nibName: "ChattingView") else { return }
         view.frame = self.bounds
         self.addSubview(view)
+        self.chattingTable.delegate = self
+        self.chattingTable.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
