@@ -12,7 +12,7 @@ import FirebaseStorage
 import FirebaseDatabase
 
 class HomeTopBar: UIView {
-    weak var parentView: UIView!
+    weak var parentViewController: BurningUpMainViewController!
     override init(frame:CGRect) {
         super.init(frame: frame)
         setup()
@@ -28,7 +28,10 @@ class HomeTopBar: UIView {
         view.frame = self.bounds
         self.addSubview(view)
     }
-    func setParentView(view:UIView) {
-        self.parentView = view
+    func setParentViewContoller(viewController:BurningUpMainViewController) {
+        self.parentViewController = viewController
+    }
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        self.parentViewController.LeftMenuButtonPressed()
     }
 }

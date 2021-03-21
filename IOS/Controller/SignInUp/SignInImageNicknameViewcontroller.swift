@@ -84,6 +84,7 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         
         var ref: DatabaseReference!
         ref = Database.database().reference()
+       
         var data = Data()
         data = (self.profileImage.image?.jpegData(compressionQuality: 0.8))!
         let metaData = StorageMetadata()
@@ -92,8 +93,9 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         
         ref.child("users/\(user.uid)/nickname").setValue(nickName)
         ref.child("users/\(user.uid)/stateMessage").setValue("")
-        ref.child("users/\(user.uid)/friends").setValue(["1","2"])
-        ref.child("users/\(user.uid)/roomId").setValue(["1","2"])
+        ref.child("users/\(user.uid)/friends").setValue([])
+        ref.child("users/\(user.uid)/roomId").setValue([])
+        
         self.navigationController?.popToRootViewController(animated: true)
        /* let storyboard = UIStoryboard(name: "BurningUpMain", bundle: nil)
         let pushController = storyboard.instantiateViewController(withIdentifier: "BurningUpMain")

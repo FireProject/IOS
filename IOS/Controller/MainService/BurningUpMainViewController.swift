@@ -40,7 +40,7 @@ class BurningUpMainViewController : UIViewController {
     }
     
     //toolbar 왼쪽상단 버튼
-    @objc func LeftMenuButtonPressed(_ sender: Any) {
+    func LeftMenuButtonPressed() {
         if sideMenuView != nil {
             sideMenuView?.removeFromSuperview()
             sideMenuView = nil
@@ -62,14 +62,17 @@ class BurningUpMainViewController : UIViewController {
         if self.viewMode == .Chatting{
             return
         }
+        sideMenuView = nil
         self.viewMode = .Chatting
         self.removeAllSubViews()
         self.setChattingView()
+        
     }
     @IBAction func HomeViewButtonPressed(_ sender: Any) {
         if self.viewMode == .Home{
             return
         }
+        
         self.viewMode = .Home
         self.removeAllSubViews()
         self.setHomeView()
@@ -86,6 +89,7 @@ class BurningUpMainViewController : UIViewController {
     }
     
     func removeAllSubViews() {
+        sideMenuView = nil
         let _ = self.view.subviews.map({$0.removeFromSuperview()})
     }
     
@@ -131,8 +135,11 @@ class BurningUpMainViewController : UIViewController {
     }
     
     func setHomeView() {
+        
         let topBar = HomeTopBar()
         let homeView = HomeView()
+        topBar.setParentViewContoller(viewController: self)
+        
         self.view.addSubview(topBar)
         self.view.addSubview(homeView)
         
