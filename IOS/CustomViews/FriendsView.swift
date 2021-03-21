@@ -28,12 +28,16 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
     
     private func setup() {
         backgroundColor = .clear
+        
+        
         guard let view = loadView(nibName: "FriendsView") else { return }
         view.frame = self.bounds
         self.addSubview(view)
         FriendsTableView.delegate = self
         FriendsTableView.dataSource = self
         FriendsTableView.backgroundColor = .black
+        FriendsTableView.register(MyCustomHeader.self,
+               forHeaderFooterViewReuseIdentifier: "userProfile")
      
     }
     
@@ -54,43 +58,11 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
         return 100.0
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        let underLine = UIView()
-        let profileImage = UIImageView()
-        let nickLabel = UILabel()
-        
-        nickLabel.text = userData?.nickname
-        nickLabel.font = .systemFont(ofSize: 17, weight: .bold)
-        nickLabel.textColor = .white
-      
-        
-        profileImage.image = userData?.profileImage
-        profileImage.contentMode = .scaleAspectFill
-        
-        underLine.backgroundColor = .white
-        
-        view.addSubview(underLine)
-        view.addSubview(profileImage)
-        view.addSubview(nickLabel)
-        
-        underLine.translatesAutoresizingMaskIntoConstraints = false
-        profileImage.translatesAutoresizingMaskIntoConstraints = false
-        nickLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            profileImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            profileImage.widthAnchor.constraint(equalToConstant: 60),
-            profileImage.heightAnchor.constraint(equalToConstant: 60),
-            profileImage.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            
-            nickLabel.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 13),
-            nickLabel.centerYAnchor.constraint(equalTo: profileImage.centerYAnchor),
-            
-            underLine.heightAnchor.constraint(equalToConstant: 0.5),
-            underLine.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            underLine.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            underLine.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:"userProfile") as! MyCustomHeader
+        view.title.text = userData?.nickname
+        view.image.image = userData?.profileImage
+        view.image.clipsToBounds = true
+        view.image.layer.cornerRadius = 25
         return view
     }
     
