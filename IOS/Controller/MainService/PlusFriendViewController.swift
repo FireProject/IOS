@@ -16,7 +16,9 @@ class PlusFriendViewController : UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.friendEmailTextField.delegate = self
+        self.warningLabel.textColor = .white
+        self.warningLabel.text = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,25 +34,6 @@ class PlusFriendViewController : UIViewController, UITextFieldDelegate {
         if text == "" {
             self.friendEmailTextField.text = "친구 Email"
         }
-        
-        guard let email = self.friendEmailTextField.text else {
-            return
-        }
-        var ref: DatabaseReference!
-        ref = Database.database().reference()
-        
-        
-        ref.child("emailToUid").child(email).getData(completion: { (error,snapshot) in
-            if let error = error {
-                print("Error getting data \(error)")
-            }
-            else if snapshot.exists() {
-                self.warningLabel.text = ""
-            }
-            else {
-                self.warningLabel.text = "존재하지 않습니다."
-            }
-        })
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -67,13 +50,17 @@ class PlusFriendViewController : UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func plusFriendButtonPressed(_ sender: Any) {
+        let s = DispatchSemaphore(value: 0)
+        var isExistEmail = false
         
-        guard let email = self.friendEmailTextField.text else {
-            return
-        }
         var ref: DatabaseReference!
         ref = Database.database().reference()
         
+        guard let emailText = self.friendEmailTextField.text?.data(using: .utf8) else {
+            return
+        }
+        let email = emailText.map({String(format:"%02x", $0)}).joined()
+
         
         ref.child("emailToUid").child(email).getData(completion: { (error,snapshot) in
             if let error = error {
@@ -81,13 +68,20 @@ class PlusFriendViewController : UIViewController, UITextFieldDelegate {
             }
             else if snapshot.exists() {
                 let uid = snapshot.value as! String
-                self.warningLabel.text = ""
                 userData.friends.append(uid)
                 ref.child("users").child(Auth.auth().currentUser!.uid).child("friends").setValue(userData.friends)
+                isExistEmail = true
             }
             else {
-                self.warningLabel.text = "존재하지 않습니다."
             }
+            s.signal()
         })
+        
+        s.wait()
+        if isExistEmail == false {
+            self.warningLabel.text = "존재하지 않는 유저입니다."
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }

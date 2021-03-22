@@ -82,7 +82,9 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         guard let user = Auth.auth().currentUser else {
             return
         }
-        
+        guard let email = user.email?.data(using: .utf8)!.map({String(format:"%02x", $0)}).joined() else {
+            return
+        }
         var ref: DatabaseReference!
         ref = Database.database().reference()
        
@@ -96,7 +98,8 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         ref.child("users/\(user.uid)/stateMessage").setValue("")
         ref.child("users/\(user.uid)/friends").setValue([])
         ref.child("users/\(user.uid)/roomId").setValue([])
-        let email = user.email?.data(using: .utf8)!.map({String(format:"%02x", $0)}).joined()
+        
+        
         ref.child("emailToUid/\(String(describing: email))").setValue(user.uid)
         
         self.navigationController?.popToRootViewController(animated: true)
