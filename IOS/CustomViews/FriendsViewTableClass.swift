@@ -24,31 +24,6 @@ class MyCustomHeader: UITableViewHeaderFooterView {
     
     func configureContents() {
         self.contentView.backgroundColor = .black
-        /*
-        image.translatesAutoresizingMaskIntoConstraints = false
-        title.translatesAutoresizingMaskIntoConstraints = false
-        
-        contentView.addSubview(image)
-        contentView.addSubview(title)
-
-        // Center the image vertically and place it near the leading
-        // edge of the view. Constrain its width and height to 50 points.
-        NSLayoutConstraint.activate([
-            image.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            image.widthAnchor.constraint(equalToConstant: 50),
-            image.heightAnchor.constraint(equalToConstant: 50),
-            image.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-        
-            // Center the label vertically, and use it to fill the remaining
-            // space in the header view.
-            title.heightAnchor.constraint(equalToConstant: 30),
-            title.leadingAnchor.constraint(equalTo: image.trailingAnchor,
-                   constant: 8),
-            title.trailingAnchor.constraint(equalTo:
-                   contentView.layoutMarginsGuide.trailingAnchor),
-            title.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-        ])*/
-        
         nickLabel.text = userData.nickname
         nickLabel.font = .systemFont(ofSize: 17, weight: .bold)
         nickLabel.textColor = .white
@@ -80,7 +55,48 @@ class MyCustomHeader: UITableViewHeaderFooterView {
             underLine.heightAnchor.constraint(equalToConstant: 0.5),
             underLine.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             underLine.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            underLine.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 20)
+            underLine.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0)
+        ])
+    }
+}
+
+class cutomCell: UITableViewCell {
+    let profileImage = UIImageView()
+    let nickLabel = UILabel()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.setting()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.setting()
+    }
+    
+    func setting() {
+        self.contentView.backgroundColor = .black
+        nickLabel.text = userData.nickname
+        nickLabel.font = .systemFont(ofSize: 17, weight: .bold)
+        nickLabel.textColor = .white
+        
+        profileImage.image = userData.profileImage
+        profileImage.contentMode = .scaleAspectFill
+        
+        contentView.addSubview(profileImage)
+        contentView.addSubview(nickLabel)
+        
+        profileImage.translatesAutoresizingMaskIntoConstraints = false
+        nickLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            profileImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            profileImage.widthAnchor.constraint(equalToConstant: 60),
+            profileImage.heightAnchor.constraint(equalToConstant: 60),
+            profileImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10),
+            
+            nickLabel.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 13),
+            nickLabel.centerYAnchor.constraint(equalTo: profileImage.centerYAnchor)
         ])
     }
 }

@@ -20,8 +20,8 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.picker.delegate = self
-        print(self.profileImage.frame.height)
-        print(self.profileImage.frame.width)
+
+        self.profileImage.contentMode = .scaleAspectFill
         self.profileImage.clipsToBounds = true
         self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2.0
     }
