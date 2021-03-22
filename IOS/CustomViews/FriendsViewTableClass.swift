@@ -49,15 +49,16 @@ class MyCustomHeader: UITableViewHeaderFooterView {
             title.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])*/
         
-        nickLabel.text = userData?.nickname
+        nickLabel.text = userData.nickname
         nickLabel.font = .systemFont(ofSize: 17, weight: .bold)
         nickLabel.textColor = .white
       
         
-        profileImage.image = userData?.profileImage
+        profileImage.image = userData.profileImage
         profileImage.contentMode = .scaleAspectFill
         
         underLine.backgroundColor = .white
+        underLine.alpha = 0.5
         
         contentView.addSubview(underLine)
         contentView.addSubview(profileImage)
@@ -79,7 +80,7 @@ class MyCustomHeader: UITableViewHeaderFooterView {
             underLine.heightAnchor.constraint(equalToConstant: 0.5),
             underLine.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             underLine.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            underLine.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            underLine.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 20)
         ])
     }
 }

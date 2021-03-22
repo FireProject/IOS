@@ -59,12 +59,12 @@ class ChattingView: UIView,UITableViewDelegate, UITableViewDataSource {
         let profileImage = UIImageView()
         let nickLabel = UILabel()
         
-        nickLabel.text = userData?.nickname
+        nickLabel.text = userData.nickname
         nickLabel.font = .systemFont(ofSize: 17, weight: .bold)
         nickLabel.textColor = .white
       
         
-        profileImage.image = userData?.profileImage
+        profileImage.image = userData.profileImage
         profileImage.contentMode = .scaleAspectFill
         
         underLine.backgroundColor = .white
