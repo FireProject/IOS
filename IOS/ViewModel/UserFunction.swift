@@ -21,13 +21,11 @@ class BurningUpUser {
     var profileImage:UIImage = #imageLiteral(resourceName: "FriendsImage")
     init(user: NSDictionary) {
         
-        guard let friends = user["friends"] as? [String],
-              let nickname = user["nickname"] as? String,
-              let roomId = user["roomId"] as? [String],
-              let stateMessage = user["stateMessage"] as? String else {
-            
-            return
-        }
+        let friends = user["friends"] as? [String] ?? []
+        let nickname = user["nickname"] as? String ?? "NoNamed"
+        let roomId = user["roomId"] as? [String] ?? []
+        let stateMessage = user["stateMessage"] as? String ?? ""
+        
         self.friends = friends
         self.nickname = nickname
         self.roomId = roomId

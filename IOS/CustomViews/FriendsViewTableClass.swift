@@ -8,9 +8,11 @@
 import Foundation
 import UIKit
 class MyCustomHeader: UITableViewHeaderFooterView {
-    let title = UILabel()
-    let image = UIImageView()
-
+    let underLine = UIView()
+    let profileImage = UIImageView()
+    let nickLabel = UILabel()
+    
+    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         configureContents()
@@ -21,6 +23,8 @@ class MyCustomHeader: UITableViewHeaderFooterView {
     }
     
     func configureContents() {
+        self.contentView.backgroundColor = .black
+        /*
         image.translatesAutoresizingMaskIntoConstraints = false
         title.translatesAutoresizingMaskIntoConstraints = false
         
@@ -43,6 +47,39 @@ class MyCustomHeader: UITableViewHeaderFooterView {
             title.trailingAnchor.constraint(equalTo:
                    contentView.layoutMarginsGuide.trailingAnchor),
             title.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])*/
+        
+        nickLabel.text = userData?.nickname
+        nickLabel.font = .systemFont(ofSize: 17, weight: .bold)
+        nickLabel.textColor = .white
+      
+        
+        profileImage.image = userData?.profileImage
+        profileImage.contentMode = .scaleAspectFill
+        
+        underLine.backgroundColor = .white
+        
+        contentView.addSubview(underLine)
+        contentView.addSubview(profileImage)
+        contentView.addSubview(nickLabel)
+        
+        underLine.translatesAutoresizingMaskIntoConstraints = false
+        profileImage.translatesAutoresizingMaskIntoConstraints = false
+        nickLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            profileImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            profileImage.widthAnchor.constraint(equalToConstant: 60),
+            profileImage.heightAnchor.constraint(equalToConstant: 60),
+            profileImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            
+            nickLabel.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 13),
+            nickLabel.centerYAnchor.constraint(equalTo: profileImage.centerYAnchor),
+            
+            underLine.heightAnchor.constraint(equalToConstant: 0.5),
+            underLine.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            underLine.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            underLine.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 }

@@ -59,10 +59,10 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:"userProfile") as! MyCustomHeader
-        view.title.text = userData?.nickname
-        view.image.image = userData?.profileImage
-        view.image.clipsToBounds = true
-        view.image.layer.cornerRadius = 25
+        view.nickLabel.text = userData?.nickname
+        view.profileImage.image = userData?.profileImage
+        view.profileImage.clipsToBounds = true
+        view.profileImage.layer.cornerRadius = 25
         return view
     }
     
