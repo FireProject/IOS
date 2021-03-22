@@ -98,26 +98,48 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znW-L5-64c">
+                                <rect key="frame" x="165.5" y="177.5" width="83" height="45"/>
+                                <state key="normal" title="확인"/>
+                                <connections>
+                                    <action selector="plusFriendButtonPressed:" destination="epW-0X-MKk" eventType="touchUpInside" id="bT3-N9-ZNx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1p-GR-o9A">
+                                <rect key="frame" x="62" y="133" width="290" height="44.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JMP-hA-miy"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LZR-jM-Vip" firstAttribute="top" secondItem="xss-FF-Jxx" secondAttribute="bottom" constant="10" id="1dj-T4-f9T"/>
+                            <constraint firstItem="znW-L5-64c" firstAttribute="height" secondItem="bkG-fN-Dyu" secondAttribute="height" multiplier="0.05" id="2f6-J9-H8q"/>
+                            <constraint firstItem="w1p-GR-o9A" firstAttribute="height" secondItem="bkG-fN-Dyu" secondAttribute="height" multiplier="0.05" id="32b-Cs-1F1"/>
+                            <constraint firstItem="znW-L5-64c" firstAttribute="top" secondItem="w1p-GR-o9A" secondAttribute="bottom" id="AmT-pf-dY9"/>
                             <constraint firstItem="xss-FF-Jxx" firstAttribute="height" secondItem="bkG-fN-Dyu" secondAttribute="height" multiplier="0.05" id="Mb9-eY-GwR"/>
                             <constraint firstItem="xss-FF-Jxx" firstAttribute="leading" secondItem="JMP-hA-miy" secondAttribute="leading" id="Qvg-Ra-DfQ"/>
                             <constraint firstItem="xss-FF-Jxx" firstAttribute="top" secondItem="JMP-hA-miy" secondAttribute="top" id="U7X-xL-ANW"/>
+                            <constraint firstItem="w1p-GR-o9A" firstAttribute="centerX" secondItem="bkG-fN-Dyu" secondAttribute="centerX" id="VxV-uP-hkg"/>
+                            <constraint firstItem="w1p-GR-o9A" firstAttribute="top" secondItem="LZR-jM-Vip" secondAttribute="bottom" id="WNv-66-ej0"/>
+                            <constraint firstItem="znW-L5-64c" firstAttribute="width" secondItem="bkG-fN-Dyu" secondAttribute="width" multiplier="0.2" id="XuY-G4-nqV"/>
+                            <constraint firstItem="w1p-GR-o9A" firstAttribute="width" secondItem="bkG-fN-Dyu" secondAttribute="width" multiplier="0.7" id="YKW-nc-5FG"/>
                             <constraint firstItem="LZR-jM-Vip" firstAttribute="width" secondItem="bkG-fN-Dyu" secondAttribute="width" multiplier="0.7" id="Yws-Td-7Rd"/>
                             <constraint firstItem="LZR-jM-Vip" firstAttribute="centerX" secondItem="bkG-fN-Dyu" secondAttribute="centerX" id="cDo-xj-H9Z"/>
                             <constraint firstItem="JMP-hA-miy" firstAttribute="trailing" secondItem="xss-FF-Jxx" secondAttribute="trailing" id="rha-e5-Ykf"/>
+                            <constraint firstItem="znW-L5-64c" firstAttribute="centerX" secondItem="bkG-fN-Dyu" secondAttribute="centerX" id="sdE-0K-ebU"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="friendEmailTextField" destination="LZR-jM-Vip" id="Fpv-G4-tJe"/>
+                        <outlet property="warningLabel" destination="w1p-GR-o9A" id="8co-rV-3iC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPY-xt-3J8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1584.057971014493" y="-87.053571428571431"/>
+            <point key="canvasLocation" x="1324.6376811594205" y="-79.017857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hef-Ct-izl">

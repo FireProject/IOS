@@ -96,12 +96,9 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         ref.child("users/\(user.uid)/stateMessage").setValue("")
         ref.child("users/\(user.uid)/friends").setValue([])
         ref.child("users/\(user.uid)/roomId").setValue([])
+        let email = user.email?.data(using: .utf8)!.map({String(format:"%02x", $0)}).joined()
+        ref.child("emailToUid/\(String(describing: email))").setValue(user.uid)
         
         self.navigationController?.popToRootViewController(animated: true)
-       /* let storyboard = UIStoryboard(name: "BurningUpMain", bundle: nil)
-        let pushController = storyboard.instantiateViewController(withIdentifier: "BurningUpMain")
-        pushController.modalPresentationStyle = .fullScreen
-        self.present(pushController, animated: true, completion: nil)*/
-        
     }
 }
