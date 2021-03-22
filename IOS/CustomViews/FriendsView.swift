@@ -55,11 +55,11 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        return 80
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60
+        return 80
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -67,7 +67,7 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
         view.nickLabel.text = userData.nickname
         view.profileImage.image = userData.profileImage
         view.profileImage.clipsToBounds = true
-        view.profileImage.layer.cornerRadius = 25
+        view.profileImage.layer.cornerRadius = 30
         return view
     }
     

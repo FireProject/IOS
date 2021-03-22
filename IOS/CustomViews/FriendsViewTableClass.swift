@@ -72,7 +72,7 @@ class MyCustomHeader: UITableViewHeaderFooterView {
             profileImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             profileImage.widthAnchor.constraint(equalToConstant: 60),
             profileImage.heightAnchor.constraint(equalToConstant: 60),
-            profileImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            profileImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10),
             
             nickLabel.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 13),
             nickLabel.centerYAnchor.constraint(equalTo: profileImage.centerYAnchor),
