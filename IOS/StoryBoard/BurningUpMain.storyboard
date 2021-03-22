@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="566.66666666666674" y="-79.017857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Plus Friend View Controller-->
         <scene sceneID="ZaI-ta-Lf8">
             <objects>
-                <viewController id="epW-0X-MKk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlusFriendViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="epW-0X-MKk" customClass="PlusFriendViewController" customModule="IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bkG-fN-Dyu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,6 +67,9 @@
                                         <state key="normal" image="multiply" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="epW-0X-MKk" eventType="touchUpInside" id="yBE-K3-epF"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구추가" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbO-pl-eu3">
                                         <rect key="frame" x="103.5" y="0.0" width="207" height="45"/>
@@ -108,6 +111,9 @@
                             <constraint firstItem="JMP-hA-miy" firstAttribute="trailing" secondItem="xss-FF-Jxx" secondAttribute="trailing" id="rha-e5-Ykf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="friendEmailTextField" destination="LZR-jM-Vip" id="Fpv-G4-tJe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPY-xt-3J8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

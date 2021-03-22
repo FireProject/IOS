@@ -27,6 +27,7 @@
 		39B3D64525E37F0B003C3756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B3D64325E37F0B003C3756 /* LaunchScreen.storyboard */; };
 		39B3D65025E37F0B003C3756 /* IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3D64F25E37F0B003C3756 /* IOSTests.swift */; };
 		39B3D65B25E37F0B003C3756 /* IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3D65A25E37F0B003C3756 /* IOSUITests.swift */; };
+		39B8270426086AE8009D5769 /* PlusFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B8270326086AE8009D5769 /* PlusFriendViewController.swift */; };
 		39BA70052600DB38009CB3CE /* SideMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39BA70042600DB38009CB3CE /* SideMenuView.xib */; };
 		39BA700A2600DB46009CB3CE /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA70092600DB46009CB3CE /* SideMenuView.swift */; };
 		39BA700F2600DD2D009CB3CE /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BA700E2600DD2D009CB3CE /* ViewExtension.swift */; };
@@ -91,6 +92,7 @@
 		39B3D65625E37F0B003C3756 /* IOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B3D65A25E37F0B003C3756 /* IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSUITests.swift; sourceTree = "<group>"; };
 		39B3D65C25E37F0B003C3756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39B8270326086AE8009D5769 /* PlusFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusFriendViewController.swift; sourceTree = "<group>"; };
 		39BA70042600DB38009CB3CE /* SideMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuView.xib; sourceTree = "<group>"; };
 		39BA70092600DB46009CB3CE /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		39BA700E2600DD2D009CB3CE /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				39500D4C25F7ACC90062EFAD /* BurningUpMainViewController.swift */,
+				39B8270326086AE8009D5769 /* PlusFriendViewController.swift */,
 			);
 			path = MainService;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39B8270426086AE8009D5769 /* PlusFriendViewController.swift in Sources */,
 				39BCBA86260242C000273D5B /* FriendsView.swift in Sources */,
 				39CE7A1D260477EA00BD3CB7 /* FriendsTopBar.swift in Sources */,
 				39C7622926048BF80046EF3C /* ChattingView.swift in Sources */,

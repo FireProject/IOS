@@ -12,7 +12,7 @@ import FirebaseStorage
 import FirebaseDatabase
 
 class FriendsTopBar: UIView {
-    weak var navgationController: UINavigationController!
+    weak var navigationController: BurningUpMainViewController!
     override init(frame:CGRect) {
         super.init(frame: frame)
         setup()
@@ -28,11 +28,13 @@ class FriendsTopBar: UIView {
         view.frame = self.bounds
         self.addSubview(view)
     }
-    func setNavigationController(navigationController: UINavigationController) {
-        self.navgationController = navigationController
+    func setNavigationController(navigationController: BurningUpMainViewController) {
+        self.navigationController = navigationController
     }
     @IBAction func plusFriendsAction(_ sender: Any) {
+        let nextView = UIStoryboard(name: "BurningUpMain", bundle: nil).instantiateViewController(identifier: "PlusFriendViewController")
         
+        self.navigationController.present(nextView, animated: true, completion: nil)
     }
 }
 

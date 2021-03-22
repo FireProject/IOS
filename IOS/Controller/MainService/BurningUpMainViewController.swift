@@ -97,6 +97,9 @@ class BurningUpMainViewController : UIViewController {
     func setFriendsView() {
         let topBar = FriendsTopBar()
         let friendsView = FriendsView()
+        
+        topBar.setNavigationController(navigationController: self)
+        
         self.view.addSubview(topBar)
         self.view.addSubview(friendsView)
         

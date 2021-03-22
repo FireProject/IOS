@@ -51,7 +51,7 @@
                                                                     <color key="titleColor" systemColor="systemGray2Color"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <segue destination="r0F-Te-k6E" kind="push" id="MVD-a5-cja"/>
+                                                                    <segue destination="r0F-Te-k6E" kind="push" id="c0S-5O-nNQ"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpv-ci-N48">
@@ -133,7 +133,9 @@
                             <constraint firstItem="fMn-2F-FDF" firstAttribute="centerY" secondItem="kbR-0T-C59" secondAttribute="centerY" id="q8R-V7-zm6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="33H-Kn-LOm"/>
+                    <navigationItem key="navigationItem" id="33H-Kn-LOm">
+                        <barButtonItem key="backBarButtonItem" title="뒤로가기" id="7xY-AT-5Vu"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="tjy-3l-pc5" id="Yiu-Wm-fix"/>
                         <outlet property="loginButton" destination="z9P-bh-syZ" id="uYh-kK-7nb"/>
@@ -280,18 +282,18 @@
                                     <action selector="NextButtonPressed:" destination="GfK-IL-2CD" eventType="touchUpInside" id="MZk-Z6-M04"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="lfi-uW-Yi0">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lfi-uW-Yi0">
                                 <rect key="frame" x="0.0" y="224" width="414" height="448"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sh9-9M-Ssg">
-                                        <rect key="frame" x="103.5" y="0.0" width="207" height="207"/>
+                                        <rect key="frame" x="103.5" y="0.0" width="207" height="201"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.fill" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAO-t3-RWv">
-                                                <rect key="frame" x="0.0" y="-4" width="207" height="213"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FriendsImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAO-t3-RWv">
+                                                <rect key="frame" x="1" y="1" width="205" height="199"/>
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gn3-CG-Dx1">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="201"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <connections>
                                                     <action selector="ImageChangeButtonPressed:" destination="GfK-IL-2CD" eventType="touchUpInside" id="arV-2I-cBk"/>
@@ -300,28 +302,33 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.3489862084" green="0.34904104470000002" blue="0.34897422789999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="TAO-t3-RWv" firstAttribute="top" secondItem="sh9-9M-Ssg" secondAttribute="top" id="5Y7-C4-HB4"/>
+                                            <constraint firstItem="TAO-t3-RWv" firstAttribute="top" secondItem="sh9-9M-Ssg" secondAttribute="top" constant="1" id="5Y7-C4-HB4"/>
                                             <constraint firstAttribute="trailing" secondItem="gn3-CG-Dx1" secondAttribute="trailing" id="IZg-r6-ntN"/>
                                             <constraint firstItem="gn3-CG-Dx1" firstAttribute="top" secondItem="sh9-9M-Ssg" secondAttribute="top" id="RvE-CM-4Vr"/>
-                                            <constraint firstItem="TAO-t3-RWv" firstAttribute="leading" secondItem="sh9-9M-Ssg" secondAttribute="leading" id="WBm-ke-Yrr"/>
+                                            <constraint firstItem="TAO-t3-RWv" firstAttribute="leading" secondItem="sh9-9M-Ssg" secondAttribute="leading" constant="1" id="WBm-ke-Yrr"/>
                                             <constraint firstItem="gn3-CG-Dx1" firstAttribute="leading" secondItem="sh9-9M-Ssg" secondAttribute="leading" id="dOS-0e-lLz"/>
                                             <constraint firstAttribute="bottom" secondItem="gn3-CG-Dx1" secondAttribute="bottom" id="fro-NS-YE2"/>
-                                            <constraint firstAttribute="bottom" secondItem="TAO-t3-RWv" secondAttribute="bottom" id="fyi-kt-mLX"/>
-                                            <constraint firstAttribute="trailing" secondItem="TAO-t3-RWv" secondAttribute="trailing" id="igv-lS-f2n"/>
+                                            <constraint firstAttribute="bottom" secondItem="TAO-t3-RWv" secondAttribute="bottom" constant="1" id="fyi-kt-mLX"/>
+                                            <constraint firstAttribute="trailing" secondItem="TAO-t3-RWv" secondAttribute="trailing" constant="1" id="igv-lS-f2n"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="닉네임" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Xf-Xq-fJb">
-                                        <rect key="frame" x="83" y="240" width="248" height="45"/>
+                                        <rect key="frame" x="83" y="231" width="248" height="44.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESy-5t-6iE">
-                                        <rect key="frame" x="0.0" y="318" width="414" height="130"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESy-5t-6iE" userLabel="fds">
+                                        <rect key="frame" x="0.0" y="305.5" width="414" height="142.5"/>
                                         <color key="backgroundColor" red="0.34901960784313724" green="0.34903606770000001" blue="0.34897482400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="sh9-9M-Ssg" firstAttribute="height" secondItem="lfi-uW-Yi0" secondAttribute="height" multiplier="0.462054" id="6gt-mv-tmy"/>
+                                    <constraint firstItem="sh9-9M-Ssg" firstAttribute="height" secondItem="lfi-uW-Yi0" secondAttribute="width" multiplier="0.485" id="6gt-mv-tmy"/>
                                     <constraint firstItem="sh9-9M-Ssg" firstAttribute="width" secondItem="lfi-uW-Yi0" secondAttribute="width" multiplier="0.5" id="Iro-I9-A06"/>
                                     <constraint firstItem="ESy-5t-6iE" firstAttribute="width" secondItem="lfi-uW-Yi0" secondAttribute="width" id="mre-n3-bCd"/>
                                     <constraint firstItem="3Xf-Xq-fJb" firstAttribute="height" secondItem="lfi-uW-Yi0" secondAttribute="height" multiplier="0.1" id="uit-Vf-yqm"/>
@@ -498,7 +505,7 @@
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="FireImage" width="80.5" height="80.5"/>
-        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <image name="FriendsImage" width="20" height="20"/>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
