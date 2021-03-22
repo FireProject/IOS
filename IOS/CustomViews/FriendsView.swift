@@ -38,19 +38,19 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
         FriendsTableView.backgroundColor = .black
         FriendsTableView.register(MyCustomHeader.self,
                forHeaderFooterViewReuseIdentifier: "userProfile")
-     
+        FriendsTableView.register(customCell.classForCoder(), forCellReuseIdentifier: "cell")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return userData.friends.count
     }
     
+    //현재 수정중
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell()
+        let cell = FriendsTableView.dequeueReusableCell(withIdentifier: "cell") as! customCell
         cell.backgroundColor = .black
-        cell.textLabel?.textColor = .white
-        cell.textLabel?.text = String(indexPath.row)
+        cell.profileImage.image = #imageLiteral(resourceName: "FriendsImage")
+        cell.nickLabel.text = "noNamed"
         return cell
     }
     

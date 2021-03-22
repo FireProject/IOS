@@ -70,28 +70,6 @@ func getUserData() {
     ref = Database.database().reference()
     let storage = Storage.storage()
     
-    /*
-     ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-     // Get user value
-     guard let value = snapshot.value as? NSDictionary else {
-     return
-     }
-     
-     userData = BurningUpUser(user: value)
-     storage.reference(forURL: "gs://fire-71c1d.appspot.com/\(user.uid)").downloadURL { (url, error) in
-     let data = NSData(contentsOf: url!)
-     let image = UIImage(data: data! as Data)
-     userData.profileImage = image!
-     }
-     
-     }) { (error) in
-     
-     print(error.localizedDescription)
-     }*/
-    
-    
-    
-    
     ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
         // Get user value
         let value = snapshot.value as? NSDictionary

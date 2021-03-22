@@ -12,7 +12,7 @@ class MyCustomHeader: UITableViewHeaderFooterView {
     let profileImage = UIImageView()
     let nickLabel = UILabel()
     
-    
+        
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         configureContents()
@@ -60,7 +60,7 @@ class MyCustomHeader: UITableViewHeaderFooterView {
     }
 }
 
-class cutomCell: UITableViewCell {
+class customCell: UITableViewCell {
     let profileImage = UIImageView()
     let nickLabel = UILabel()
     
