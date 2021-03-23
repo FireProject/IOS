@@ -23,7 +23,7 @@ class BurningUpMainViewController : UIViewController {
         super.viewDidLoad()
         self.viewMode = .Home
         self.setHomeView()
-        userSetting()
+       
         
     }
     

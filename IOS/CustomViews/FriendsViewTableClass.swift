@@ -75,13 +75,14 @@ class customCell: UITableViewCell {
     }
     
     func setting() {
+        self.selectionStyle = .none
         self.contentView.backgroundColor = .black
-        nickLabel.text = userData.nickname
         nickLabel.font = .systemFont(ofSize: 17, weight: .bold)
         nickLabel.textColor = .white
-        
-        profileImage.image = userData.profileImage
+    
         profileImage.contentMode = .scaleAspectFill
+        profileImage.layer.masksToBounds = true
+        profileImage.layer.cornerRadius = 30
         
         contentView.addSubview(profileImage)
         contentView.addSubview(nickLabel)

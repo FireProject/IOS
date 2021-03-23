@@ -42,22 +42,22 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(Auth.auth().currentUser?.uid)
-        dump(userData)
-        return userData.friends.count
+        return friendsData.count
     }
     
     //현재 수정중
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = FriendsTableView.dequeueReusableCell(withIdentifier: "cell") as! customCell
         cell.backgroundColor = .black
-        cell.profileImage.image = #imageLiteral(resourceName: "FriendsImage")
-        cell.nickLabel.text = "noNamed"
+        cell.profileImage.image = friendsData[indexPath.row].profileImage
+        cell.nickLabel.text = friendsData[indexPath.row].nickname
+        cell.nickLabel.textColor = .white
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 90
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

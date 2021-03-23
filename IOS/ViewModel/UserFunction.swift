@@ -42,7 +42,7 @@ class BurningUpFriend {
     var profileImage:UIImage = #imageLiteral(resourceName: "FriendsImage")
     init(friends :NSDictionary) {
         guard let nickname = friends["nickname"] as? String,
-              let stateMessage = friends["statMessage"] as? String else {
+              let stateMessage = friends["stateMessage"] as? String else {
             return
         }
         self.nickname = nickname
@@ -54,97 +54,50 @@ func userSetting() {
     getUserData()
 }
 
-func getFriendsData() {
-    
-}
+
 
 func getUserData() {
     
     guard let user = Auth.auth().currentUser else {
         return
     }
-    let s = DispatchSemaphore(value: 0)
+    
     var ref: DatabaseReference!
     ref = Database.database().reference()
     let storage = Storage.storage()
     
     
-    ref.child("users").child(user.uid).getData(completion: {
-        (error, snapshot) in
+    ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
         let value = snapshot.value as? NSDictionary
         userData = BurningUpUser(user: value ?? NSDictionary())
-        
         storage.reference(forURL: "gs://fire-71c1d.appspot.com/\(user.uid)").downloadURL { (url, error) in
             if error != nil {
-                s.signal()
                 return
             }
             let data = NSData(contentsOf: url!)
             let image = UIImage(data: data! as Data)
             userData.profileImage = image!
-            
-            
-            //여기 에러임 와드와드
-            for friendUid in userData.friends {
-                ref.child("users").child(friendUid).observeSingleEvent(of: .value, with: { (snapshot) in
-                    // Get user value
-                    let value = snapshot.value as? NSDictionary
-                    
-                    let friend = BurningUpFriend(friends: value ?? NSDictionary())
-                    // ...
-                    storage.reference(forURL: "gs://fire-71c1d.appspot.com/\(friendUid)").downloadURL { (url, error) in
-                        if error != nil {
-                            s.signal()
-                            return
-                        }
-                        let data = NSData(contentsOf: url!)
-                        let image = UIImage(data: data! as Data)
-                        friend.profileImage = image!
+        }
+
+        for friendUid in userData.friends {
+            ref.child("users").child(friendUid).observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user value
+                let value = snapshot.value as? NSDictionary
+                
+                let friend = BurningUpFriend(friends: value ?? NSDictionary())
+                // ...
+                storage.reference(forURL: "gs://fire-71c1d.appspot.com/\(friendUid)").downloadURL { (url, error) in
+                    if error != nil {
+                        return
                     }
-                    friendsData.append(friend)
-                })  {(error) in
-                    print(error.localizedDescription)
+                    let data = NSData(contentsOf: url!)
+                    let image = UIImage(data: data! as Data)
+                    friend.profileImage = image!
                 }
+                friendsData.append(friend)
+            })  {(error) in
+                print(error.localizedDescription)
             }
-            s.signal()
         }
     })
-    //s.wait()
-    /*
-    ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-        // Get user value
-        let value = snapshot.value as? NSDictionary
-        userData = BurningUpUser(user: value ?? NSDictionary())
-        // ...
-        storage.reference(forURL: "gs://fire-71c1d.appspot.com/\(user.uid)").downloadURL { (url, error) in
-            if error != nil {
-                return
-            }
-            let data = NSData(contentsOf: url!)
-            let image = UIImage(data: data! as Data)
-            userData.profileImage = image!
-            
-            for friendUid in userData.friends {
-                ref.child("users").child(friendUid).observeSingleEvent(of: .value, with: { (snapshot) in
-                    // Get user value
-                    let value = snapshot.value as? NSDictionary
-                    
-                    userData = BurningUpUser(user: value ?? NSDictionary())
-                    // ...
-                    storage.reference(forURL: "gs://fire-71c1d.appspot.com/\(friendUid)").downloadURL { (url, error) in
-                        if error != nil {
-                            return
-                        }
-                        let data = NSData(contentsOf: url!)
-                        let image = UIImage(data: data! as Data)
-                        userData.profileImage = image!
-                    }
-                })  {(error) in
-                    print(error.localizedDescription)
-                }
-            }
-        }
-    }) { (error) in
-        print(error.localizedDescription)
-    }*/
 }

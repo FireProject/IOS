@@ -142,7 +142,7 @@ class LoginViewController : UIViewController , UITextFieldDelegate {
             UserDefaults.standard.set(email, forKey: "Email")
             UserDefaults.standard.set(password, forKey: "Password")
 
-            
+            userSetting()
             
             //실제서비스 뷰 이동
             let storyboard = UIStoryboard(name: "BurningUpMain", bundle: nil)
