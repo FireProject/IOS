@@ -34,13 +34,9 @@ class BurningUpUser {
     }
 }
 
-class BurningUpFriend {
-    var nickname:String = ""
-    var stateMessage:String = ""
-    var profileImage:UIImage = #imageLiteral(resourceName: "FriendsImage")
-}
 
-class BurningUpFriends {
+
+class BurningUpFriend {
     var nickname:String = ""
     var stateMessage:String = ""
     var profileImage:UIImage = #imageLiteral(resourceName: "FriendsImage")
@@ -72,7 +68,7 @@ func getUserData() {
     ref = Database.database().reference()
     let storage = Storage.storage()
     
-    print("tlqkftlqklf")
+    
     ref.child("users").child(user.uid).getData(completion: {
         (error, snapshot) in
         let value = snapshot.value as? NSDictionary
@@ -94,7 +90,7 @@ func getUserData() {
                     // Get user value
                     let value = snapshot.value as? NSDictionary
                     
-                    userData = BurningUpUser(user: value ?? NSDictionary())
+                    let friend = BurningUpFriend(friends: value ?? NSDictionary())
                     // ...
                     storage.reference(forURL: "gs://fire-71c1d.appspot.com/\(friendUid)").downloadURL { (url, error) in
                         if error != nil {
@@ -103,8 +99,9 @@ func getUserData() {
                         }
                         let data = NSData(contentsOf: url!)
                         let image = UIImage(data: data! as Data)
-                        userData.profileImage = image!
+                        friend.profileImage = image!
                     }
+                    friendsData.append(friend)
                 })  {(error) in
                     print(error.localizedDescription)
                 }
