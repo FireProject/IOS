@@ -68,6 +68,9 @@ class PlusFriendViewController : UIViewController, UITextFieldDelegate {
             }
             else if snapshot.exists() {
                 let uid = snapshot.value as! String
+                if userData.friends.contains(uid) {
+                    return
+                }
                 userData.friends.append(uid)
                 ref.child("users").child(Auth.auth().currentUser!.uid).child("friends").setValue(userData.friends)
                 isExistEmail = true
