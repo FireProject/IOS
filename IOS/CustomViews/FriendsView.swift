@@ -42,6 +42,8 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(Auth.auth().currentUser?.uid)
+        dump(userData)
         return userData.friends.count
     }
     

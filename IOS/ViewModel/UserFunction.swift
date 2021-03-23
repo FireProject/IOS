@@ -63,6 +63,7 @@ func getFriendsData() {
 }
 
 func getUserData() {
+    
     guard let user = Auth.auth().currentUser else {
         return
     }
@@ -71,11 +72,12 @@ func getUserData() {
     ref = Database.database().reference()
     let storage = Storage.storage()
     
-    
+    print("tlqkftlqklf")
     ref.child("users").child(user.uid).getData(completion: {
         (error, snapshot) in
         let value = snapshot.value as? NSDictionary
         userData = BurningUpUser(user: value ?? NSDictionary())
+        
         storage.reference(forURL: "gs://fire-71c1d.appspot.com/\(user.uid)").downloadURL { (url, error) in
             if error != nil {
                 s.signal()
@@ -85,6 +87,8 @@ func getUserData() {
             let image = UIImage(data: data! as Data)
             userData.profileImage = image!
             
+            
+            //여기 에러임 와드와드
             for friendUid in userData.friends {
                 ref.child("users").child(friendUid).observeSingleEvent(of: .value, with: { (snapshot) in
                     // Get user value

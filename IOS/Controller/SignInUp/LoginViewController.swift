@@ -28,6 +28,7 @@ class LoginViewController : UIViewController , UITextFieldDelegate {
     //뷰가 백그라운드에서 나오던 처음 나오던 내비게이션바 숨김
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        
     }
     
     //뷰를 터치할시 키보드 사라지게끔
