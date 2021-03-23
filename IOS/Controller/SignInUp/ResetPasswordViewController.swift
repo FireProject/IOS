@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+/**
+ 비밀번호 초기화 뷰 컨트롤러 ResetPasswordViewController
+ 
+ - 스토리보드 위치 : **BurningUpSignInUp.storyboard 마지막 뷰**
+ - Location in storyboard : **BurningUpSignInUp.stroyboard last view**
+ */
 class ResetPasswordViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
