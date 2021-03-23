@@ -17,10 +17,13 @@ import FirebaseStorage
  - 스토리보드 위치 : **BurningUpSignInUp.storyboard 네번째뷰**
  - Location in storyboard  : **BurningUpSignInUp.storyboard 's fourth view **
  
+ 사용자의 프로필 사진과 닉네임을 Firebase 디비와 Storage 에 저장하고 root 뷰로 돌아감
  
+ Save the user's profile image & nickname to Firebase Database & Storage and Go back to the root View
  */
 
 class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
+
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nickNameTextField: UITextField!
@@ -31,13 +34,27 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         super.viewDidLoad()
         self.picker.delegate = self
 
+        //이미지를 둥그렇게 설정
         self.profileImage.contentMode = .scaleAspectFill
         self.profileImage.clipsToBounds = true
         self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2.0
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        //뷰를 터치하는경우 수정을 끝냄 즉 키보드 다시 내려감
         self.view.endEditing(true)
     }
+    
+    /**
+     이미지 교체 버튼 액션 함수 image change button action button
+     
+     - parameters:
+        - sender: 사용안함 (Not use)
+     
+     Alert를 띄워서 앨범에서 선택하거나 사진을 찍어 설정할 수 있음
+     
+     Can set the profileimage by selecting album or taking picture
+     and user can see this two option in Alert
+     */
     @IBAction func ImageChangeButtonPressed(_ sender: Any) {
         let actionSheet = UIAlertController(title: "프로필 사진 설정", message: nil, preferredStyle: .actionSheet)
         let album = UIAlertAction(title: "앨범에서 가져오기", style: .default) { (action) in
@@ -52,6 +69,9 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         actionSheet.addAction(cancel)
         self.present(actionSheet, animated: true, completion: nil)
     }
+    /*
+     * 사진과 앨범의 경우에따른 설정 함수
+     */
     func openCamera() {
         picker.sourceType = .camera
         present(picker, animated: true, completion: nil)
@@ -61,6 +81,10 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         present(picker, animated: true, completion: nil)
     }
     
+    /*
+     * when imagePick is finish this function called
+     * 이미지 선택이 완료되면 이 함수가 호출됨
+     */
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             profileImage.image = image
@@ -68,6 +92,11 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    /*
+     * 텍스트필드 수정이 완료 시작시 특정 문자열이면 수정해줌
+     */
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.text == "" {
             self.nickNameTextField.text = "닉네임"
@@ -78,6 +107,11 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
             self.nickNameTextField.text = ""
         }
     }
+    /*
+     *  다음 버튼 누를 시
+     *  확인할것들 모두 확인후 유저데이터를 DB에 저장함
+     *  사진은 Storage에 저장
+     */
     @IBAction func NextButtonPressed(_ sender: Any) {
         guard let nickName = self.nickNameTextField.text else {
             return
