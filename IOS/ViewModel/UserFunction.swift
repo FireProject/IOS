@@ -57,7 +57,6 @@ func userSetting() {
 
 
 func getUserData() {
-    
     guard let user = Auth.auth().currentUser else {
         return
     }
