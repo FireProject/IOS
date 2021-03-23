@@ -12,7 +12,11 @@ import FirebaseAuth
  비밀번호 초기화 뷰 컨트롤러 ResetPasswordViewController
  
  - 스토리보드 위치 : **BurningUpSignInUp.storyboard 마지막 뷰**
- - Location in storyboard : **BurningUpSignInUp.stroyboard last view**
+ - Location in storyboard : **BurningUpSignInUp.stroyboard's last view**
+ 
+ 
+ 사용자가 이메일을 입력해 비밀번호 초기화 메일을 보낼 수 있으며 완료버튼으로 종료가능
+ User can send passwrod reset email typing user's email, can exit finish button
  */
 class ResetPasswordViewController: UIViewController {
 

@@ -10,6 +10,16 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
+
+/**
+ 프로필 사진과 닉네임을 설정하는 뷰 컨트롤러 View Controller setting Profile and Nickname
+ 
+ - 스토리보드 위치 : **BurningUpSignInUp.storyboard 네번째뷰**
+ - Location in storyboard  : **BurningUpSignInUp.storyboard 's fourth view **
+ 
+ 
+ */
+
 class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
     
     @IBOutlet weak var profileImage: UIImageView!
