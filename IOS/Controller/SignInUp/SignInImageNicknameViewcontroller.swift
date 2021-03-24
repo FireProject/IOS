@@ -113,6 +113,8 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
      *  사진은 Storage에 저장
      */
     @IBAction func NextButtonPressed(_ sender: Any) {
+        
+        //옵셔널 바인딩 및 닉네임 확인
         guard let nickName = self.nickNameTextField.text else {
             return
         }
@@ -122,13 +124,15 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
             self.present(alert, animated: true, completion: nil)
             return
         }
-        self.navigationController?.popToRootViewController(animated: true)
+        
         guard let user = Auth.auth().currentUser else {
             return
         }
         guard let email = user.email?.data(using: .utf8)!.map({String(format:"%02x", $0)}).joined() else {
             return
         }
+        
+        //디비에 저장하는 코드
         var ref: DatabaseReference!
         ref = Database.database().reference()
        
