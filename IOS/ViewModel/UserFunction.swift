@@ -52,6 +52,7 @@ class BurningUpFriend {
 
 func userSetting() {
     getUserData()
+    
 }
 
 
@@ -65,6 +66,10 @@ func getUserData() {
     ref = Database.database().reference()
     let storage = Storage.storage()
     
+    //만약 저장 안되어있으면 다시 디비에 저장
+    if let email = user.email?.data(using: .utf8)!.map({String(format:"%02x", $0)}).joined()  {
+        ref.child("emailToUid/\(String(describing: email))").setValue(user.uid)
+    }
     
     ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
         let value = snapshot.value as? NSDictionary
