@@ -121,6 +121,9 @@ class BurningUpMainViewController : UIViewController {
         let topBar = ChattingTopBar()
         let chattingView = ChattingView()
        
+        topBar.setNavigationController(navigationController : self)
+        
+        
         self.view.addSubview(topBar)
         self.view.addSubview(chattingView)
         

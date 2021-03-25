@@ -40,6 +40,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUI-Je-Xe5">
                             <rect key="frame" x="33" y="39.5" width="65.5" height="79"/>
                             <state key="normal" backgroundImage="ChattingRoomImage"/>
+                            <connections>
+                                <action selector="makeRoomButtonAction:" destination="-1" eventType="touchUpInside" id="glv-4A-iea"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
