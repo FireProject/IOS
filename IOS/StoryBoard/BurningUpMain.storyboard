@@ -193,13 +193,23 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FireImage" translatesAutoresizingMaskIntoConstraints="NO" id="2hQ-Ok-z5W">
                                         <rect key="frame" x="83" y="32.5" width="248" height="248.5"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xt1-kO-Tfi">
+                                        <rect key="frame" x="83" y="32.5" width="248" height="248.5"/>
+                                        <connections>
+                                            <action selector="chattingRoomImageSettingButtonAction:" destination="9EQ-De-8FS" eventType="touchUpInside" id="6Bz-tN-Dug"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.9851838946" green="0.89950853590000002" blue="0.83916264770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="xt1-kO-Tfi" firstAttribute="width" secondItem="2hQ-Ok-z5W" secondAttribute="width" id="1sl-vE-d7l"/>
+                                    <constraint firstItem="xt1-kO-Tfi" firstAttribute="centerX" secondItem="0xL-Qu-SRv" secondAttribute="centerX" id="5Tg-OZ-xES"/>
                                     <constraint firstItem="2hQ-Ok-z5W" firstAttribute="height" secondItem="0xL-Qu-SRv" secondAttribute="width" multiplier="0.6" id="ElY-tJ-1hn"/>
+                                    <constraint firstItem="xt1-kO-Tfi" firstAttribute="height" secondItem="2hQ-Ok-z5W" secondAttribute="height" id="MNT-hB-xEI"/>
                                     <constraint firstItem="2hQ-Ok-z5W" firstAttribute="width" secondItem="0xL-Qu-SRv" secondAttribute="width" multiplier="0.6" id="V8V-kn-6hz"/>
                                     <constraint firstItem="2hQ-Ok-z5W" firstAttribute="centerY" secondItem="0xL-Qu-SRv" secondAttribute="centerY" id="Zpt-Ri-vYY"/>
                                     <constraint firstItem="2hQ-Ok-z5W" firstAttribute="centerX" secondItem="0xL-Qu-SRv" secondAttribute="centerX" id="f5s-JN-91o"/>
+                                    <constraint firstItem="xt1-kO-Tfi" firstAttribute="centerY" secondItem="0xL-Qu-SRv" secondAttribute="centerY" id="gPN-gr-Vby"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OU3-fG-1ox">
@@ -396,6 +406,7 @@
                         <outlet property="monthCycleButton" destination="cqT-Zm-JKF" id="ZQX-vX-2Lp"/>
                         <outlet property="numberSlider" destination="fmm-Q3-okr" id="W1k-ej-IVs"/>
                         <outlet property="personNumberLabel" destination="tFv-bJ-d4k" id="OrU-Hd-QFO"/>
+                        <outlet property="roomImage" destination="2hQ-Ok-z5W" id="MWH-Hn-cBE"/>
                         <outlet property="voteCycleLabel" destination="FBV-68-RtV" id="mKI-8b-7PY"/>
                         <outlet property="weekCycleButton" destination="wXA-q9-zhU" id="Gez-wS-eV4"/>
                     </connections>
