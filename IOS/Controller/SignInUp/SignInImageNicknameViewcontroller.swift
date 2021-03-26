@@ -36,8 +36,9 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
 
         //이미지를 둥그렇게 설정
         self.profileImage.contentMode = .scaleAspectFill
+        
         self.profileImage.clipsToBounds = true
-        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2.0
+        self.profileImage.layer.cornerRadius = self.profileImage.frame.width/2.265
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         //뷰를 터치하는경우 수정을 끝냄 즉 키보드 다시 내려감

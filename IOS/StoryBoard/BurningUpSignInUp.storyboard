@@ -51,7 +51,7 @@
                                                                     <color key="titleColor" systemColor="systemGray2Color"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <segue destination="r0F-Te-k6E" kind="show" id="c0S-5O-nNQ"/>
+                                                                    <segue destination="r0F-Te-k6E" kind="show" id="ecb-D6-ung"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpv-ci-N48">
