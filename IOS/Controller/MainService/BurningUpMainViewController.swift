@@ -38,6 +38,7 @@ class BurningUpMainViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.isToolbarHidden = false
     }
     
     //toolbar 왼쪽상단 버튼

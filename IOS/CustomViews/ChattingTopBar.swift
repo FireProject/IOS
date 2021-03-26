@@ -33,8 +33,8 @@ class ChattingTopBar: UIView {
     }
     @IBAction func makeRoomButtonAction(_ sender: Any) {
         let nextView = UIStoryboard(name: "BurningUpMain", bundle: nil).instantiateViewController(identifier: "PlusRoomViewController")
-        
-        self.navigationController.present(nextView, animated: true, completion: nil)
+        nextView.modalPresentationStyle = .fullScreen
+        self.navigationController.navigationController?.pushViewController(nextView, animated: true)
     }
 }
 

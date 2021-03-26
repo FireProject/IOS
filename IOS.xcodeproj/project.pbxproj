@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09D975DBFD087BF9EABD3C21 /* Pods_IOS_IOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6814ECA26FFE1CA3467C934 /* Pods_IOS_IOSUITests.framework */; };
+		391555C4260DAB85003D021A /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391555C3260DAB85003D021A /* Rooms.swift */; };
 		39500D4D25F7ACC90062EFAD /* BurningUpMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39500D4C25F7ACC90062EFAD /* BurningUpMainViewController.swift */; };
 		39500D5225F7B38E0062EFAD /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39500D5125F7B38E0062EFAD /* ResetPasswordViewController.swift */; };
 		39500D5725F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39500D5625F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		350E49AE96982DA21D194493 /* Pods-IOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTests.debug.xcconfig"; path = "Target Support Files/Pods-IOSTests/Pods-IOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		391555C3260DAB85003D021A /* Rooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
 		39500D4C25F7ACC90062EFAD /* BurningUpMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurningUpMainViewController.swift; sourceTree = "<group>"; };
 		39500D5125F7B38E0062EFAD /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		39500D5625F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInImageNicknameViewcontroller.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				39500D8825F7B8DB0062EFAD /* UserFunction.swift */,
+				391555C3260DAB85003D021A /* Rooms.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				39BA700A2600DB46009CB3CE /* SideMenuView.swift in Sources */,
 				399652B8260C272700E1B1C4 /* PlusRoomViewController.swift in Sources */,
 				39500D4D25F7ACC90062EFAD /* BurningUpMainViewController.swift in Sources */,
+				391555C4260DAB85003D021A /* Rooms.swift in Sources */,
 				39500D5225F7B38E0062EFAD /* ResetPasswordViewController.swift in Sources */,
 				39B3D63925E37F0B003C3756 /* AppDelegate.swift in Sources */,
 				39BA700F2600DD2D009CB3CE /* ViewExtension.swift in Sources */,
