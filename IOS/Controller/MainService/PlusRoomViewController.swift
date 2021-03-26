@@ -16,7 +16,7 @@ enum enumVoteCycle {
     case day
 }
 
-class PlusRoomViewController : UIViewController, UITextFieldDelegate {
+class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPickerViewControllerDelegate {
     
     @IBOutlet weak var backgroundColorButton: UIButton!
     @IBOutlet weak var numberSlider: UISlider!
@@ -24,7 +24,9 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate {
     @IBOutlet weak var weekCycleButton: UIButton!
     @IBOutlet weak var dayCycleButton: UIButton!
     @IBOutlet weak var personNumberLabel: UILabel!
+    @IBOutlet weak var voteCycleLabel: UILabel!
     var voteCycle:enumVoteCycle = .day
+    let picker = UIColorPickerViewController()
     
     
     
@@ -34,6 +36,13 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate {
         self.backgroundColorButton.layer.borderColor = CGColor(gray: 1, alpha: 1)
         self.numberSlider.maximumValue = 15
         self.numberSlider.minimumValue = 2
+        self.picker.delegate = self
+        self.picker.selectedColor = .white
+        self.backgroundColorButton.backgroundColor = .white
+        self.dayCycleButton.setImage(#imageLiteral(resourceName: "FireImage"), for: .normal)
+        self.numberSlider.value = 7
+        self.personNumberLabel.text = "7명"
+        self.voteCycleLabel.text = "투표주기: 00:00 ~ 23:59"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,20 +62,27 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate {
         dayCycleButton.setImage(nil, for: .normal)
     }
     
+    func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+        self.backgroundColorButton.backgroundColor = viewController.selectedColor
+    }
+    
     @IBAction func cycleButtonPressed(_ sender: UIButton){
         resetButtonImage()
         switch sender {
         case dayCycleButton:
             dayCycleButton.setImage(#imageLiteral(resourceName: "FireImage"), for: .normal)
             self.voteCycle = .day
+            self.voteCycleLabel.text = "투표주기: 00:00 ~ 23:59"
             break
         case weekCycleButton:
             weekCycleButton.setImage(#imageLiteral(resourceName: "FireImage"), for: .normal)
             self.voteCycle = .week
+            self.voteCycleLabel.text = "투표주기: 매주 일요일"
             break
         case monthCycleButton:
             monthCycleButton.setImage(#imageLiteral(resourceName: "FireImage"), for: .normal)
             self.voteCycle = .month
+            self.voteCycleLabel.text = "투표주기: 매월 1일"
             break
         default:
             print("error")
@@ -78,11 +94,11 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func backgroundColorButtonAction(_ sender: Any) {
-        print("fdsafds")
+        self.present(picker, animated: true, completion: nil)
     }
     
     
-    @IBAction func sliderAction(_ sender: Any) {
-        
+    @IBAction func sliderAction(_ sender: UISlider) {
+        self.personNumberLabel.text = "\(Int(sender.value))명"
     }
 }

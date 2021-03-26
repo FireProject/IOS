@@ -287,7 +287,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFv-bJ-d4k">
-                                        <rect key="frame" x="258" y="35" width="42" height="33"/>
+                                        <rect key="frame" x="258" y="27" width="42" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -297,6 +297,7 @@
                                 <constraints>
                                     <constraint firstItem="tFv-bJ-d4k" firstAttribute="width" secondItem="OU3-fG-1ox" secondAttribute="width" multiplier="0.101449" id="0fZ-Or-HRY"/>
                                     <constraint firstItem="9lX-Ta-xYl" firstAttribute="centerY" secondItem="3RV-AY-t7f" secondAttribute="centerY" id="7Mw-60-KfO"/>
+                                    <constraint firstItem="cqT-Zm-JKF" firstAttribute="height" secondItem="OU3-fG-1ox" secondAttribute="height" multiplier="0.0956938" id="9nb-Js-Bv0"/>
                                     <constraint firstItem="6vW-2A-Lft" firstAttribute="width" secondItem="OU3-fG-1ox" secondAttribute="width" multiplier="0.45" id="9p8-Kg-BdZ"/>
                                     <constraint firstItem="upZ-iA-nG0" firstAttribute="centerY" secondItem="cqT-Zm-JKF" secondAttribute="centerY" id="AZF-Bg-xiA"/>
                                     <constraint firstItem="wXA-q9-zhU" firstAttribute="leading" secondItem="upZ-iA-nG0" secondAttribute="trailing" constant="5" id="AbW-1g-gvf"/>
@@ -306,15 +307,18 @@
                                     <constraint firstItem="cqT-Zm-JKF" firstAttribute="centerY" secondItem="OxY-ff-Ecg" secondAttribute="centerY" id="DGt-Za-5hh"/>
                                     <constraint firstItem="YOB-Tt-yOk" firstAttribute="top" secondItem="OU3-fG-1ox" secondAttribute="top" id="EGv-DZ-Nsq"/>
                                     <constraint firstItem="tFv-bJ-d4k" firstAttribute="height" secondItem="OU3-fG-1ox" secondAttribute="height" multiplier="0.105263" id="Fn2-q1-d9F"/>
+                                    <constraint firstItem="wkf-zr-ncH" firstAttribute="width" secondItem="OU3-fG-1ox" secondAttribute="width" multiplier="0.0724638" id="GD3-Nd-NQu"/>
                                     <constraint firstItem="3RV-AY-t7f" firstAttribute="height" secondItem="OU3-fG-1ox" secondAttribute="height" multiplier="0.1" id="J4h-Pg-8o7"/>
                                     <constraint firstItem="6vW-2A-Lft" firstAttribute="height" secondItem="OU3-fG-1ox" secondAttribute="height" multiplier="0.1" id="JDa-ih-hd6"/>
                                     <constraint firstItem="OxY-ff-Ecg" firstAttribute="leading" secondItem="kym-k3-AJ2" secondAttribute="trailing" id="NkZ-P8-i3R"/>
                                     <constraint firstItem="FBV-68-RtV" firstAttribute="top" secondItem="cqT-Zm-JKF" secondAttribute="bottom" constant="10" id="OxB-zR-Blf"/>
                                     <constraint firstItem="3RV-AY-t7f" firstAttribute="width" secondItem="OU3-fG-1ox" secondAttribute="width" multiplier="0.55" id="Po8-T3-zcQ"/>
                                     <constraint firstItem="fmm-Q3-okr" firstAttribute="centerY" secondItem="YOB-Tt-yOk" secondAttribute="centerY" id="RRl-ld-jRx"/>
+                                    <constraint firstItem="wkf-zr-ncH" firstAttribute="height" secondItem="OU3-fG-1ox" secondAttribute="height" multiplier="0.0956938" id="Sdw-gU-GGb"/>
                                     <constraint firstItem="wXA-q9-zhU" firstAttribute="centerY" secondItem="upZ-iA-nG0" secondAttribute="centerY" id="TUP-bN-UMJ"/>
                                     <constraint firstItem="wkf-zr-ncH" firstAttribute="leading" secondItem="1m9-ho-LmO" secondAttribute="trailing" constant="5" id="Tlo-mQ-nfG"/>
                                     <constraint firstItem="fmm-Q3-okr" firstAttribute="height" secondItem="YOB-Tt-yOk" secondAttribute="height" multiplier="0.1" id="V5E-AT-0GQ"/>
+                                    <constraint firstItem="cqT-Zm-JKF" firstAttribute="width" secondItem="OU3-fG-1ox" secondAttribute="width" multiplier="0.0724638" id="VUb-Pr-Ruw"/>
                                     <constraint firstItem="OxY-ff-Ecg" firstAttribute="top" secondItem="6vW-2A-Lft" secondAttribute="bottom" constant="10" id="Wm1-XA-txi"/>
                                     <constraint firstItem="FBV-68-RtV" firstAttribute="height" secondItem="OU3-fG-1ox" secondAttribute="height" multiplier="0.08" id="WrL-Ul-tIF"/>
                                     <constraint firstItem="9lX-Ta-xYl" firstAttribute="leading" secondItem="3RV-AY-t7f" secondAttribute="trailing" constant="5" id="bVu-Y0-RSa"/>
@@ -325,13 +329,15 @@
                                     <constraint firstAttribute="trailing" secondItem="fmm-Q3-okr" secondAttribute="trailing" constant="30" id="hSm-Ah-fnq"/>
                                     <constraint firstItem="FBV-68-RtV" firstAttribute="leading" secondItem="OxY-ff-Ecg" secondAttribute="leading" id="i7E-sp-gmu"/>
                                     <constraint firstItem="FBV-68-RtV" firstAttribute="width" secondItem="OU3-fG-1ox" secondAttribute="width" multiplier="0.62" id="jRv-gY-MbQ"/>
+                                    <constraint firstItem="wXA-q9-zhU" firstAttribute="height" secondItem="OU3-fG-1ox" secondAttribute="height" multiplier="0.0956938" id="klH-OS-wZb"/>
                                     <constraint firstItem="kym-k3-AJ2" firstAttribute="top" secondItem="6vW-2A-Lft" secondAttribute="bottom" constant="5" id="mTp-Tx-FBb"/>
                                     <constraint firstItem="3RV-AY-t7f" firstAttribute="top" secondItem="YOB-Tt-yOk" secondAttribute="bottom" constant="45" id="nRh-DR-hge"/>
                                     <constraint firstItem="1m9-ho-LmO" firstAttribute="centerY" secondItem="wXA-q9-zhU" secondAttribute="centerY" id="nS8-c0-3R6"/>
                                     <constraint firstItem="tFv-bJ-d4k" firstAttribute="centerX" secondItem="fmm-Q3-okr" secondAttribute="centerX" id="pgE-pk-TfZ"/>
                                     <constraint firstItem="YOB-Tt-yOk" firstAttribute="leading" secondItem="OU3-fG-1ox" secondAttribute="leading" constant="50" id="qB8-Z6-62e"/>
-                                    <constraint firstItem="tFv-bJ-d4k" firstAttribute="top" secondItem="fmm-Q3-okr" secondAttribute="bottom" constant="18" id="tPz-Zw-AXy"/>
+                                    <constraint firstItem="tFv-bJ-d4k" firstAttribute="top" secondItem="fmm-Q3-okr" secondAttribute="bottom" constant="10" id="tPz-Zw-AXy"/>
                                     <constraint firstItem="1m9-ho-LmO" firstAttribute="leading" secondItem="wXA-q9-zhU" secondAttribute="trailing" constant="20" id="uAn-T7-ziF"/>
+                                    <constraint firstItem="wXA-q9-zhU" firstAttribute="width" secondItem="OU3-fG-1ox" secondAttribute="width" multiplier="0.0724638" id="uY0-Yj-uAF"/>
                                     <constraint firstItem="6vW-2A-Lft" firstAttribute="top" secondItem="3RV-AY-t7f" secondAttribute="bottom" constant="45" id="uhQ-vn-Cys"/>
                                     <constraint firstItem="YOB-Tt-yOk" firstAttribute="height" secondItem="OU3-fG-1ox" secondAttribute="height" multiplier="0.1" id="xs9-4z-tSD"/>
                                     <constraint firstItem="3RV-AY-t7f" firstAttribute="leading" secondItem="OU3-fG-1ox" secondAttribute="leading" constant="50" id="ylv-2d-Hvr"/>
@@ -390,6 +396,7 @@
                         <outlet property="monthCycleButton" destination="cqT-Zm-JKF" id="ZQX-vX-2Lp"/>
                         <outlet property="numberSlider" destination="fmm-Q3-okr" id="W1k-ej-IVs"/>
                         <outlet property="personNumberLabel" destination="tFv-bJ-d4k" id="OrU-Hd-QFO"/>
+                        <outlet property="voteCycleLabel" destination="FBV-68-RtV" id="mKI-8b-7PY"/>
                         <outlet property="weekCycleButton" destination="wXA-q9-zhU" id="Gez-wS-eV4"/>
                     </connections>
                 </viewController>
