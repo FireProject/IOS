@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-class MyCustomHeader: UITableViewHeaderFooterView {
+class FriendsTabelHeader: UITableViewHeaderFooterView {
     let underLine = UIView()
     let profileImage = UIImageView()
     let nickLabel = UILabel()
@@ -60,7 +60,8 @@ class MyCustomHeader: UITableViewHeaderFooterView {
     }
 }
 
-class customCell: UITableViewCell {
+
+class FriendsTableCell: UITableViewCell {
     let profileImage = UIImageView()
     let nickLabel = UILabel()
     

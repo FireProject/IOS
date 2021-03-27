@@ -36,9 +36,9 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
         FriendsTableView.delegate = self
         FriendsTableView.dataSource = self
         FriendsTableView.backgroundColor = .black
-        FriendsTableView.register(MyCustomHeader.self,
+        FriendsTableView.register(FriendsTabelHeader.self,
                forHeaderFooterViewReuseIdentifier: "userProfile")
-        FriendsTableView.register(customCell.classForCoder(), forCellReuseIdentifier: "cell")
+        FriendsTableView.register(FriendsTableCell.classForCoder(), forCellReuseIdentifier: "cell")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,7 +47,7 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
     
     //현재 수정중
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = FriendsTableView.dequeueReusableCell(withIdentifier: "cell") as! customCell
+        let cell = FriendsTableView.dequeueReusableCell(withIdentifier: "cell") as! FriendsTableCell
         cell.backgroundColor = .black
         cell.profileImage.image = friendsData[indexPath.row].profileImage
         cell.nickLabel.text = friendsData[indexPath.row].nickname
@@ -65,7 +65,7 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:"userProfile") as! MyCustomHeader
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:"userProfile") as! FriendsTabelHeader
         view.nickLabel.text = userData.nickname
         view.profileImage.image = userData.profileImage
         view.profileImage.clipsToBounds = true
