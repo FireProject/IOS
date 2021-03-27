@@ -6,3 +6,24 @@
 //
 
 import Foundation
+
+
+//roomid
+//name
+//image
+//curPerson / Maxperson
+class ChattingRoom {
+    
+}
+
+//roomid
+//background color
+//voteCycle
+//voteCycle
+//notice
+//bannedUid
+//usersUid
+//Messages
+class ChattingRoomInfo {
+    
+}
