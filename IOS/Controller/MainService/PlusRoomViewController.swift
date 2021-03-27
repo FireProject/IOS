@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 enum enumVoteCycle {
     case month
@@ -26,6 +27,8 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
     @IBOutlet weak var personNumberLabel: UILabel!
     @IBOutlet weak var voteCycleLabel: UILabel!
     @IBOutlet weak var roomImage: UIImageView!
+    @IBOutlet weak var roomNameLabel: UITextField!
+    
     
     var voteCycle:enumVoteCycle = .day
     let colorPicker = UIColorPickerViewController()
@@ -130,6 +133,41 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
     
     @IBAction func makeRoomButtonAction(_ sender: Any) {
         
+        guard  let backgroundColor = self.backgroundColorButton.backgroundColor, let roomName = self.roomNameLabel.text, let masterUid = Auth.auth().currentUser?.uid
+        else {
+            return
+        }
+        let nPerson = Int(self.numberSlider.value)
+        let voteCycle = self.voteCycle
+        let roomNotice = ""
+        let bannedId:[String] = []
+        let users:[String] = [masterUid]
+        
+        
+        let curTime = Date()
+        let timeStamp = Int(curTime.timeIntervalSince1970)
+        let roomId = "\(masterUid)@\(timeStamp)"
+        
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        let storage = Storage.storage(url: "gs://fire-71c1d.appspot.com/")
+        
+        ref.child("rooms/\(roomId)/roomName").setValue(roomName)
+        ref.child("rooms/\(roomId)/masterUid").setValue(masterUid)
+        ref.child("rooms/\(roomId)/maxPerson").setValue(nPerson)
+        ref.child("rooms/\(roomId)/curPerson").setValue(1)
+       //미정 ref.child("rooms/\(roomId)/voteCycle").setValue()
+        ref.child("rooms/\(roomId)/bannedUid").setValue(bannedId)
+        ref.child("rooms/\(roomId)/users").setValue(users)
+        ref.child("rooms/\(roomId)/roomNotice").setValue(roomNotice)
+        //배경색을 숫자로 바꿔서 저장해볼까
+        //ref.child("rooms/\(roomId)/backgroundColor").setValue(1)
+        var data = Data()
+        data = (self.roomImage.image?.jpegData(compressionQuality: 0.8))!
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/png"
+        storage.reference().child("rooms").child(roomId).child("profileImage").putData(data, metadata: metaData)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func backgroundColorButtonAction(_ sender: Any) {

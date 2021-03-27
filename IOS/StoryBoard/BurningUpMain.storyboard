@@ -406,7 +406,8 @@
                         <outlet property="monthCycleButton" destination="cqT-Zm-JKF" id="ZQX-vX-2Lp"/>
                         <outlet property="numberSlider" destination="fmm-Q3-okr" id="W1k-ej-IVs"/>
                         <outlet property="personNumberLabel" destination="tFv-bJ-d4k" id="OrU-Hd-QFO"/>
-                        <outlet property="roomImage" destination="2hQ-Ok-z5W" id="MWH-Hn-cBE"/>
+                        <outlet property="roomImage" destination="2hQ-Ok-z5W" id="tDd-9S-FCM"/>
+                        <outlet property="roomNameLabel" destination="9h0-eN-E4G" id="V1Q-om-wwm"/>
                         <outlet property="voteCycleLabel" destination="FBV-68-RtV" id="mKI-8b-7PY"/>
                         <outlet property="weekCycleButton" destination="wXA-q9-zhU" id="Gez-wS-eV4"/>
                     </connections>
