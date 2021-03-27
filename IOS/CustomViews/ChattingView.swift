@@ -41,56 +41,18 @@ class ChattingView: UIView,UITableViewDelegate, UITableViewDataSource {
         return 5
     }
     
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = UITableViewCell()
+        let cell = chattingTable.dequeueReusableCell(withIdentifier: "cell") as! FriendsTableCell
         cell.backgroundColor = .black
-        cell.textLabel?.textColor = .white
-        cell.textLabel?.text = String(indexPath.row)
+        cell.profileImage.image = friendsData[indexPath.row].profileImage
+        cell.nickLabel.text = friendsData[indexPath.row].nickname
+        cell.nickLabel.textColor = .white
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0
     }
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        let underLine = UIView()
-        let profileImage = UIImageView()
-        let nickLabel = UILabel()
-        
-        nickLabel.text = userData.nickname
-        nickLabel.font = .systemFont(ofSize: 17, weight: .bold)
-        nickLabel.textColor = .white
-      
-        
-        profileImage.image = userData.profileImage
-        profileImage.contentMode = .scaleAspectFill
-        
-        underLine.backgroundColor = .white
-        
-        view.addSubview(underLine)
-        view.addSubview(profileImage)
-        view.addSubview(nickLabel)
-        
-        underLine.translatesAutoresizingMaskIntoConstraints = false
-        profileImage.translatesAutoresizingMaskIntoConstraints = false
-        nickLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            profileImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            profileImage.widthAnchor.constraint(equalToConstant: 60),
-            profileImage.heightAnchor.constraint(equalToConstant: 60),
-            profileImage.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            
-            nickLabel.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 13),
-            nickLabel.centerYAnchor.constraint(equalTo: profileImage.centerYAnchor),
-            
-            underLine.heightAnchor.constraint(equalToConstant: 0.5),
-            underLine.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            underLine.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            underLine.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        return view
-    }
+    
 }

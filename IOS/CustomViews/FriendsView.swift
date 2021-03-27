@@ -52,7 +52,6 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
         cell.profileImage.image = friendsData[indexPath.row].profileImage
         cell.nickLabel.text = friendsData[indexPath.row].nickname
         cell.nickLabel.textColor = .white
-        
         return cell
     }
     

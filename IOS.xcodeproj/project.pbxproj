@@ -16,6 +16,7 @@
 		395E1BD125F653E800616684 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395E1BD025F653E800616684 /* LoginViewController.swift */; };
 		395E1BD925F6613100616684 /* BurningUpMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 395E1BD825F6613100616684 /* BurningUpMain.storyboard */; };
 		395E1BDE25F6616400616684 /* SignInEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395E1BDD25F6616400616684 /* SignInEmailViewController.swift */; };
+		396A69A8260F726900D41EFB /* ChattingViewTableClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A69A7260F726900D41EFB /* ChattingViewTableClass.swift */; };
 		3983109C25F5034D00509D81 /* BurningUpSignInUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3983109B25F5034D00509D81 /* BurningUpSignInUp.storyboard */; };
 		398E132225E3D14C00AE21A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */; };
 		399652B8260C272700E1B1C4 /* PlusRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399652B7260C272700E1B1C4 /* PlusRoomViewController.swift */; };
@@ -77,6 +78,7 @@
 		395E1BD025F653E800616684 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		395E1BD825F6613100616684 /* BurningUpMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BurningUpMain.storyboard; sourceTree = "<group>"; };
 		395E1BDD25F6616400616684 /* SignInEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewController.swift; sourceTree = "<group>"; };
+		396A69A7260F726900D41EFB /* ChattingViewTableClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewTableClass.swift; sourceTree = "<group>"; };
 		3983109B25F5034D00509D81 /* BurningUpSignInUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BurningUpSignInUp.storyboard; sourceTree = "<group>"; };
 		398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		399652B7260C272700E1B1C4 /* PlusRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusRoomViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				39C41B912607885A006D6509 /* FriendsViewTableClass.swift */,
 				39BCBA85260242C000273D5B /* FriendsView.swift */,
 				39BCBA8A260242CC00273D5B /* FriendsView.xib */,
+				396A69A7260F726900D41EFB /* ChattingViewTableClass.swift */,
 				39C7622826048BF80046EF3C /* ChattingView.swift */,
 				39C7622326048BF20046EF3C /* ChattingView.xib */,
 				39CE7A12260473D100BD3CB7 /* HomeTopBar.swift */,
@@ -575,6 +578,7 @@
 				39CE7A272604780E00BD3CB7 /* ChattingTopBar.swift in Sources */,
 				39500D5725F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift in Sources */,
 				39B3D63B25E37F0B003C3756 /* SceneDelegate.swift in Sources */,
+				396A69A8260F726900D41EFB /* ChattingViewTableClass.swift in Sources */,
 				399A95182601C2CE00241661 /* MemoView.swift in Sources */,
 				39A1117B25FF226D00A54A5C /* RoomSummaryView.swift in Sources */,
 			);
