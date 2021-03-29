@@ -147,6 +147,7 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
         let curTime = Date()
         let timeStamp = Int(curTime.timeIntervalSince1970)
         let roomId = "\(masterUid)@\(timeStamp)"
+        userData.roomId.append(roomId)
         
         var ref: DatabaseReference!
         ref = Database.database().reference()
@@ -160,6 +161,7 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
         ref.child("rooms/\(roomId)/bannedUid").setValue(bannedId)
         ref.child("rooms/\(roomId)/users").setValue(users)
         ref.child("rooms/\(roomId)/roomNotice").setValue(roomNotice)
+        ref.child("users").child(masterUid).child("roomId").setValue(userData.roomId)
         //배경색을 숫자로 바꿔서 저장해볼까
         //ref.child("rooms/\(roomId)/backgroundColor").setValue(1)
         var data = Data()

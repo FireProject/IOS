@@ -42,15 +42,15 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendsData.count
+        return friendsDatas.count
     }
     
     //현재 수정중
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = FriendsTableView.dequeueReusableCell(withIdentifier: "cell") as! FriendsTableCell
         cell.backgroundColor = .black
-        cell.profileImage.image = friendsData[indexPath.row].profileImage
-        cell.nickLabel.text = friendsData[indexPath.row].nickname
+        cell.profileImage.image = friendsDatas[indexPath.row].profileImage
+        cell.nickLabel.text = friendsDatas[indexPath.row].nickname
         cell.nickLabel.textColor = .white
         return cell
     }

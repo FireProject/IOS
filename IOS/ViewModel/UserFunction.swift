@@ -12,7 +12,7 @@ import FirebaseStorage
 import FirebaseDatabase
 
 var userData: BurningUpUser = BurningUpUser(user: NSDictionary())
-var friendsData: [BurningUpFriend] = []
+var friendsDatas: [BurningUpFriend] = []
 
 class BurningUpUser {
     var friends:[String] = []
@@ -81,7 +81,8 @@ func getUserData() {
             let image = UIImage(data: data! as Data)
             userData.profileImage = image!
         }
-
+        getRoomsData()
+        
         for friendUid in userData.friends {
             ref.child("users").child(friendUid).observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
@@ -97,7 +98,7 @@ func getUserData() {
                     let image = UIImage(data: data! as Data)
                     friend.profileImage = image!
                 }
-                friendsData.append(friend)
+                friendsDatas.append(friend)
             })  {(error) in
                 print(error.localizedDescription)
             }

@@ -39,7 +39,7 @@ class ChattingView: UIView,UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return roomDatas.count
     }
     
 
@@ -47,7 +47,7 @@ class ChattingView: UIView,UITableViewDelegate, UITableViewDataSource {
         let cell = chattingTable.dequeueReusableCell(withIdentifier: "chattingCell") as! ChattingTableCell
         cell.backgroundColor = .black
         cell.profileImage.image = #imageLiteral(resourceName: "ChattingRoomImage")
-        cell.roomName.text = "test"
+        cell.roomName.text = roomDatas[indexPath.row].roomName
         cell.lastMessage.text = "testMEssage"
         cell.roomName.textColor = .white
         

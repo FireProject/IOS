@@ -10,7 +10,7 @@ import UIKit
 import FirebaseStorage
 import FirebaseDatabase
 
-var roomData:ChattingRoomInfo = ChattingRoomInfo(roomData:[:])
+var roomDatas:[ChattingRoomInfo] = []
 //roomid
 //name
 //image
@@ -36,24 +36,26 @@ class ChattingRoomInfo {
     var roomName:String = ""
     var masterUid:String = ""
     init(roomData: NSDictionary) {
-        roomId = roomData["roomId"] as! String
-        notice = roomData["notice"] as! String
-        masterUid = roomData["masterUid"] as! String
-        bannedUid = roomData["bannedUid"] as! [String]
-        userUid = roomData["users"] as! [String]
-        maxPerson = roomData["maxPerson"] as! Int
-        curPerson = roomData["curPerson"] as! Int
+        roomId = roomData["roomId"] as? String ?? ""
+        notice = roomData["notice"] as? String ?? ""
+        masterUid = roomData["masterUid"] as? String ?? ""
+        bannedUid = roomData["bannedUid"] as? [String] ?? []
+        userUid = roomData["users"] as? [String] ?? []
+        maxPerson = roomData["maxPerson"] as? Int ?? 2
+        curPerson = roomData["curPerson"] as? Int ?? 2
+        roomName = roomData["roomName"] as? String ?? "NoNamed"
     }
 }
 
 func getRoomsData() {
+    print(userData.roomId.count)
     for roomId in userData.roomId {
         var ref: DatabaseReference!
         ref = Database.database().reference()
         let storage = Storage.storage()
         ref.child("rooms").child(roomId).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
-            roomData = ChattingRoomInfo(roomData: value ?? NSDictionary())
+            roomDatas.append(ChattingRoomInfo(roomData: value ?? NSDictionary()))
         })
     }
 }
