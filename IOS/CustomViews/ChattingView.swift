@@ -35,6 +35,7 @@ class ChattingView: UIView,UITableViewDelegate, UITableViewDataSource {
         self.addSubview(view)
         self.chattingTable.delegate = self
         self.chattingTable.dataSource = self
+        chattingTable.register(ChattingTableCell.classForCoder(), forCellReuseIdentifier: "chattingCell")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,11 +44,13 @@ class ChattingView: UIView,UITableViewDelegate, UITableViewDataSource {
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = chattingTable.dequeueReusableCell(withIdentifier: "cell") as! FriendsTableCell
+        let cell = chattingTable.dequeueReusableCell(withIdentifier: "chattingCell") as! ChattingTableCell
         cell.backgroundColor = .black
-        cell.profileImage.image = friendsData[indexPath.row].profileImage
-        cell.nickLabel.text = friendsData[indexPath.row].nickname
-        cell.nickLabel.textColor = .white
+        cell.profileImage.image = #imageLiteral(resourceName: "ChattingRoomImage")
+        cell.roomName.text = "test"
+        cell.lastMessage.text = "testMEssage"
+        cell.roomName.textColor = .white
+        
         return cell
     }
     

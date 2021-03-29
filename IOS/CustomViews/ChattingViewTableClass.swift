@@ -51,7 +51,7 @@ class ChattingTableCell: UITableViewCell {
             profileImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10),
             
             roomName.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 13),
-            roomName.centerYAnchor.constraint(equalTo: profileImage.centerYAnchor, constant: -30),
+            roomName.centerYAnchor.constraint(equalTo: profileImage.centerYAnchor, constant: -25),
             
             lastMessage.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 13),
             lastMessage.centerYAnchor.constraint(equalTo: profileImage.centerYAnchor)
