@@ -48,7 +48,6 @@ class ChattingRoomInfo {
 }
 
 func getRoomsData() {
-    print(userData.roomId.count)
     for roomId in userData.roomId {
         var ref: DatabaseReference!
         ref = Database.database().reference()

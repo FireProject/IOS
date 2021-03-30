@@ -71,5 +71,10 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
         view.profileImage.layer.cornerRadius = 30
         return view
     }
+
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("seleted!!")
+    }
     
 }
