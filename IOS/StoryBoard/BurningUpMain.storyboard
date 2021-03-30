@@ -175,15 +175,15 @@
             </objects>
             <point key="canvasLocation" x="-204.34782608695653" y="-7.3660714285714279"/>
         </scene>
-        <!--View Controller-->
+        <!--Chatting View Controller-->
         <scene sceneID="Cbe-VU-jCo">
             <objects>
-                <viewController storyboardIdentifier="ChattingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nZb-93-lhZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChattingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nZb-93-lhZ" customClass="ChattingViewController" customModule="IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OOk-lz-qaV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="j8H-u1-pFs"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qy5-4U-pq9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -439,8 +439,8 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

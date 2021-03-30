@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09D975DBFD087BF9EABD3C21 /* Pods_IOS_IOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6814ECA26FFE1CA3467C934 /* Pods_IOS_IOSUITests.framework */; };
+		390895402612BE1000480F82 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3908953F2612BE1000480F82 /* ChattingViewController.swift */; };
 		391555C4260DAB85003D021A /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391555C3260DAB85003D021A /* Rooms.swift */; };
 		39500D4D25F7ACC90062EFAD /* BurningUpMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39500D4C25F7ACC90062EFAD /* BurningUpMainViewController.swift */; };
 		39500D5225F7B38E0062EFAD /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39500D5125F7B38E0062EFAD /* ResetPasswordViewController.swift */; };
@@ -70,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		350E49AE96982DA21D194493 /* Pods-IOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTests.debug.xcconfig"; path = "Target Support Files/Pods-IOSTests/Pods-IOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3908953F2612BE1000480F82 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		391555C3260DAB85003D021A /* Rooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
 		39500D4C25F7ACC90062EFAD /* BurningUpMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurningUpMainViewController.swift; sourceTree = "<group>"; };
 		39500D5125F7B38E0062EFAD /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				39500D4C25F7ACC90062EFAD /* BurningUpMainViewController.swift */,
 				39B8270326086AE8009D5769 /* PlusFriendViewController.swift */,
 				399652B7260C272700E1B1C4 /* PlusRoomViewController.swift */,
+				3908953F2612BE1000480F82 /* ChattingViewController.swift */,
 			);
 			path = MainService;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				390895402612BE1000480F82 /* ChattingViewController.swift in Sources */,
 				39B8270426086AE8009D5769 /* PlusFriendViewController.swift in Sources */,
 				39BCBA86260242C000273D5B /* FriendsView.swift in Sources */,
 				39CE7A1D260477EA00BD3CB7 /* FriendsTopBar.swift in Sources */,

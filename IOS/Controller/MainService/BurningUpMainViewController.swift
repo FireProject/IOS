@@ -121,7 +121,8 @@ class BurningUpMainViewController : UIViewController {
     func setChattingView() {
         let topBar = ChattingTopBar()
         let chattingView = ChattingView()
-       
+        
+        chattingView.setNavigation(navigation: self)
         topBar.setNavigationController(navigationController : self)
         
         

@@ -17,7 +17,7 @@ import FirebaseDatabase
  */
 class ChattingView: UIView,UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var chattingTable: UITableView!
-    
+    weak var navigationController:BurningUpMainViewController?
     
     override init(frame:CGRect) {
         super.init(frame: frame)
@@ -37,6 +37,11 @@ class ChattingView: UIView,UITableViewDelegate, UITableViewDataSource {
         self.chattingTable.dataSource = self
         chattingTable.register(ChattingTableCell.classForCoder(), forCellReuseIdentifier: "chattingCell")
     }
+    
+    func setNavigation(navigation:BurningUpMainViewController) {
+        self.navigationController = navigation
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return roomDatas.count
@@ -58,6 +63,9 @@ class ChattingView: UIView,UITableViewDelegate, UITableViewDataSource {
         return 100.0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("select!!")
+        let storyboard = UIStoryboard(name: "BurningUpMain", bundle: nil)
+        let pushController = storyboard.instantiateViewController(withIdentifier: "ChattingViewController")
+        pushController.modalPresentationStyle = .fullScreen
+        self.navigationController?.navigationController?.pushViewController(pushController, animated: true)
     }
 }
