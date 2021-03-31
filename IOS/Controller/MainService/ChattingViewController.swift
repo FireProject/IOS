@@ -12,14 +12,24 @@ import FirebaseStorage
 import FirebaseDatabase
 
 
-class ChattingViewController:UIViewController {
+class ChattingViewController:UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+    
+   
     @IBOutlet weak var messageTextFiled: UITextField!
+    @IBOutlet weak var chattingCollectionView: UICollectionView!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        self.setting()
+    }
+    
+    func setting() {
+        
     }
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -43,7 +53,6 @@ class ChattingViewController:UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.isToolbarHidden = true
         self.navigationController?.navigationBar.backgroundColor = .clear
-    
         self.navigationItem.title = "test 방"
         
         let menuBtn = UIButton(type: .custom)
@@ -67,4 +76,15 @@ class ChattingViewController:UIViewController {
     }
     
 
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = UICollectionViewCell()
+        
+        return cell
+    }
+    
+    
 }

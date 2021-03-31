@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -219,42 +220,43 @@
                                     <constraint firstItem="8vZ-rx-xbf" firstAttribute="leading" secondItem="M9K-2K-Xfr" secondAttribute="leading" constant="25" id="wnQ-i7-NTn"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Juj-Ew-Kd1">
-                                <rect key="frame" x="0.0" y="44" width="414" height="771.5"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wld-BE-wop">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="500" identifier="scrollHeight" id="Lzn-if-hiq"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Wld-BE-wop" firstAttribute="top" secondItem="SKF-4A-mgo" secondAttribute="top" id="74l-eX-1Rg"/>
-                                    <constraint firstItem="Wld-BE-wop" firstAttribute="trailing" secondItem="SKF-4A-mgo" secondAttribute="trailing" id="IUd-yd-6y1"/>
-                                    <constraint firstItem="Wld-BE-wop" firstAttribute="width" secondItem="sqm-El-BtO" secondAttribute="width" id="Nhe-Qq-QpV"/>
-                                    <constraint firstItem="Wld-BE-wop" firstAttribute="bottom" secondItem="SKF-4A-mgo" secondAttribute="bottom" id="kFK-hX-4tO"/>
-                                    <constraint firstItem="Wld-BE-wop" firstAttribute="leading" secondItem="SKF-4A-mgo" secondAttribute="leading" id="ojP-U4-4Cf"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="SKF-4A-mgo"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="sqm-El-BtO"/>
-                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jmb-J2-WWm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="815.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p6o-1x-x7r">
+                                    <size key="itemSize" width="414" height="90"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="YP5-hf-4eb">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8lo-0V-u6m">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="90"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j8H-u1-pFs"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="M9K-2K-Xfr" firstAttribute="bottom" secondItem="OOk-lz-qaV" secondAttribute="bottom" id="0di-8f-K20"/>
-                            <constraint firstItem="Juj-Ew-Kd1" firstAttribute="leading" secondItem="j8H-u1-pFs" secondAttribute="leading" id="JwM-dP-mXS"/>
+                            <constraint firstItem="M9K-2K-Xfr" firstAttribute="top" secondItem="Jmb-J2-WWm" secondAttribute="bottom" id="BfK-DT-4N9"/>
                             <constraint firstItem="M9K-2K-Xfr" firstAttribute="height" secondItem="OOk-lz-qaV" secondAttribute="height" multiplier="0.09" id="M8e-Mn-ABy"/>
-                            <constraint firstItem="j8H-u1-pFs" firstAttribute="trailing" secondItem="Juj-Ew-Kd1" secondAttribute="trailing" id="SgG-4I-HUl"/>
+                            <constraint firstItem="j8H-u1-pFs" firstAttribute="trailing" secondItem="Jmb-J2-WWm" secondAttribute="trailing" id="MUy-d7-cBU"/>
                             <constraint firstItem="M9K-2K-Xfr" firstAttribute="leading" secondItem="j8H-u1-pFs" secondAttribute="leading" id="Tq9-bp-s0l"/>
-                            <constraint firstItem="Juj-Ew-Kd1" firstAttribute="top" secondItem="j8H-u1-pFs" secondAttribute="top" id="Wlz-Pj-0J3"/>
+                            <constraint firstItem="Jmb-J2-WWm" firstAttribute="top" secondItem="OOk-lz-qaV" secondAttribute="top" id="VRV-Ws-SYy"/>
                             <constraint firstItem="M9K-2K-Xfr" firstAttribute="trailing" secondItem="j8H-u1-pFs" secondAttribute="trailing" id="bAI-4L-a71"/>
-                            <constraint firstItem="M9K-2K-Xfr" firstAttribute="top" secondItem="Juj-Ew-Kd1" secondAttribute="bottom" id="zK4-1g-sUZ"/>
+                            <constraint firstItem="Jmb-J2-WWm" firstAttribute="leading" secondItem="j8H-u1-pFs" secondAttribute="leading" id="eIH-iX-z4e"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chattingCollectionView" destination="Jmb-J2-WWm" id="a7v-KJ-3pd"/>
                         <outlet property="messageTextFiled" destination="mUa-MM-Aiv" id="Fv6-c7-mfQ"/>
                     </connections>
                 </viewController>
