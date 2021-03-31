@@ -47,6 +47,7 @@ class ChattingRoomInfo {
     }
 }
 
+
 func getRoomsData() {
     for roomId in userData.roomId {
         var ref: DatabaseReference!

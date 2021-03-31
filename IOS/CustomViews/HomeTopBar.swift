@@ -34,4 +34,8 @@ class HomeTopBar: UIView {
     @IBAction func menuButtonPressed(_ sender: Any) {
         self.parentViewController.LeftMenuButtonPressed()
     }
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        guard let nextView = parentViewController.storyboard?.instantiateViewController(identifier: "searchRoomViewController") else { return  }
+        parentViewController.navigationController?.pushViewController(nextView, animated: true)
+    }
 }

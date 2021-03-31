@@ -164,6 +164,7 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
         ref.child("users").child(masterUid).child("roomId").setValue(userData.roomId)
         //배경색을 숫자로 바꿔서 저장해볼까
         //ref.child("rooms/\(roomId)/backgroundColor").setValue(1)
+        
         var data = Data()
         data = (self.roomImage.image?.jpegData(compressionQuality: 0.8))!
         let metaData = StorageMetadata()
