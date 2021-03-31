@@ -12,13 +12,12 @@ import FirebaseStorage
 import FirebaseDatabase
 
 
-class ChattingViewController:UIViewController, UITextFieldDelegate {
+class ChattingViewController:UIViewController {
     @IBOutlet weak var messageTextFiled: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messageTextFiled.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -63,14 +62,9 @@ class ChattingViewController:UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.topItem?.title = ""
     }
-    
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
+    @IBAction func sendButtonAction(_ sender: Any) {
+        //디비에 보내기만 할까?
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-    }
-    
+
 }
