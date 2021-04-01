@@ -10,6 +10,7 @@ import UIKit
 import FirebaseStorage
 import FirebaseDatabase
 
+var currentRoom:ChattingRoomInfo? = nil
 var roomDatas:[ChattingRoomInfo] = []
 //roomid
 //name
@@ -55,7 +56,10 @@ func getRoomsData() {
         let storage = Storage.storage()
         ref.child("rooms").child(roomId).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
-            roomDatas.append(ChattingRoomInfo(roomData: value ?? NSDictionary()))
+            let tmp = ChattingRoomInfo(roomData: value ?? NSDictionary())
+            tmp.roomId = roomId
+            roomDatas.append(tmp)
         })
     }
+
 }

@@ -22,8 +22,6 @@ class BurningUpMainViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewMode = .Home
-        self.setHomeView()
-       
         
     }
     
@@ -39,6 +37,17 @@ class BurningUpMainViewController : UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.isToolbarHidden = false
+        switch viewMode {
+        case .Chatting:
+            setChattingView()
+            break
+        case .Friends:
+            setFriendsView()
+            break
+        case .Home:
+            setHomeView()
+            break
+        }
     }
     
     //toolbar 왼쪽상단 버튼

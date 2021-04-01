@@ -63,6 +63,7 @@ class ChattingView: UIView,UITableViewDelegate, UITableViewDataSource {
         return 100.0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentRoom = roomDatas[indexPath.row]
         let storyboard = UIStoryboard(name: "BurningUpMain", bundle: nil)
         let pushController = storyboard.instantiateViewController(withIdentifier: "ChattingViewController")
         pushController.modalPresentationStyle = .fullScreen

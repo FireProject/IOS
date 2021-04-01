@@ -14,12 +14,8 @@ import FirebaseDatabase
 
 class ChattingViewController:UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    
-   
     @IBOutlet weak var messageTextFiled: UITextField!
     @IBOutlet weak var chattingCollectionView: UICollectionView!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +25,9 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
     }
     
     func setting() {
-        
+        Database.database().reference().child("Messages").observe(DataEventType.value, with: { (datasnapshot) in
+            
+        })
     }
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -73,16 +71,33 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
     }
     @IBAction func sendButtonAction(_ sender: Any) {
         //디비에 보내기만 할까?
+        guard let text = self.messageTextFiled.text ,
+              let uid = Auth.auth().currentUser?.uid,
+              let roomId = currentRoom?.roomId else {
+            return
+        }
+        
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        
+        
+        let comment = [
+            "uid" : uid,
+            "Message" : text
+        ]
+        
+        ref.child("Messages/\(roomId)").childByAutoId().setValue(comment)
+        
     }
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = UICollectionViewCell()
-        
+        cell.backgroundColor = .gray
         return cell
     }
     

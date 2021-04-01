@@ -65,6 +65,9 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
         self.navigationController?.navigationBar.topItem?.title = ""
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     func resetButtonImage() {
         monthCycleButton.setImage(nil, for: .normal)
@@ -143,27 +146,27 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
         let bannedId:[String] = []
         let users:[String] = [masterUid]
         
-        
-        let curTime = Date()
-        let timeStamp = Int(curTime.timeIntervalSince1970)
-        let roomId = "\(masterUid)@\(timeStamp)"
-        userData.roomId.append(roomId)
-        
         var ref: DatabaseReference!
         ref = Database.database().reference()
         let storage = Storage.storage(url: "gs://fire-71c1d.appspot.com/")
         
-        ref.child("rooms/\(roomId)/roomName").setValue(roomName)
-        ref.child("rooms/\(roomId)/masterUid").setValue(masterUid)
-        ref.child("rooms/\(roomId)/maxPerson").setValue(nPerson)
-        ref.child("rooms/\(roomId)/curPerson").setValue(1)
-       //미정 ref.child("rooms/\(roomId)/voteCycle").setValue()
-        ref.child("rooms/\(roomId)/bannedUid").setValue(bannedId)
-        ref.child("rooms/\(roomId)/users").setValue(users)
-        ref.child("rooms/\(roomId)/roomNotice").setValue(roomNotice)
-        ref.child("users").child(masterUid).child("roomId").setValue(userData.roomId)
-        //배경색을 숫자로 바꿔서 저장해볼까
-        //ref.child("rooms/\(roomId)/backgroundColor").setValue(1)
+        let value = [
+            "roomName" : roomName,
+            "masterUid" : masterUid,
+            "maxPerson" : nPerson,
+            "curPerson" : 1,
+            "voteCycle" : "monthly",
+            "bannedUid" : bannedId,
+            "users" : users,
+            "roomNotice" : roomNotice
+        ] as [String : Any]
+        let rref = ref.child("rooms").childByAutoId()
+        guard let roomId = rref.key else {
+            return
+        }
+        userData.roomId.append(roomId)
+        ref.child("users/\(masterUid)/roomId").setValue(userData.roomId)
+        rref.setValue(value)
         
         var data = Data()
         data = (self.roomImage.image?.jpegData(compressionQuality: 0.8))!
@@ -182,3 +185,4 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
         self.personNumberLabel.text = "\(Int(sender.value))명"
     }
 }
+
