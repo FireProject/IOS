@@ -92,7 +92,7 @@ func getUserData() {
     })
     getUserProfileImage(uid: user.uid)
     
-    /*
+    /* 좀더 확인해보고 삭제할 것
     ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
         let value = snapshot.value as? NSDictionary
         userData = BurningUpUser(user: value ?? NSDictionary())

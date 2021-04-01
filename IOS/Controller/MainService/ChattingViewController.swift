@@ -17,6 +17,7 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var messageTextFiled: UITextField!
     @IBOutlet weak var chattingCollectionView: UICollectionView!
     
+    var messages:[String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -24,11 +25,24 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         self.setting()
     }
     
+    
+    
     func setting() {
-        Database.database().reference().child("Messages").observe(DataEventType.value, with: { (datasnapshot) in
-            
+        guard let roomId = currentRoom?.roomId else {
+            return
+        }
+        
+        Database.database().reference().child("message").child("\(roomId)").observe(.childAdded, with: { (snapshot) in
+            let dic = snapshot.value as? NSDictionary
+            guard let message = dic?["sendText"] as? String else {
+                return
+            }
+            self.messages.append(message)
+            print(message)
         })
     }
+    
+    
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -51,7 +65,8 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         super.viewWillAppear(animated)
         self.navigationController?.isToolbarHidden = true
         self.navigationController?.navigationBar.backgroundColor = .clear
-        self.navigationItem.title = "test 방"
+        let roomName = currentRoom?.roomName ?? "erorr Daeho"
+        self.navigationItem.title = roomName
         
         let menuBtn = UIButton(type: .custom)
         menuBtn.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
@@ -82,12 +97,12 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         
         
         let comment = [
-            "uid" : uid,
-            "Message" : text
+            "senderUid" : uid,
+            "sendText" : text
         ]
         
-        ref.child("Messages/\(roomId)").childByAutoId().setValue(comment)
-        
+        ref.child("message/\(roomId)").childByAutoId().setValue(comment)
+        self.messageTextFiled.text = ""
     }
     
 
