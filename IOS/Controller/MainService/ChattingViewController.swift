@@ -41,8 +41,16 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
        
         chattingCollectionView.register(UINib.init(nibName: "ChattingMessageCell", bundle: nil), forCellWithReuseIdentifier: "messageCell")
 
+        let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(endEdit))
+        singleTapGestureRecognizer.numberOfTapsRequired = 1
+        singleTapGestureRecognizer.isEnabled = true
+        singleTapGestureRecognizer.cancelsTouchesInView = false
+        chattingCollectionView.addGestureRecognizer(singleTapGestureRecognizer)
     }
-    
+    @objc func endEdit() {
+        self.view.endEditing(true)
+        
+    }
     
     
     func setting() {
@@ -66,8 +74,8 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= (keyboardSize.height - 20
-                )
+                self.view.frame.origin.y -= (keyboardSize.height - 20)
+                
             }
         }
     }
@@ -75,22 +83,21 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
+            
         }
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
+ 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isToolbarHidden = true
         self.navigationController?.navigationBar.backgroundColor = .clear
+        
         let roomName = currentRoom?.roomName ?? "erorr Daeho"
         self.navigationItem.title = roomName
         
         let menuBtn = UIButton(type: .custom)
         menuBtn.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
-        //menuBtn.setImage(#imageLiteral(resourceName: "SideMenuImage"), for: .normal)
         menuBtn.setBackgroundImage(#imageLiteral(resourceName: "SideMenuImage"), for: .normal)
 
         let menuBarItem = UIBarButtonItem(customView: menuBtn)
