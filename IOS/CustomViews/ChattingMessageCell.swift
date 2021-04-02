@@ -14,6 +14,9 @@ class ChattingMessageCell: UICollectionViewCell {
     
     @IBOutlet weak var messageLabel: UILabel!
 
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
     }

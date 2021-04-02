@@ -38,7 +38,9 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         chattingCollectionView.delegate = self
         chattingCollectionView.dataSource = self
         self.setting()
-        chattingCollectionView.register(ChattingMessageCell.classForCoder(), forCellWithReuseIdentifier: "messageCell")
+       
+        chattingCollectionView.register(UINib.init(nibName: "ChattingMessageCell", bundle: nil), forCellWithReuseIdentifier: "messageCell")
+
     }
     
     
@@ -131,16 +133,24 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = self.chattingCollectionView.dequeueReusableCell(withReuseIdentifier: "messageCell", for: indexPath) as! ChattingMessageCell
-        cell.backgroundColor = .gray
-        
+        cell.backgroundColor = .black
+        cell.messageLabel.text = self.messages[indexPath.row].message
+        if indexPath.row > 0 && self.messages[indexPath.row].uid == self.messages[indexPath.row-1].uid {
+            cell.userProfileImage.image = nil
+            cell.userNicknameLabel.text = nil
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize: CGRect = UIScreen.main.bounds
         var size = screenSize.size
-        size.height = 100
-
+        size.height = 50
+        if indexPath.row > 0 && self.messages[indexPath.row].uid == self.messages[indexPath.row-1].uid {
+            size.height = 25
+        }
         return size
     }
+    
+    
 }
