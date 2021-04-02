@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChattingMessageCell" customModule="IOS" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="messageCell" id="3p1-7I-B86" customClass="ChattingMessageCell" customModule="IOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="386" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ETt-4P-whj">
+                <rect key="frame" x="0.0" y="0.0" width="386" height="95"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FriendsImage" translatesAutoresizingMaskIntoConstraints="NO" id="keu-tO-SuU">
+                        <rect key="frame" x="5" y="5" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="hl0-EX-MfS"/>
+                            <constraint firstAttribute="height" constant="60" id="peV-g3-MIE"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NickName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUh-rr-J2z">
+                        <rect key="frame" x="75" y="10" width="150" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="ULg-JE-PTG"/>
+                            <constraint firstAttribute="height" constant="25" id="kwq-dR-nV0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TestMessage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faA-t6-Ucg">
+                        <rect key="frame" x="75" y="64" width="200" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="IWx-pf-oLk"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lUh-rr-J2z" firstAttribute="top" secondItem="ETt-4P-whj" secondAttribute="top" constant="10" id="G07-iJ-Ulx"/>
+                    <constraint firstItem="lUh-rr-J2z" firstAttribute="leading" secondItem="keu-tO-SuU" secondAttribute="trailing" constant="10" id="KYB-jm-1d8"/>
+                    <constraint firstItem="faA-t6-Ucg" firstAttribute="leading" secondItem="ETt-4P-whj" secondAttribute="leading" constant="75" id="Tyg-xa-Rar"/>
+                    <constraint firstItem="keu-tO-SuU" firstAttribute="leading" secondItem="ETt-4P-whj" secondAttribute="leading" constant="5" id="bJe-Pe-C4Y"/>
+                    <constraint firstAttribute="bottom" secondItem="faA-t6-Ucg" secondAttribute="bottom" constant="10" id="kaJ-i6-6Ld"/>
+                    <constraint firstItem="keu-tO-SuU" firstAttribute="top" secondItem="ETt-4P-whj" secondAttribute="top" constant="5" id="sMb-2d-uEY"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="386" height="95"/>
+            <connections>
+                <outlet property="messageLabel" destination="faA-t6-Ucg" id="tfr-JA-a5Z"/>
+                <outlet property="userNicknameLabel" destination="lUh-rr-J2z" id="xw4-Z3-54M"/>
+                <outlet property="userProfileImage" destination="keu-tO-SuU" id="1ga-jt-0nO"/>
+            </connections>
+            <point key="canvasLocation" x="-60.869565217391312" y="-61.941964285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="FriendsImage" width="20" height="20"/>
+    </resources>
+</document>

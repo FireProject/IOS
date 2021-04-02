@@ -50,6 +50,8 @@
 		39CE7A22260477F200BD3CB7 /* FriendsTopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39CE7A21260477F200BD3CB7 /* FriendsTopBar.xib */; };
 		39CE7A272604780E00BD3CB7 /* ChattingTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE7A262604780E00BD3CB7 /* ChattingTopBar.swift */; };
 		39CE7A2C2604781500BD3CB7 /* ChattingTopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39CE7A2B2604781500BD3CB7 /* ChattingTopBar.xib */; };
+		39E53F812617382200424149 /* ChattingMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39E53F802617382200424149 /* ChattingMessageCell.xib */; };
+		39E53F862617384F00424149 /* ChattingMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E53F852617384F00424149 /* ChattingMessageCell.swift */; };
 		A7BEAAB987480238A640E0E6 /* Pods_IOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42240BD9E2F1FE728ED85FBD /* Pods_IOSTests.framework */; };
 		D91B46FBF9994392118BF373 /* Pods_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BD3033B37D0EBAC613D34E /* Pods_IOS.framework */; };
 /* End PBXBuildFile section */
@@ -121,6 +123,8 @@
 		39CE7A21260477F200BD3CB7 /* FriendsTopBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTopBar.xib; sourceTree = "<group>"; };
 		39CE7A262604780E00BD3CB7 /* ChattingTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingTopBar.swift; sourceTree = "<group>"; };
 		39CE7A2B2604781500BD3CB7 /* ChattingTopBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingTopBar.xib; sourceTree = "<group>"; };
+		39E53F802617382200424149 /* ChattingMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingMessageCell.xib; sourceTree = "<group>"; };
+		39E53F852617384F00424149 /* ChattingMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMessageCell.swift; sourceTree = "<group>"; };
 		42240BD9E2F1FE728ED85FBD /* Pods_IOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BD3033B37D0EBAC613D34E /* Pods_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAFE1BA32725F3A7C581BA7 /* Pods-IOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTests.release.xcconfig"; path = "Target Support Files/Pods-IOSTests/Pods-IOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 				39CE7A262604780E00BD3CB7 /* ChattingTopBar.swift */,
 				39CE7A2B2604781500BD3CB7 /* ChattingTopBar.xib */,
 				396E3BFB261588F800760E99 /* CollectionViewCell.xib */,
+				39E53F802617382200424149 /* ChattingMessageCell.xib */,
+				39E53F852617384F00424149 /* ChattingMessageCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -441,6 +447,7 @@
 				3983109C25F5034D00509D81 /* BurningUpSignInUp.storyboard in Resources */,
 				39CE7A18260473DB00BD3CB7 /* HomeTopBar.xib in Resources */,
 				396E3BFC261588F800760E99 /* CollectionViewCell.xib in Resources */,
+				39E53F812617382200424149 /* ChattingMessageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +590,7 @@
 				39500D4D25F7ACC90062EFAD /* BurningUpMainViewController.swift in Sources */,
 				391555C4260DAB85003D021A /* Rooms.swift in Sources */,
 				39500D5225F7B38E0062EFAD /* ResetPasswordViewController.swift in Sources */,
+				39E53F862617384F00424149 /* ChattingMessageCell.swift in Sources */,
 				39B3D63925E37F0B003C3756 /* AppDelegate.swift in Sources */,
 				39BA700F2600DD2D009CB3CE /* ViewExtension.swift in Sources */,
 				395E1BD125F653E800616684 /* LoginViewController.swift in Sources */,

@@ -13,16 +13,32 @@ import FirebaseDatabase
 
 
 class ChattingViewController:UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
+    
+    class MesageInfo {
+        var message : String
+        var uid : String
+        init(uid:String, message:String) {
+            self.message = message
+            self.uid = uid
+        }
+    }
+    
     @IBOutlet weak var messageTextFiled: UITextField!
     @IBOutlet weak var chattingCollectionView: UICollectionView!
+
+    var messages:[MesageInfo] = []
+    var profileImages:[String:UIImage] = [:]
+    var userNickname:[String:String] = [:]
+    //nickName,uid
     
-    var messages:[String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        chattingCollectionView.delegate = self
+        chattingCollectionView.dataSource = self
         self.setting()
+        chattingCollectionView.register(ChattingMessageCell.classForCoder(), forCellWithReuseIdentifier: "messageCell")
     }
     
     
@@ -31,15 +47,17 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         guard let roomId = currentRoom?.roomId else {
             return
         }
-        
+    
         Database.database().reference().child("message").child("\(roomId)").observe(.childAdded, with: { (snapshot) in
             let dic = snapshot.value as? NSDictionary
-            guard let message = dic?["sendText"] as? String else {
+            guard let message = dic?["sendText"] as? String ,
+                  let uid = dic?["senderUid"] as? String else {
                 return
             }
-            self.messages.append(message)
-            print(message)
+            self.messages.append(MesageInfo(uid: uid, message: message))
+            self.chattingCollectionView.reloadData()
         })
+        // 유저 프로필 이미지 받아오기
     }
     
     
@@ -107,14 +125,22 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.messages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = UICollectionViewCell()
+
+        let cell = self.chattingCollectionView.dequeueReusableCell(withReuseIdentifier: "messageCell", for: indexPath) as! ChattingMessageCell
         cell.backgroundColor = .gray
+        
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenSize: CGRect = UIScreen.main.bounds
+        var size = screenSize.size
+        size.height = 100
+
+        return size
+    }
 }
