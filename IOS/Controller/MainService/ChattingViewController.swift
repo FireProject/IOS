@@ -66,6 +66,9 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
             }
             self.messages.append(MesageInfo(uid: uid, message: message))
             self.chattingCollectionView.reloadData()
+            
+            let lastItemIndex = IndexPath(item: self.messages.count-1, section: 0)
+            self.chattingCollectionView.scrollToItem(at: lastItemIndex, at: .top, animated: true)
         })
         // 유저 프로필 이미지 받아오기
     }
@@ -143,7 +146,6 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         cell.backgroundColor = .gray
         cell.messageLabel.text = self.messages[indexPath.row].message
         if indexPath.row > 0 && self.messages[indexPath.row].uid == self.messages[indexPath.row-1].uid {
-            print("\(indexPath.row):\(self.messages[indexPath.row].message)")
             cell.userProfileImage.image = nil
             cell.userNicknameLabel.text = nil
         } else {
