@@ -140,11 +140,15 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = self.chattingCollectionView.dequeueReusableCell(withReuseIdentifier: "messageCell", for: indexPath) as! ChattingMessageCell
-        cell.backgroundColor = .black
+        cell.backgroundColor = .gray
         cell.messageLabel.text = self.messages[indexPath.row].message
         if indexPath.row > 0 && self.messages[indexPath.row].uid == self.messages[indexPath.row-1].uid {
+            print("\(indexPath.row):\(self.messages[indexPath.row].message)")
             cell.userProfileImage.image = nil
             cell.userNicknameLabel.text = nil
+        } else {
+            cell.userProfileImage.image = self.profileImages[self.messages[indexPath.row].uid] ?? #imageLiteral(resourceName: "FriendsImage")
+            cell.userNicknameLabel.text = self.userNickname[self.messages[indexPath.row].uid] ?? "Nonamed"
         }
         return cell
     }
