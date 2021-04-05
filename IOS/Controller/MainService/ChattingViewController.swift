@@ -39,8 +39,9 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         chattingCollectionView.dataSource = self
         self.setting()
        
-        chattingCollectionView.register(UINib.init(nibName: "ChattingMessageCell", bundle: nil), forCellWithReuseIdentifier: "messageCell")
-
+        //chattingCollectionView.register(UINib.init(nibName: "ChattingMessageCell", bundle: nil), forCellWithReuseIdentifier: "messageCell")
+        chattingCollectionView.register(ChattingMessageCell.self, forCellWithReuseIdentifier: "messageCell")
+        
         let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(endEdit))
         singleTapGestureRecognizer.numberOfTapsRequired = 1
         singleTapGestureRecognizer.isEnabled = true
@@ -145,13 +146,20 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
 
         let cell = self.chattingCollectionView.dequeueReusableCell(withReuseIdentifier: "messageCell", for: indexPath) as! ChattingMessageCell
         cell.backgroundColor = .gray
-        cell.messageLabel.text = self.messages[indexPath.row].message
-        if indexPath.row > 0 && self.messages[indexPath.row].uid == self.messages[indexPath.row-1].uid {
+        cell.messageLabel.text = "  \(self.messages[indexPath.row].message)  "
+        cell.messageLabel.numberOfLines = 10
+        if self.messages[indexPath.row].uid == Auth.auth().currentUser?.uid {
             cell.userProfileImage.image = nil
             cell.userNicknameLabel.text = nil
+            cell.setMessageType(type: .user)
+        } else if indexPath.row > 0 && self.messages[indexPath.row].uid == self.messages[indexPath.row-1].uid {
+            cell.userProfileImage.image = nil
+            cell.userNicknameLabel.text = nil
+            cell.setMessageType(type: .otherUserNotProfile)
         } else {
             cell.userProfileImage.image = self.profileImages[self.messages[indexPath.row].uid] ?? #imageLiteral(resourceName: "FriendsImage")
             cell.userNicknameLabel.text = self.userNickname[self.messages[indexPath.row].uid] ?? "Nonamed"
+            cell.setMessageType(type: .otherUser)
         }
         return cell
     }
@@ -160,11 +168,14 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         let screenSize: CGRect = UIScreen.main.bounds
         var size = screenSize.size
         size.height = 50
-        if indexPath.row > 0 && self.messages[indexPath.row].uid == self.messages[indexPath.row-1].uid {
+        if self.messages[indexPath.row].uid == Auth.auth().currentUser?.uid {
+            size.height = 25
+        }else if indexPath.row > 0 && self.messages[indexPath.row].uid == self.messages[indexPath.row-1].uid {
             size.height = 25
         }
         return size
     }
     
+
     
 }

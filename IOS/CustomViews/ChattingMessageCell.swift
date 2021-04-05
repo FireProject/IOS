@@ -8,21 +8,91 @@
 import Foundation
 import UIKit
 class ChattingMessageCell: UICollectionViewCell {
-    @IBOutlet weak var userProfileImage: UIImageView!
     
-    @IBOutlet weak var userNicknameLabel: UILabel!
-    
-    @IBOutlet weak var messageLabel: UILabel!
-
-    override class func awakeFromNib() {
-        super.awakeFromNib()
+    enum messageType {
+        case user
+        case otherUser
+        case otherUserNotProfile
     }
+    
+    var userNicknameLabel:UILabel = UILabel()
+    var userProfileImage:UIImageView = UIImageView()
+    var messageLabel: UILabel = UILabel()
+    var messageType = ChattingMessageCell.messageType.otherUser
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setting()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setting()
+    }
+    
+    func setMessageType(type: ChattingMessageCell.messageType) {
+        self.messageType = type
+        setting()
+    }
+    
+    func setting() {
+        self.contentView.backgroundColor = .black
+        self.messageLabel.backgroundColor = .gray
+        self.messageLabel.layer.masksToBounds = true
+        self.messageLabel.layer.cornerRadius = 10
+        removeSubViews()
+        switch self.messageType {
+        case .otherUser:
+            constraintOtherUser()
+            break
+        case .otherUserNotProfile:
+            constraintOtherUserNotProfile()
+            break
+        case .user:
+            constraintUser()
+            break
+        }
+
+    }
+    func removeSubViews() {
+        let _ = self.contentView.subviews.map({$0.removeFromSuperview()})
+    }
+    func constraintOtherUser() {
+        contentView.addSubview(userProfileImage)
+        contentView.addSubview(userNicknameLabel)
+        contentView.addSubview(messageLabel)
         
+        userNicknameLabel.translatesAutoresizingMaskIntoConstraints = false
+        userProfileImage.translatesAutoresizingMaskIntoConstraints = false
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            userProfileImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            userProfileImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            userProfileImage.heightAnchor.constraint(equalToConstant: 30),
+            userProfileImage.widthAnchor.constraint(equalToConstant: 30),
+            
+            userNicknameLabel.leadingAnchor.constraint(equalTo: userProfileImage.trailingAnchor, constant: 5),
+            userNicknameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            userNicknameLabel.widthAnchor.constraint(equalToConstant: 100),
+            
+            messageLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5),
+            messageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 45)
+        ])
+    }
+    func constraintOtherUserNotProfile() {
+        contentView.addSubview(messageLabel)
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            messageLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5),
+            messageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 45)
+        ])
+    }
+    func constraintUser() {
+        contentView.addSubview(messageLabel)
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            messageLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5),
+            messageLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
+        ])
     }
 }
