@@ -52,6 +52,7 @@
 		39CE7A2C2604781500BD3CB7 /* ChattingTopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39CE7A2B2604781500BD3CB7 /* ChattingTopBar.xib */; };
 		39E53F812617382200424149 /* ChattingMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39E53F802617382200424149 /* ChattingMessageCell.xib */; };
 		39E53F862617384F00424149 /* ChattingMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E53F852617384F00424149 /* ChattingMessageCell.swift */; };
+		39F2BD63261AC58F00243905 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2BD62261AC58F00243905 /* Friends.swift */; };
 		A7BEAAB987480238A640E0E6 /* Pods_IOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42240BD9E2F1FE728ED85FBD /* Pods_IOSTests.framework */; };
 		D91B46FBF9994392118BF373 /* Pods_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BD3033B37D0EBAC613D34E /* Pods_IOS.framework */; };
 /* End PBXBuildFile section */
@@ -125,6 +126,7 @@
 		39CE7A2B2604781500BD3CB7 /* ChattingTopBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingTopBar.xib; sourceTree = "<group>"; };
 		39E53F802617382200424149 /* ChattingMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingMessageCell.xib; sourceTree = "<group>"; };
 		39E53F852617384F00424149 /* ChattingMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMessageCell.swift; sourceTree = "<group>"; };
+		39F2BD62261AC58F00243905 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		42240BD9E2F1FE728ED85FBD /* Pods_IOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BD3033B37D0EBAC613D34E /* Pods_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CAFE1BA32725F3A7C581BA7 /* Pods-IOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTests.release.xcconfig"; path = "Target Support Files/Pods-IOSTests/Pods-IOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			children = (
 				39500D8825F7B8DB0062EFAD /* UserFunction.swift */,
 				391555C3260DAB85003D021A /* Rooms.swift */,
+				39F2BD62261AC58F00243905 /* Friends.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				39CE7A272604780E00BD3CB7 /* ChattingTopBar.swift in Sources */,
 				3918B71C2614484B00B54811 /* SearchRoomViewController.swift in Sources */,
 				39500D5725F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift in Sources */,
+				39F2BD63261AC58F00243905 /* Friends.swift in Sources */,
 				39B3D63B25E37F0B003C3756 /* SceneDelegate.swift in Sources */,
 				396A69A8260F726900D41EFB /* ChattingViewTableClass.swift in Sources */,
 				399A95182601C2CE00241661 /* MemoView.swift in Sources */,

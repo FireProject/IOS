@@ -70,6 +70,7 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
             let lastItemIndex = IndexPath(item: self.messages.count-1, section: 0)
             self.chattingCollectionView.scrollToItem(at: lastItemIndex, at: .top, animated: true)
         })
+        
         // 유저 프로필 이미지 받아오기
     }
     

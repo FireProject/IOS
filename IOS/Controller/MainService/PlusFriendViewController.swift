@@ -68,7 +68,7 @@ class PlusFriendViewController : UIViewController, UITextFieldDelegate {
             }
             else if snapshot.exists() {
                 let uid = snapshot.value as! String
-                if userData.friends.contains(uid) {
+                if userData.friends.contains(uid) || uid == Auth.auth().currentUser?.uid{
                     return
                 }
                 userData.friends.append(uid)
@@ -84,6 +84,7 @@ class PlusFriendViewController : UIViewController, UITextFieldDelegate {
         if isExistEmail == false {
             self.warningLabel.text = "존재하지 않는 유저입니다."
         } else {
+            getFriends()
             self.dismiss(animated: true, completion: nil)
         }
     }
