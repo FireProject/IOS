@@ -36,9 +36,13 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
 
         //이미지를 둥그렇게 설정
         self.profileImage.contentMode = .scaleAspectFill
-        
         self.profileImage.clipsToBounds = true
         self.profileImage.layer.cornerRadius = self.profileImage.frame.width/2.265
+        
+        self.profileImage.image = userData.profileImage
+        if userData.nickname != "" {
+            self.nickNameTextField.text = userData.nickname
+        }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         //뷰를 터치하는경우 수정을 끝냄 즉 키보드 다시 내려감
@@ -145,8 +149,7 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         
         ref.child("users/\(user.uid)/nickName").setValue(nickName)
         ref.child("users/\(user.uid)/stateMessage").setValue("")
-        ref.child("users/\(user.uid)/friends").setValue([])
-        ref.child("users/\(user.uid)/roomId").setValue([])
+        ref.child("users/\(user.uid)/email").setValue(user.email)
         
         
         ref.child("emailToUid/\(String(describing: email))").setValue(user.uid)

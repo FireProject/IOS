@@ -184,6 +184,13 @@
 			path = MainService;
 			sourceTree = "<group>";
 		};
+		393C8B6C261B473F00AF2C88 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		398E136825E3DEF500AE21A8 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +274,7 @@
 		39B3D63725E37F0B003C3756 /* IOS */ = {
 			isa = PBXGroup;
 			children = (
+				393C8B6C261B473F00AF2C88 /* Protocol */,
 				39A1117925FF21D700A54A5C /* CustomViews */,
 				398E138425E401CC00AE21A8 /* ViewModel */,
 				398E137B25E3FF2000AE21A8 /* Controller */,

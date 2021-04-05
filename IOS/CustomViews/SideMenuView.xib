@@ -28,7 +28,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FireImage" translatesAutoresizingMaskIntoConstraints="NO" id="SN3-RG-5is">
-                            <rect key="frame" x="62" y="33" width="97" height="66.5"/>
+                            <rect key="frame" x="77.5" y="33" width="66" height="66.5"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainLogo" translatesAutoresizingMaskIntoConstraints="NO" id="5YA-Fh-ld5">
                             <rect key="frame" x="0.0" y="0.0" width="221" height="33"/>
@@ -38,7 +38,7 @@
                     <constraints>
                         <constraint firstItem="5YA-Fh-ld5" firstAttribute="leading" secondItem="LHh-2R-DWk" secondAttribute="leading" id="0Ob-qk-FUZ"/>
                         <constraint firstItem="TxN-8B-so2" firstAttribute="leading" secondItem="LHh-2R-DWk" secondAttribute="leading" id="55B-t4-vlk"/>
-                        <constraint firstItem="SN3-RG-5is" firstAttribute="width" secondItem="LHh-2R-DWk" secondAttribute="width" multiplier="0.436842" id="6LO-RD-6gz"/>
+                        <constraint firstItem="SN3-RG-5is" firstAttribute="width" secondItem="LHh-2R-DWk" secondAttribute="height" multiplier="0.5" id="6LO-RD-6gz"/>
                         <constraint firstItem="TxN-8B-so2" firstAttribute="top" secondItem="SN3-RG-5is" secondAttribute="bottom" id="9HH-hm-YPS"/>
                         <constraint firstItem="5YA-Fh-ld5" firstAttribute="top" secondItem="LHh-2R-DWk" secondAttribute="top" id="9LG-1O-MH7"/>
                         <constraint firstItem="5YA-Fh-ld5" firstAttribute="height" secondItem="LHh-2R-DWk" secondAttribute="height" multiplier="0.25" id="AoK-oG-pVc"/>

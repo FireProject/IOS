@@ -32,6 +32,11 @@ class SideMenuView: UIView {
         guard let view = loadView(nibName: "SideMenuView") else { return }
         view.frame = self.bounds
         userProfileImage.image = userData.profileImage
+        userProfileImage.contentMode = .scaleAspectFill
+        userProfileImage.layer.masksToBounds = true
+        userProfileImage.layer.cornerRadius = self.userProfileImage.frame.width/1.5
+        
+       
         userNickNameLabel.text = "\(userData.nickname)님 환영합니다!"
         self.addSubview(view)
     }
@@ -52,9 +57,18 @@ class SideMenuView: UIView {
         self.removeFromSuperview()
     }
     @IBAction func profileModifyAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "BurningUpSignInUp", bundle: nil)
+        let nextView = storyboard.instantiateViewController(identifier: "SignInImageNickname")
+        self.parentViewController.navigationController?.navigationBar.isHidden = false
+        self.parentViewController.navigationController?.pushViewController(nextView, animated: true)
     }
     @IBAction func resetPasswordAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "BurningUpSignInUp", bundle: nil)
+        let nextView = storyboard.instantiateViewController(identifier: "ResetPasswordViewController")
+        
+        self.parentViewController.navigationController?.pushViewController(nextView, animated: true)
     }
     @IBAction func introduceUsAction(_ sender: Any) {
+        //개발자 소개 뷰와 연결
     }
 }
