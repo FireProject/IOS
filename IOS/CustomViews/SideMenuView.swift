@@ -13,6 +13,11 @@ import FirebaseDatabase
 
 class SideMenuView: UIView {
     weak var parentViewController: UIViewController!
+    
+    @IBOutlet weak var userProfileImage: UIImageView!
+    @IBOutlet weak var userNickNameLabel: UILabel!
+    
+    
     override init(frame:CGRect) {
         super.init(frame: frame)
         setup()
@@ -26,6 +31,8 @@ class SideMenuView: UIView {
         backgroundColor = .clear
         guard let view = loadView(nibName: "SideMenuView") else { return }
         view.frame = self.bounds
+        userProfileImage.image = userData.profileImage
+        userNickNameLabel.text = "\(userData.nickname)님 환영합니다!"
         self.addSubview(view)
     }
     @IBAction func LogoutButtonPressed(_ sender: Any) {
@@ -43,5 +50,11 @@ class SideMenuView: UIView {
         UserDefaults.standard.removeObject(forKey: "Email")
         UserDefaults.standard.removeObject(forKey: "Password")
         self.removeFromSuperview()
+    }
+    @IBAction func profileModifyAction(_ sender: Any) {
+    }
+    @IBAction func resetPasswordAction(_ sender: Any) {
+    }
+    @IBAction func introduceUsAction(_ sender: Any) {
     }
 }

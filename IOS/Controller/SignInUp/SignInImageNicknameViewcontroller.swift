@@ -143,7 +143,7 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         metaData.contentType = "image/png"
         storage.reference().child(user.uid).putData(data, metadata: metaData)
         
-        ref.child("users/\(user.uid)/nickname").setValue(nickName)
+        ref.child("users/\(user.uid)/nickName").setValue(nickName)
         ref.child("users/\(user.uid)/stateMessage").setValue("")
         ref.child("users/\(user.uid)/friends").setValue([])
         ref.child("users/\(user.uid)/roomId").setValue([])
