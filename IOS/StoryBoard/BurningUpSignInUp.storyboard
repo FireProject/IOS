@@ -283,7 +283,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lfi-uW-Yi0">
-                                <rect key="frame" x="0.0" y="224" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="179" width="414" height="538"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sh9-9M-Ssg">
                                         <rect key="frame" x="103.5" y="0.0" width="207" height="201"/>
@@ -318,12 +318,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="닉네임" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Xf-Xq-fJb">
-                                        <rect key="frame" x="83" y="231" width="248" height="44.5"/>
+                                        <rect key="frame" x="83" y="231" width="248" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESy-5t-6iE" userLabel="fds">
-                                        <rect key="frame" x="0.0" y="305.5" width="414" height="142.5"/>
+                                        <rect key="frame" x="0.0" y="315" width="414" height="223"/>
                                         <color key="backgroundColor" red="0.34901960784313724" green="0.34903606770000001" blue="0.34897482400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
@@ -350,7 +350,7 @@
                             <constraint firstItem="lfi-uW-Yi0" firstAttribute="leading" secondItem="ylq-9F-jme" secondAttribute="leading" id="Txk-py-Kc6"/>
                             <constraint firstItem="jlf-pB-JS0" firstAttribute="top" secondItem="Qm9-h1-ilZ" secondAttribute="bottom" id="VC1-Z1-die"/>
                             <constraint firstItem="SU1-5t-FHA" firstAttribute="trailing" secondItem="ylq-9F-jme" secondAttribute="trailing" id="ZWR-gz-Ezx"/>
-                            <constraint firstItem="lfi-uW-Yi0" firstAttribute="height" secondItem="35R-FZ-IvX" secondAttribute="height" multiplier="0.5" id="bhh-Mo-FCN"/>
+                            <constraint firstItem="lfi-uW-Yi0" firstAttribute="height" secondItem="35R-FZ-IvX" secondAttribute="height" multiplier="0.6" id="bhh-Mo-FCN"/>
                             <constraint firstItem="jlf-pB-JS0" firstAttribute="leading" secondItem="ylq-9F-jme" secondAttribute="leading" id="dkm-n5-4YK"/>
                             <constraint firstItem="Qm9-h1-ilZ" firstAttribute="centerX" secondItem="35R-FZ-IvX" secondAttribute="centerX" id="qND-op-JSM"/>
                             <constraint firstItem="jlf-pB-JS0" firstAttribute="height" secondItem="35R-FZ-IvX" secondAttribute="height" multiplier="0.1" id="xRh-F2-ldQ"/>
