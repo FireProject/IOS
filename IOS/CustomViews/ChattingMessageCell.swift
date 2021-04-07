@@ -20,6 +20,7 @@ class ChattingMessageCell: UICollectionViewCell {
     var messageLabel: UILabel = UILabel()
     var messageType = ChattingMessageCell.messageType.otherUser
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setting()
@@ -32,7 +33,19 @@ class ChattingMessageCell: UICollectionViewCell {
     
     func setMessageType(type: ChattingMessageCell.messageType) {
         self.messageType = type
-        setting()
+        removeSubViews()
+        switch self.messageType {
+        case .otherUser:
+            constraintOtherUser()
+            break
+        case .otherUserNotProfile:
+            constraintOtherUserNotProfile()
+            break
+        case .user:
+            constraintUser()
+            break
+        }
+        
     }
     
     func setting() {
@@ -40,6 +53,11 @@ class ChattingMessageCell: UICollectionViewCell {
         self.messageLabel.backgroundColor = .gray
         self.messageLabel.layer.masksToBounds = true
         self.messageLabel.layer.cornerRadius = 10
+        self.messageLabel.lineBreakMode = .byWordWrapping
+        self.messageLabel.numberOfLines = 0
+        self.messageLabel.sizeToFit()
+        
+        
         removeSubViews()
         switch self.messageType {
         case .otherUser:
@@ -76,23 +94,34 @@ class ChattingMessageCell: UICollectionViewCell {
             userNicknameLabel.widthAnchor.constraint(equalToConstant: 100),
             
             messageLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5),
-            messageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 45)
+            messageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 45),
+            messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 300),
+            messageLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 20)
         ])
     }
     func constraintOtherUserNotProfile() {
         contentView.addSubview(messageLabel)
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            messageLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5),
-            messageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 45)
+            messageLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
+            messageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 45),
+            messageLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 20),
+            messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 300),
+            messageLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 20)
         ])
+        
     }
     func constraintUser() {
+   
         contentView.addSubview(messageLabel)
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            messageLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5),
-            messageLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
+            messageLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
+            messageLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            messageLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 20),
+            messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 300),
+            messageLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 20)
         ])
+        
     }
 }
