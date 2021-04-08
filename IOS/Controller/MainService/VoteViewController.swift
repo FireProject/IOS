@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import FirebaseStorage
+import FirebaseDatabase
 
 class VoteViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -66,6 +68,9 @@ extension VoteViewController : UICollectionViewDelegate, UICollectionViewDataSou
     
     
     func getCertificationImage() {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        let storage = Storage.storage(url: "gs://fire-71c1d.appspot.com/")
         
     }
     
