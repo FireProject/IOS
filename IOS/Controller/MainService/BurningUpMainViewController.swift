@@ -173,5 +173,7 @@ class BurningUpMainViewController : UIViewController {
         homeView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         homeView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
+    
+    
 }
     

@@ -215,9 +215,12 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         
         let line = Int(label.frame.size.height/20)
         size.height += CGFloat(line) * 20
-        
-        
-
         return size
     }
+    
+    @IBAction func voteButtonAction(_ sender: Any) {
+        guard let nvc = self.navigationController?.storyboard?.instantiateViewController(identifier: "voteViewController") else {return}
+        self.navigationController?.pushViewController(nvc, animated: true)
+    }
+    
 }

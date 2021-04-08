@@ -11,6 +11,7 @@
 		390895402612BE1000480F82 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3908953F2612BE1000480F82 /* ChattingViewController.swift */; };
 		391555C4260DAB85003D021A /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391555C3260DAB85003D021A /* Rooms.swift */; };
 		3918B71C2614484B00B54811 /* SearchRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918B71B2614484B00B54811 /* SearchRoomViewController.swift */; };
+		3922F2DE261F3C11002A3E8D /* PostUserCertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3922F2DD261F3C11002A3E8D /* PostUserCertificationViewController.swift */; };
 		39500D4D25F7ACC90062EFAD /* BurningUpMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39500D4C25F7ACC90062EFAD /* BurningUpMainViewController.swift */; };
 		39500D5225F7B38E0062EFAD /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39500D5125F7B38E0062EFAD /* ResetPasswordViewController.swift */; };
 		39500D5725F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39500D5625F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift */; };
@@ -21,6 +22,7 @@
 		396A69A8260F726900D41EFB /* ChattingViewTableClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A69A7260F726900D41EFB /* ChattingViewTableClass.swift */; };
 		3983109C25F5034D00509D81 /* BurningUpSignInUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3983109B25F5034D00509D81 /* BurningUpSignInUp.storyboard */; };
 		398E132225E3D14C00AE21A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */; };
+		3992A9BC261DF0CF006742D8 /* VoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3992A9BB261DF0CF006742D8 /* VoteViewController.swift */; };
 		399652B8260C272700E1B1C4 /* PlusRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399652B7260C272700E1B1C4 /* PlusRoomViewController.swift */; };
 		399A95182601C2CE00241661 /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399A95172601C2CE00241661 /* MemoView.swift */; };
 		399A951D2601C2D700241661 /* MemoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 399A951C2601C2D700241661 /* MemoView.xib */; };
@@ -77,6 +79,7 @@
 		3908953F2612BE1000480F82 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		391555C3260DAB85003D021A /* Rooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
 		3918B71B2614484B00B54811 /* SearchRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoomViewController.swift; sourceTree = "<group>"; };
+		3922F2DD261F3C11002A3E8D /* PostUserCertificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUserCertificationViewController.swift; sourceTree = "<group>"; };
 		39500D4C25F7ACC90062EFAD /* BurningUpMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurningUpMainViewController.swift; sourceTree = "<group>"; };
 		39500D5125F7B38E0062EFAD /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		39500D5625F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInImageNicknameViewcontroller.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		396A69A7260F726900D41EFB /* ChattingViewTableClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewTableClass.swift; sourceTree = "<group>"; };
 		3983109B25F5034D00509D81 /* BurningUpSignInUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BurningUpSignInUp.storyboard; sourceTree = "<group>"; };
 		398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3992A9BB261DF0CF006742D8 /* VoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewController.swift; sourceTree = "<group>"; };
 		399652B7260C272700E1B1C4 /* PlusRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusRoomViewController.swift; sourceTree = "<group>"; };
 		399A95172601C2CE00241661 /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
 		399A951C2601C2D700241661 /* MemoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoView.xib; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				399652B7260C272700E1B1C4 /* PlusRoomViewController.swift */,
 				3908953F2612BE1000480F82 /* ChattingViewController.swift */,
 				3918B71B2614484B00B54811 /* SearchRoomViewController.swift */,
+				3992A9BB261DF0CF006742D8 /* VoteViewController.swift */,
+				3922F2DD261F3C11002A3E8D /* PostUserCertificationViewController.swift */,
 			);
 			path = MainService;
 			sourceTree = "<group>";
@@ -594,9 +600,11 @@
 				391555C4260DAB85003D021A /* Rooms.swift in Sources */,
 				39500D5225F7B38E0062EFAD /* ResetPasswordViewController.swift in Sources */,
 				39E53F862617384F00424149 /* ChattingMessageCell.swift in Sources */,
+				3992A9BC261DF0CF006742D8 /* VoteViewController.swift in Sources */,
 				39B3D63925E37F0B003C3756 /* AppDelegate.swift in Sources */,
 				39BA700F2600DD2D009CB3CE /* ViewExtension.swift in Sources */,
 				395E1BD125F653E800616684 /* LoginViewController.swift in Sources */,
+				3922F2DE261F3C11002A3E8D /* PostUserCertificationViewController.swift in Sources */,
 				39CE7A272604780E00BD3CB7 /* ChattingTopBar.swift in Sources */,
 				3918B71C2614484B00B54811 /* SearchRoomViewController.swift in Sources */,
 				39500D5725F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift in Sources */,
