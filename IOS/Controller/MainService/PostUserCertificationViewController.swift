@@ -7,6 +7,9 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 
 class PostUserCertificationViewController: UIViewController  {
     
@@ -15,11 +18,17 @@ class PostUserCertificationViewController: UIViewController  {
     @IBOutlet weak var plusPictureButton: UIButton!
     let textView = UnderlinedTextView()
     let picker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setting()
         self.picker.delegate = self
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     func setting() {
         imageView.clipsToBounds = true
         imageView.layer.borderWidth = 1.5
@@ -72,7 +81,38 @@ class PostUserCertificationViewController: UIViewController  {
     
     
     @IBAction func clearButtonAction(_ sender: Any) {
+        guard let uid = Auth.auth().currentUser?.uid,
+              let roomId = currentRoom?.roomId else {
+            print("error Hello good")
+            return
+        }
+        guard let image = self.imageView.image else {
+            let alert = UIAlertController(title: "에러", message: "사진은 필수입니다.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        let tmpDate = DateFormatter()
+        tmpDate.dateFormat = "YYYYMMdd"
+        let date = tmpDate.string(from: Date())
+        //등록시에 날짜가 변경되는 순간인지 확인
+        //투표 주기에따른 date 형식 달라야함
+        //매일 : 연월일, 매달 : 연월, 매주: 연주차
         
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        let storage = Storage.storage(url: "gs://fire-71c1d.appspot.com/")
+        
+        
+        //"Certification"/roomId/date/uid/message
+        ref.child("certification").child(roomId).child(date).child(uid).child("message").setValue(self.textView.text)
+        
+        var data = Data()
+        data = (image.jpegData(compressionQuality: 0.8))!
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/png"
+        storage.reference().child("rooms/\(roomId)/\(date)/\(uid)/postImage").putData(data, metadata: metaData)
+        //rooms/roomId/date/uid/postImage
         dismiss(animated: true, completion: nil)
     }
     
