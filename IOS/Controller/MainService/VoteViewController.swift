@@ -122,6 +122,9 @@ extension VoteViewController : UICollectionViewDelegate, UICollectionViewDataSou
         func getMessage(at:Int) -> String {
             return certifications[at].message
         }
+        func getInfo(at:Int) -> Certification{
+            return certifications[at]
+        }
     }
     
     func getCertifications() {
@@ -174,14 +177,14 @@ extension VoteViewController : UICollectionViewDelegate, UICollectionViewDataSou
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-        //return certificationData.count
+       // return 1
+        return certificationData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as! postCell
-        cell.image.image = #imageLiteral(resourceName: "FireImage")
-        //cell.image.image = certificationData.getImage(at:indexPath.section*3 + indexPath.row)
+        //cell.image.image = #imageLiteral(resourceName: "FireImage")
+        cell.image.image = certificationData.getImage(at:indexPath.section*3 + indexPath.row)
         
         cell.image.contentMode = .scaleAspectFill
         cell.backgroundColor = .green
@@ -193,6 +196,15 @@ extension VoteViewController : UICollectionViewDelegate, UICollectionViewDataSou
         size.width = size.width/3 - 2
         size.height = size.width
         return size
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let n = indexPath.section * 3 + indexPath.row
+        let info = certificationData.getInfo(at: n)
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "VotePostViewController") else {return}
+        guard let vc = nextVC as? VotePostViewController else {return}
+        vc.setUserInfo(info: info)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

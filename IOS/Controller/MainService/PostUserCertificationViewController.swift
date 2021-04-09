@@ -23,6 +23,13 @@ class PostUserCertificationViewController: UIViewController  {
         super.viewDidLoad()
         setting()
         self.picker.delegate = self
+        self.textView.autocorrectionType = .no
+        self.textView.autocapitalizationType = .none
+        self.textView.smartQuotesType = .no
+        self.textView.textContentType = .none
+        self.textView.spellCheckingType = .no
+        self.textView.smartInsertDeleteType = .no
+        self.textView.smartDashesType = .no
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

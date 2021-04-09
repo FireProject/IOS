@@ -51,6 +51,7 @@
 		39CE7A22260477F200BD3CB7 /* FriendsTopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39CE7A21260477F200BD3CB7 /* FriendsTopBar.xib */; };
 		39CE7A272604780E00BD3CB7 /* ChattingTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE7A262604780E00BD3CB7 /* ChattingTopBar.swift */; };
 		39CE7A2C2604781500BD3CB7 /* ChattingTopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39CE7A2B2604781500BD3CB7 /* ChattingTopBar.xib */; };
+		39DADAE22620A1B6006A9A24 /* VotePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DADAE12620A1B6006A9A24 /* VotePostViewController.swift */; };
 		39E53F862617384F00424149 /* ChattingMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E53F852617384F00424149 /* ChattingMessageCell.swift */; };
 		39F2BD63261AC58F00243905 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2BD62261AC58F00243905 /* Friends.swift */; };
 		A7BEAAB987480238A640E0E6 /* Pods_IOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42240BD9E2F1FE728ED85FBD /* Pods_IOSTests.framework */; };
@@ -125,6 +126,7 @@
 		39CE7A21260477F200BD3CB7 /* FriendsTopBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTopBar.xib; sourceTree = "<group>"; };
 		39CE7A262604780E00BD3CB7 /* ChattingTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingTopBar.swift; sourceTree = "<group>"; };
 		39CE7A2B2604781500BD3CB7 /* ChattingTopBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingTopBar.xib; sourceTree = "<group>"; };
+		39DADAE12620A1B6006A9A24 /* VotePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotePostViewController.swift; sourceTree = "<group>"; };
 		39E53F852617384F00424149 /* ChattingMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMessageCell.swift; sourceTree = "<group>"; };
 		39F2BD62261AC58F00243905 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		42240BD9E2F1FE728ED85FBD /* Pods_IOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +188,7 @@
 				3918B71B2614484B00B54811 /* SearchRoomViewController.swift */,
 				3992A9BB261DF0CF006742D8 /* VoteViewController.swift */,
 				3922F2DD261F3C11002A3E8D /* PostUserCertificationViewController.swift */,
+				39DADAE12620A1B6006A9A24 /* VotePostViewController.swift */,
 			);
 			path = MainService;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				395E1BDE25F6616400616684 /* SignInEmailViewController.swift in Sources */,
 				39500D8925F7B8DB0062EFAD /* UserFunction.swift in Sources */,
 				39CE7A13260473D100BD3CB7 /* HomeTopBar.swift in Sources */,
+				39DADAE22620A1B6006A9A24 /* VotePostViewController.swift in Sources */,
 				39BA700A2600DB46009CB3CE /* SideMenuView.swift in Sources */,
 				399652B8260C272700E1B1C4 /* PlusRoomViewController.swift in Sources */,
 				39500D4D25F7ACC90062EFAD /* BurningUpMainViewController.swift in Sources */,
