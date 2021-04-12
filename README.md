@@ -1,4 +1,4 @@
-# FireProjec팀의 BurningUp 어플리케이션 IOS입니다!.
+# FireProject팀의 BurningUp 어플리케이션 IOS입니다!.
 
 ## 팀원
 IOS : 장대호
