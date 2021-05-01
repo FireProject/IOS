@@ -27,11 +27,15 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nickNameTextField: UITextField!
+    @IBOutlet weak var stateMessageView: UITextView!
+    
+    
     let storage = Storage.storage(url: "gs://fire-71c1d.appspot.com/")
     let picker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        stateMessageView.text = ""
         self.picker.delegate = self
 
         //이미지를 둥그렇게 설정
@@ -145,7 +149,7 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         guard let email = user.email?.data(using: .utf8)!.map({String(format:"%02x", $0)}).joined() else {
             return
         }
-        
+        let stateMessage = self.stateMessageView.text
         //디비에 저장하는 코드
         var ref: DatabaseReference!
         ref = Database.database().reference()
@@ -157,7 +161,7 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         storage.reference().child("users/\(user.uid)/profileImage").putData(data, metadata: metaData)
         
         ref.child("users/\(user.uid)/nickName").setValue(nickName)
-        ref.child("users/\(user.uid)/stateMessage").setValue("")
+        ref.child("users/\(user.uid)/stateMessage").setValue(stateMessage)
         ref.child("users/\(user.uid)/email").setValue(user.email)
         ref.child("emailToUid/\(String(describing: email))").setValue(user.uid)
 

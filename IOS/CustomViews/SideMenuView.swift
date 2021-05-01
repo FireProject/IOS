@@ -54,6 +54,7 @@ class SideMenuView: UIView {
         self.parentViewController.present(pushController!, animated: true, completion: nil)
         UserDefaults.standard.removeObject(forKey: "Email")
         UserDefaults.standard.removeObject(forKey: "Password")
+        resetAllData()
         self.removeFromSuperview()
     }
     @IBAction func profileModifyAction(_ sender: Any) {

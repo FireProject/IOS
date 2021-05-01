@@ -333,13 +333,23 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="각오 한마디 (상태 메세지)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wP1-df-HFK">
+                                                <rect key="frame" x="62" y="0.0" width="290" height="22"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="19"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.34901960784313724" green="0.34903606770000001" blue="0.34897482400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="wP1-df-HFK" firstAttribute="width" secondItem="vhK-hT-EXr" secondAttribute="width" id="2ay-Uc-A1L"/>
                                             <constraint firstItem="vhK-hT-EXr" firstAttribute="width" secondItem="ESy-5t-6iE" secondAttribute="width" multiplier="0.7" id="4Tq-0b-vbS"/>
+                                            <constraint firstItem="wP1-df-HFK" firstAttribute="leading" secondItem="vhK-hT-EXr" secondAttribute="leading" id="CgG-gI-vcc"/>
                                             <constraint firstItem="vhK-hT-EXr" firstAttribute="centerX" secondItem="ESy-5t-6iE" secondAttribute="centerX" id="Of3-eA-Wuy"/>
                                             <constraint firstItem="vhK-hT-EXr" firstAttribute="centerY" secondItem="ESy-5t-6iE" secondAttribute="centerY" id="RIe-n0-M1e"/>
+                                            <constraint firstItem="wP1-df-HFK" firstAttribute="top" secondItem="ESy-5t-6iE" secondAttribute="top" id="YJ3-Lj-jUr"/>
                                             <constraint firstItem="vhK-hT-EXr" firstAttribute="height" secondItem="ESy-5t-6iE" secondAttribute="height" multiplier="0.8" id="fcr-od-ntM"/>
+                                            <constraint firstItem="vhK-hT-EXr" firstAttribute="top" secondItem="wP1-df-HFK" secondAttribute="bottom" id="wUZ-LH-cbY"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -377,11 +387,12 @@
                     <connections>
                         <outlet property="ProfileImage" destination="TAO-t3-RWv" id="J01-gg-vzA"/>
                         <outlet property="nickNameTextField" destination="3Xf-Xq-fJb" id="g8t-gi-sch"/>
+                        <outlet property="stateMessageView" destination="vhK-hT-EXr" id="XJh-Xg-fZL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANX-sO-MMD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2806" y="110"/>
+            <point key="canvasLocation" x="2805.7971014492755" y="109.82142857142857"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="9BL-7k-8iq">
