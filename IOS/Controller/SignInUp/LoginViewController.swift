@@ -26,9 +26,15 @@ class LoginViewController : UIViewController , UITextFieldDelegate {
     }
     
     //뷰가 백그라운드에서 나오던 처음 나오던 내비게이션바 숨김
+    //또한 항상 로그아웃되어있어야함을 명심
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
-        
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
     
     //뷰를 터치할시 키보드 사라지게끔

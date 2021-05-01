@@ -22,7 +22,7 @@ class BurningUpUser {
     var profileImage:UIImage = #imageLiteral(resourceName: "FriendsImage")
     init(user: NSDictionary) {
         let friends = user["friends"] as? [String] ?? []
-        let nickname = user["nickname"] as? String ?? "NoNamed"
+        let nickname = user["nickName"] as? String ?? "NoNamed"
         let roomId = user["roomId"] as? [String] ?? []
         let stateMessage = user["stateMessage"] as? String ?? ""
         
@@ -33,7 +33,7 @@ class BurningUpUser {
     }
     func getData(data: NSDictionary) {
         let friends = data["friends"] as? [String] ?? self.friends
-        let nickname = data["nickname"] as? String ?? self.nickname
+        let nickname = data["nickName"] as? String ?? self.nickname
         let roomId = data["roomId"] as? [String] ?? self.roomId
         let stateMessage = data["stateMessage"] as? String ?? self.stateMessage
         self.friends = friends
@@ -85,7 +85,7 @@ func getUserData() {
 
 func getUserProfileImage(uid:String) {
     let storage = Storage.storage()
-    storage.reference(forURL: "gs://fire-71c1d.appspot.com/\(uid)").downloadURL { (url, error) in
+    storage.reference(forURL: "gs://fire-71c1d.appspot.com/users/\(uid)/profileImage").downloadURL { (url, error) in
         if error != nil {
             return
         }

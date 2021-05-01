@@ -42,8 +42,17 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         self.profileImage.image = userData.profileImage
         if userData.nickname != "" {
             self.nickNameTextField.text = userData.nickname
+            if self.nickNameTextField.text == "NoNamed" {
+                self.nickNameTextField.text = "닉네임"
+            }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isToolbarHidden = true
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         //뷰를 터치하는경우 수정을 끝냄 즉 키보드 다시 내려감
         self.view.endEditing(true)
@@ -145,14 +154,19 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         data = (self.profileImage.image?.jpegData(compressionQuality: 0.8))!
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
-        storage.reference().child(user.uid).putData(data, metadata: metaData)
+        storage.reference().child("users/\(user.uid)/profileImage").putData(data, metadata: metaData)
         
         ref.child("users/\(user.uid)/nickName").setValue(nickName)
         ref.child("users/\(user.uid)/stateMessage").setValue("")
         ref.child("users/\(user.uid)/email").setValue(user.email)
-        
-        
         ref.child("emailToUid/\(String(describing: email))").setValue(user.uid)
+
+        //프로필 변경과 회원가입의 차이는 아마 이메일 인증의 차이일 것이다.
+        //그리고 프로필 변경인경우는 사용자의 데이터를 다시 가저올 필요가 있을것
+        if user.isEmailVerified == true {
+            userData.nickname = nickName
+            userData.profileImage = profileImage.image ?? userData.profileImage
+        }
         
         self.navigationController?.popToRootViewController(animated: true)
     }
