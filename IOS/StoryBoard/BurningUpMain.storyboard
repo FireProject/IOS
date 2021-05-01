@@ -143,6 +143,29 @@
             </objects>
             <point key="canvasLocation" x="1324.6376811594205" y="-79.017857142857139"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="yw6-Gg-ju2">
+            <objects>
+                <viewController id="HKp-kV-oC1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3MW-io-PWp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXN-Yf-hk5">
+                                <rect key="frame" x="115" y="309" width="184" height="194"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="logOut"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YJG-6r-30g"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="x6e-bH-McC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="beT-pP-7Ob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1252.1739130434783" y="-37.5"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="hef-Ct-izl">
             <objects>
@@ -169,7 +192,7 @@
                         <color key="barTintColor" red="0.3489862084" green="0.34904104470000002" blue="0.34897422789999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </toolbar>
                     <connections>
-                        <segue destination="nOy-fW-oJZ" kind="relationship" relationship="rootViewController" id="heW-pS-TQ2"/>
+                        <segue destination="nOy-fW-oJZ" kind="relationship" relationship="rootViewController" id="OWK-1l-tSF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8l-aI-9Ab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

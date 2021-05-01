@@ -78,6 +78,7 @@ class SignInEmailViewController: UIViewController,UITextFieldDelegate {
             let alert = UIAlertController(title: "오류", message: "두 비밀번호가 일치하지 않습니다.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            return
         }
         
         Auth.auth().createUser(withEmail: email, password: password) { (user,error) in
