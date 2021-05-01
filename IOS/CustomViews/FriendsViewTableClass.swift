@@ -80,14 +80,19 @@ class FriendsTableCell: UITableViewCell {
     func setting() {
         self.selectionStyle = .none
         self.contentView.backgroundColor = .black
+        self.stateMessageLabel.text = userData.stateMessage
         
         nickLabel.font = .systemFont(ofSize: 17, weight: .bold)
         nickLabel.textColor = .white
-        stateMessageLabel.backgroundColor = #colorLiteral(red: 0.7529411765, green: 0.9960784314, blue: 0.9882352941, alpha: 1)
+        stateMessageLabel.backgroundColor = #colorLiteral(red: 0.7399609685, green: 0.8449184299, blue: 0.9341754913, alpha: 1)
+        stateMessageLabel.textColor = .black
+        stateMessageLabel.textAlignment = .center
+        stateMessageLabel.layer.masksToBounds = true
+        stateMessageLabel.layer.cornerRadius = 15
         
         profileImage.contentMode = .scaleAspectFill
         profileImage.layer.masksToBounds = true
-        profileImage.layer.cornerRadius = 30
+        profileImage.layer.cornerRadius = 25
         
         levelImage.contentMode = .scaleAspectFill
         levelImage.layer.masksToBounds = true
@@ -106,22 +111,26 @@ class FriendsTableCell: UITableViewCell {
         
         
         NSLayoutConstraint.activate([
-            profileImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            profileImage.widthAnchor.constraint(equalToConstant: 60),
-            profileImage.heightAnchor.constraint(equalToConstant: 60),
+            profileImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            profileImage.widthAnchor.constraint(equalToConstant: 50),
+            profileImage.heightAnchor.constraint(equalToConstant: 50),
             profileImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10),
             
             nickLabel.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 13),
             nickLabel.centerYAnchor.constraint(equalTo: profileImage.centerYAnchor),
             nickLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 100),
             
-            stateMessageLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: 10),
+           
             
             levelImage.widthAnchor.constraint(equalToConstant: 30),
             levelImage.heightAnchor.constraint(equalToConstant: 30),
             levelImage.leadingAnchor.constraint(equalTo: nickLabel.trailingAnchor, constant: 5),
             levelImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10),
-            stateMessageLabel.leadingAnchor.constraint(lessThanOrEqualTo: levelImage.trailingAnchor, constant: 5)
+            
+            stateMessageLabel.heightAnchor.constraint(equalToConstant: 40),
+            stateMessageLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -10),
+            stateMessageLabel.leadingAnchor.constraint(lessThanOrEqualTo: levelImage.trailingAnchor, constant: 5),
+            stateMessageLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10)
             
         ])
     }
