@@ -38,7 +38,7 @@ func getFriends() {
             
             let friend = BurningUpFriend(friends: value ?? NSDictionary())
             // ...
-            storage.reference(forURL: "gs://fire-71c1d.appspot.com/\(friendUid)").downloadURL { (url, error) in
+            storage.reference(forURL: "gs://fire-71c1d.appspot.com/users/\(friendUid)/profileImage").downloadURL { (url, error) in
                 if error != nil {
                     return
                 }

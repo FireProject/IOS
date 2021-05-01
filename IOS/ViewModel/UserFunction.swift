@@ -52,7 +52,12 @@ func userSetting() {
     
 }
 
-
+func resetAllData(){
+    userData = BurningUpUser(user: NSDictionary())
+    currentRoom = nil
+    roomDatas = []
+    friendsDatas = []
+}
 
 func getUserData() {
     guard let user = Auth.auth().currentUser else {

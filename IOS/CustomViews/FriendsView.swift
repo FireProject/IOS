@@ -72,7 +72,7 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
         return view
     }
 
-    
+    //친구 터치시 개인채팅 & 삭제버튼 보여줌
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("seleted!!")
     }

@@ -71,8 +71,9 @@ class PlusFriendViewController : UIViewController, UITextFieldDelegate {
                 if userData.friends.contains(uid) || uid == Auth.auth().currentUser?.uid{
                     return
                 }
-                userData.friends.append(uid)
-                ref.child("users").child(Auth.auth().currentUser!.uid).child("friends").setValue(userData.friends)
+                var data = userData.friends
+                data.append(uid)
+                ref.child("users").child(Auth.auth().currentUser!.uid).child("friends").setValue(data)
                 isExistEmail = true
             }
             else {
