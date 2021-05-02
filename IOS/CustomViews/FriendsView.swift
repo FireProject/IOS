@@ -77,8 +77,8 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
 
     //친구 터치시 개인채팅 & 삭제버튼 보여줌
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let subView = FriendSubView()
+        subView.friendUid = friendsDatas[indexPath.row].uid
         self.addSubview(subView)
         subView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -101,6 +101,8 @@ class FriendSubView:UIView {
     let stateMessageLabel = UILabel()
     let chattingButton = UIButton()
     let deleteFriendButton = UIButton()
+    var friendUid = ""
+    
     
     override init(frame:CGRect) {
         super.init(frame: frame)
@@ -110,6 +112,7 @@ class FriendSubView:UIView {
         super.init(coder: coder)
         setup()
     }
+    
     func setup() {
         backgroundColor = #colorLiteral(red: 0.7399609685, green: 0.8449184299, blue: 0.9341754913, alpha: 1)
         exitButton.setImage(UIImage(systemName: "xmark"), for: .normal)
@@ -130,20 +133,26 @@ class FriendSubView:UIView {
         stateMessageLabel.numberOfLines = 2
         stateMessageLabel.textAlignment = .center
         
-        //chattingButton.setImage(#imageLiteral(resourceName: "ChattingRoomImage"), for: .normal)
         chattingButton.setBackgroundImage(#imageLiteral(resourceName: "ChattingRoomImage"), for: .normal)
+        
+        deleteFriendButton.setBackgroundImage(#imageLiteral(resourceName: "FireImage"), for: .normal)
+        
         
         self.addSubview(exitButton)
         self.addSubview(profileImage)
         self.addSubview(nickNameLabel)
         self.addSubview(stateMessageLabel)
         self.addSubview(chattingButton)
+        self.addSubview(deleteFriendButton)
+        
         
         exitButton.translatesAutoresizingMaskIntoConstraints = false
         profileImage.translatesAutoresizingMaskIntoConstraints = false
         nickNameLabel.translatesAutoresizingMaskIntoConstraints = false
         stateMessageLabel.translatesAutoresizingMaskIntoConstraints = false
         chattingButton.translatesAutoresizingMaskIntoConstraints = false
+        deleteFriendButton.translatesAutoresizingMaskIntoConstraints = false
+        
         
         NSLayoutConstraint.activate([
             exitButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
@@ -169,11 +178,22 @@ class FriendSubView:UIView {
             chattingButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20),
             chattingButton.centerXAnchor.constraint(equalTo: self.centerXAnchor,constant: -70),
             chattingButton.widthAnchor.constraint(equalToConstant: 50),
-            chattingButton.heightAnchor.constraint(equalToConstant: 50)
+            chattingButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            deleteFriendButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20),
+            deleteFriendButton.centerXAnchor.constraint(equalTo: self.centerXAnchor,constant: 70),
+            deleteFriendButton.widthAnchor.constraint(equalToConstant: 50),
+            deleteFriendButton.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
     
     @objc func exitButtonAction() {
         self.removeFromSuperview()
+    }
+    //여기 하는중
+    @objc func deleteFriend() {
+        //삭제, 디비 업데이트
+        let alert = UIAlertController(title: "친구 삭제", message: "정말로 삭제하시겠습니까?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
     }
 }

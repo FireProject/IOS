@@ -16,13 +16,16 @@ class BurningUpFriend {
     var nickname:String = ""
     var stateMessage:String = ""
     var profileImage:UIImage = #imageLiteral(resourceName: "FriendsImage")
+    var uid:String = ""
     init(friends :NSDictionary) {
         guard let nickname = friends["nickName"] as? String,
-              let stateMessage = friends["stateMessage"] as? String else {
+              let stateMessage = friends["stateMessage"] as? String
+        else {
             return
         }
         self.nickname = nickname
         self.stateMessage = stateMessage
+
     }
 }
 
@@ -45,10 +48,21 @@ func getFriends() {
                 let data = NSData(contentsOf: url!)
                 let image = UIImage(data: data! as Data)
                 friend.profileImage = image!
+                friend.uid = friendUid
             }
             friendsDatas.append(friend)
         })  {(error) in
             print(error.localizedDescription)
         }
     }
+}
+
+func deleteFriend(uid:String) {
+    friendsDatas = friendsDatas.filter({
+        if $0.uid != uid {
+            return true
+        } else {
+            return false
+        }
+    })
 }
