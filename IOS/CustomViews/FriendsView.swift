@@ -121,23 +121,29 @@ class FriendSubView:UIView {
         
         nickNameLabel.text = "NoNamed"
         
-        stateMessageLabel.text = "testStateMessagefdsfdsafdsafdsafdsaffds"
+        stateMessageLabel.text = "상태매세지 테스트중입니다 얼마나 길게까지 될지 함 봐보십시요용요요요용ㅇ"
         stateMessageLabel.layer.masksToBounds = true
         stateMessageLabel.layer.cornerRadius = 10
         stateMessageLabel.layer.borderWidth = 1.5
+        stateMessageLabel.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        stateMessageLabel.textColor = .black
         stateMessageLabel.numberOfLines = 2
+        stateMessageLabel.textAlignment = .center
         
+        //chattingButton.setImage(#imageLiteral(resourceName: "ChattingRoomImage"), for: .normal)
+        chattingButton.setBackgroundImage(#imageLiteral(resourceName: "ChattingRoomImage"), for: .normal)
         
         self.addSubview(exitButton)
         self.addSubview(profileImage)
         self.addSubview(nickNameLabel)
         self.addSubview(stateMessageLabel)
-        
+        self.addSubview(chattingButton)
         
         exitButton.translatesAutoresizingMaskIntoConstraints = false
         profileImage.translatesAutoresizingMaskIntoConstraints = false
         nickNameLabel.translatesAutoresizingMaskIntoConstraints = false
         stateMessageLabel.translatesAutoresizingMaskIntoConstraints = false
+        chattingButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             exitButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
@@ -159,6 +165,11 @@ class FriendSubView:UIView {
             stateMessageLabel.topAnchor.constraint(equalTo: nickNameLabel.bottomAnchor),
             stateMessageLabel.bottomAnchor.constraint(equalTo: profileImage.bottomAnchor),
             stateMessageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            
+            chattingButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20),
+            chattingButton.centerXAnchor.constraint(equalTo: self.centerXAnchor,constant: -70),
+            chattingButton.widthAnchor.constraint(equalToConstant: 50),
+            chattingButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
