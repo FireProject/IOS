@@ -25,6 +25,9 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
         super.init(coder: coder)
         setup()
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+    }
     
     private func setup() {
         backgroundColor = .clear
@@ -74,12 +77,30 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
 
     //친구 터치시 개인채팅 & 삭제버튼 보여줌
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("seleted!!")
+        
+        let subView = FriendSubView()
+        self.addSubview(subView)
+        subView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            subView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            subView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3),
+            subView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            subView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            subView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
     }
+    
     
 }
 
 class FriendSubView:UIView {
+    let exitButton = UIButton()
+    let profileImage = UIImageView()
+    let nickNameLabel = UILabel()
+    let stateMessageLabel = UILabel()
+    let chattingButton = UIButton()
+    let deleteFriendButton = UIButton()
     
     override init(frame:CGRect) {
         super.init(frame: frame)
@@ -90,6 +111,58 @@ class FriendSubView:UIView {
         setup()
     }
     func setup() {
+        backgroundColor = #colorLiteral(red: 0.7399609685, green: 0.8449184299, blue: 0.9341754913, alpha: 1)
+        exitButton.setImage(UIImage(systemName: "xmark"), for: .normal)
+        exitButton.addTarget(self, action: #selector(exitButtonAction), for: .touchUpInside)
         
+        profileImage.image = #imageLiteral(resourceName: "FriendsImage")
+        profileImage.layer.masksToBounds = true
+        profileImage.layer.cornerRadius = 40
+        
+        nickNameLabel.text = "NoNamed"
+        
+        stateMessageLabel.text = "testStateMessagefdsfdsafdsafdsafdsaffds"
+        stateMessageLabel.layer.masksToBounds = true
+        stateMessageLabel.layer.cornerRadius = 10
+        stateMessageLabel.layer.borderWidth = 1.5
+        stateMessageLabel.numberOfLines = 2
+        
+        
+        self.addSubview(exitButton)
+        self.addSubview(profileImage)
+        self.addSubview(nickNameLabel)
+        self.addSubview(stateMessageLabel)
+        
+        
+        exitButton.translatesAutoresizingMaskIntoConstraints = false
+        profileImage.translatesAutoresizingMaskIntoConstraints = false
+        nickNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        stateMessageLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            exitButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            exitButton.topAnchor.constraint(equalTo: self.topAnchor),
+            exitButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.175),
+            exitButton.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.25),
+            
+            profileImage.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 20),
+            profileImage.topAnchor.constraint(equalTo: self.topAnchor,constant: 20),
+            profileImage.widthAnchor.constraint(equalToConstant: 80),
+            profileImage.heightAnchor.constraint(equalToConstant: 80),
+            
+            nickNameLabel.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 10),
+            nickNameLabel.trailingAnchor.constraint(equalTo: exitButton.leadingAnchor),
+            nickNameLabel.topAnchor.constraint(equalTo: self.topAnchor,constant: 10),
+            nickNameLabel.heightAnchor.constraint(equalToConstant: 40),
+            
+            stateMessageLabel.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 10),
+            stateMessageLabel.topAnchor.constraint(equalTo: nickNameLabel.bottomAnchor),
+            stateMessageLabel.bottomAnchor.constraint(equalTo: profileImage.bottomAnchor),
+            stateMessageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+        ])
+    }
+    
+    @objc func exitButtonAction() {
+        self.removeFromSuperview()
     }
 }
