@@ -10,6 +10,10 @@ import UIKit
 
 
 class RoomSummaryView: UIView {
+    @IBOutlet weak var roomNameLabel: UILabel!
+    @IBOutlet weak var roomProfileImage: UIImageView!
+    @IBOutlet weak var remainVoteTimeLabel: UILabel!
+    
     override init(frame:CGRect) {
         super.init(frame: frame)
         setup()
@@ -24,7 +28,5 @@ class RoomSummaryView: UIView {
         guard let view = loadView(nibName: "RoomSummaryView") else { return }
         view.frame = self.bounds
         self.addSubview(view)
-        
-        
     }
 }
