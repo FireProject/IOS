@@ -57,7 +57,7 @@ func getFriends() {
     }
 }
 
-func deleteFriend(uid:String) {
+func deleteFriendData(uid:String) {
     friendsDatas = friendsDatas.filter({
         if $0.uid != uid {
             return true
@@ -65,4 +65,19 @@ func deleteFriend(uid:String) {
             return false
         }
     })
+    userData.friends = userData.friends.filter({
+        if $0 != uid {
+            return true
+        } else {
+            return false
+        }
+    })
+    print(userData.friends)
+    guard let uuid = Auth.auth().currentUser?.uid else {
+        return
+    }
+    
+    var ref: DatabaseReference!
+    ref = Database.database().reference()
+    ref.child("users/\(uuid)/friends").setValue(userData.friends)
 }

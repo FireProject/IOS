@@ -14,7 +14,9 @@ enum ViewEnum {
     case Home
     case Chatting
 }
-class BurningUpMainViewController : UIViewController {
+class BurningUpMainViewController : UIViewController,FriendSubViewDelegate {
+  
+    
     var sideMenuView: SideMenuView? = nil
     var viewMode:ViewEnum = .Home
     
@@ -35,6 +37,7 @@ class BurningUpMainViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.isToolbarHidden = false
         switch viewMode {
@@ -109,6 +112,7 @@ class BurningUpMainViewController : UIViewController {
         let topBar = FriendsTopBar()
         let friendsView = FriendsView()
         
+        friendsView.subView.delegate = self
         topBar.setNavigationController(navigationController: self)
         
         self.view.addSubview(topBar)
@@ -174,6 +178,15 @@ class BurningUpMainViewController : UIViewController {
         homeView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
     
-    
+    func deleteFriend(uid: String) {
+        let alert = UIAlertController(title: "경고", message: "정말 삭제하시겠습니까", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: {_ in 
+            deleteFriendData(uid: uid)
+            self.setFriendsView()
+        }))
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+   
 }
     

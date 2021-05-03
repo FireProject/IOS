@@ -69,6 +69,7 @@ class PlusFriendViewController : UIViewController, UITextFieldDelegate {
             else if snapshot.exists() {
                 let uid = snapshot.value as! String
                 if userData.friends.contains(uid) || uid == Auth.auth().currentUser?.uid{
+                    s.signal()
                     return
                 }
                 var data = userData.friends

@@ -15,7 +15,10 @@ import FirebaseDatabase
  * note : 본인보여주는 셀만 underLine이 있기를 원함
  */
 class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
+
+    
     @IBOutlet weak var FriendsTableView: UITableView!
+    var subView = FriendSubView()
     
     override init(frame:CGRect) {
         super.init(frame: frame)
@@ -36,6 +39,7 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
         guard let view = loadView(nibName: "FriendsView") else { return }
         view.frame = self.bounds
         self.addSubview(view)
+        
         FriendsTableView.delegate = self
         FriendsTableView.dataSource = self
         FriendsTableView.backgroundColor = .black
@@ -77,11 +81,14 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
 
     //친구 터치시 개인채팅 & 삭제버튼 보여줌
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let subView = FriendSubView()
         subView.friendUid = friendsDatas[indexPath.row].uid
         self.addSubview(subView)
-        subView.translatesAutoresizingMaskIntoConstraints = false
+        setLayoutOfSubView()
+    }
+    
+    func setLayoutOfSubView() {
         
+        subView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             subView.widthAnchor.constraint(equalTo: self.widthAnchor),
             subView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3),
@@ -90,8 +97,7 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
             subView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
-    
-    
+
 }
 
 class FriendSubView:UIView {
@@ -102,7 +108,7 @@ class FriendSubView:UIView {
     let chattingButton = UIButton()
     let deleteFriendButton = UIButton()
     var friendUid = ""
-    
+    weak var delegate:FriendSubViewDelegate?
     
     override init(frame:CGRect) {
         super.init(frame: frame)
@@ -136,7 +142,7 @@ class FriendSubView:UIView {
         chattingButton.setBackgroundImage(#imageLiteral(resourceName: "ChattingRoomImage"), for: .normal)
         
         deleteFriendButton.setBackgroundImage(#imageLiteral(resourceName: "FireImage"), for: .normal)
-        
+        deleteFriendButton.addTarget(self, action: #selector(deleteButtonAction), for: .touchUpInside)
         
         self.addSubview(exitButton)
         self.addSubview(profileImage)
@@ -191,9 +197,13 @@ class FriendSubView:UIView {
         self.removeFromSuperview()
     }
     //여기 하는중
-    @objc func deleteFriend() {
+    @objc func deleteButtonAction() {
         //삭제, 디비 업데이트
-        let alert = UIAlertController(title: "친구 삭제", message: "정말로 삭제하시겠습니까?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+        delegate?.deleteFriend(uid:friendUid)
     }
+}
+
+
+protocol FriendSubViewDelegate: AnyObject {
+    func deleteFriend(uid:String)
 }
