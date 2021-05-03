@@ -53,11 +53,21 @@ func getRoomsData() {
     for roomId in userData.roomId {
         var ref: DatabaseReference!
         ref = Database.database().reference()
+        let storage = Storage.storage()
         ref.child("rooms").child(roomId).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let tmp = ChattingRoomInfo(roomData: value ?? NSDictionary())
             tmp.roomId = roomId
-            roomDatas.append(tmp)
+            
+            storage.reference(forURL: "gs://fire-71c1d.appspot.com/rooms/\(roomId)/profileImage").downloadURL { (url, error) in
+                if error != nil {
+                    return
+                }
+                let data = NSData(contentsOf: url!)
+                let image = UIImage(data: data! as Data)
+                tmp.image = image!
+                roomDatas.append(tmp)
+            }
         })
     }
 

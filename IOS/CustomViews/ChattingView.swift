@@ -51,7 +51,7 @@ class ChattingView: UIView,UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = chattingTable.dequeueReusableCell(withIdentifier: "chattingCell") as! ChattingTableCell
         cell.backgroundColor = .black
-        cell.profileImage.image = #imageLiteral(resourceName: "ChattingRoomImage")
+        cell.profileImage.image = roomDatas[indexPath.row].image
         cell.roomName.text = roomDatas[indexPath.row].roomName
         cell.lastMessage.text = "testMEssage"
         cell.roomName.textColor = .white

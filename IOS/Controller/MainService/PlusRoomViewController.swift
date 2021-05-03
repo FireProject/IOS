@@ -164,8 +164,10 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
         guard let roomId = rref.key else {
             return
         }
-        userData.roomId.append(roomId)
-        ref.child("users/\(masterUid)/roomId").setValue(userData.roomId)
+        var tmp = userData.roomId
+        tmp.append(roomId)
+        
+        ref.child("users/\(masterUid)/roomId").setValue(tmp)
         rref.setValue(value)
         
         var data = Data()

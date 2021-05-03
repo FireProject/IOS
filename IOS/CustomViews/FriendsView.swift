@@ -52,7 +52,7 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
         return friendsDatas.count
     }
     
-    //현재 수정중
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = FriendsTableView.dequeueReusableCell(withIdentifier: "cell") as! FriendsTableCell
         cell.backgroundColor = .black
@@ -82,6 +82,9 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
     //친구 터치시 개인채팅 & 삭제버튼 보여줌
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         subView.friendUid = friendsDatas[indexPath.row].uid
+        subView.profileImage.image = friendsDatas[indexPath.row].profileImage
+        subView.nickNameLabel.text = friendsDatas[indexPath.row].nickname
+        subView.stateMessageLabel.text = friendsDatas[indexPath.row].stateMessage
         self.addSubview(subView)
         setLayoutOfSubView()
     }
