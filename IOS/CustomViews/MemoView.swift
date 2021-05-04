@@ -39,7 +39,9 @@ class MemoView: UIView ,UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
         delegate?.MemoViewDidChange(textView)
     }
-    
+    func setText(text:String) {
+        self.memoTextView.text = text
+    }
 
 }
 

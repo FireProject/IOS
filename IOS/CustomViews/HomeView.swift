@@ -12,8 +12,10 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
-class HomeView: UIView {
-
+class HomeView: UIView,RoomSummaryViewDelegate, MemoViewDelegate {
+    @IBOutlet weak var roomSummaryView: RoomSummaryView!
+    @IBOutlet weak var memoView: MemoView!
+    var location = 0;
     
     override init(frame:CGRect) {
         super.init(frame: frame)
@@ -30,7 +32,30 @@ class HomeView: UIView {
         guard let view = loadView(nibName: "HomeView") else { return }
         view.frame = self.bounds
         self.addSubview(view)
+        roomSummaryView.delegate = self
+        memoView.delegate = self
+        roomSummaryView.setRoomSummary(loc: location)
+        memoView.setText(text: "test")
     }
-
+    
+    func RoomSummaryViewSwipe(direction: UISwipeGestureRecognizer.Direction) {
+        if direction == .left {
+            location -= 1
+            if location < 0 {
+                location = roomDatas.count - 1
+            }
+        } else if direction == .right {
+            location = (location + 1) % roomDatas.count
+        } else {
+            return
+        }
+        
+        roomSummaryView.setRoomSummary(loc: location)
+        memoView.setText(text: "test")
+    }
+    
+    func MemoViewDidChange(_ textView: UITextView) {
+        
+    }
 }
 
