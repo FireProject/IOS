@@ -19,6 +19,7 @@ class HomeView: UIView {
         super.init(frame: frame)
         setup()
     }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
@@ -32,3 +33,4 @@ class HomeView: UIView {
     }
 
 }
+

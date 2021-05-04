@@ -90,11 +90,13 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outletCollection property="gestureRecognizers" destination="aNI-CF-C1D" appends="YES" id="H9y-aa-QHu"/>
+                        <outletCollection property="gestureRecognizers" destination="kew-wF-6ji" appends="YES" id="6w4-LE-seQ"/>
+                        <outletCollection property="gestureRecognizers" destination="iT5-hn-H6X" appends="YES" id="T9h-8Z-a0D"/>
                     </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="OLR-FF-OLr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="85F-pL-PdP"/>
                 <constraint firstItem="OLR-FF-OLr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HVC-93-l7Z"/>
@@ -109,9 +111,14 @@
             </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="-526.81159420289862" y="-10.379464285714285"/>
         </view>
-        <swipeGestureRecognizer direction="right" id="aNI-CF-C1D">
+        <swipeGestureRecognizer direction="left" id="kew-wF-6ji" userLabel="leftSwipe">
             <connections>
-                <action selector="swipeAction:" destination="-1" id="M7Y-Ci-2jX"/>
+                <action selector="SwipeAction:" destination="-1" id="N5z-ce-HWU"/>
+            </connections>
+        </swipeGestureRecognizer>
+        <swipeGestureRecognizer direction="right" id="iT5-hn-H6X" userLabel="rightSwipe">
+            <connections>
+                <action selector="SwipeAction:" destination="-1" id="qxZ-81-Lvj"/>
             </connections>
         </swipeGestureRecognizer>
     </objects>

@@ -15,6 +15,8 @@ import FirebaseDatabase
 class MemoView: UIView ,UITextViewDelegate{
 
     @IBOutlet weak var memoTextView: UITextView!
+    weak var delegate:MemoViewDelegate?
+    
     override init(frame:CGRect) {
         super.init(frame: frame)
         setup()
@@ -31,6 +33,16 @@ class MemoView: UIView ,UITextViewDelegate{
         guard let view = loadView(nibName: "MemoView") else { return }
         view.frame = self.bounds
         self.addSubview(view)
+        
     }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        delegate?.MemoViewDidChange(textView)
+    }
+    
 
+}
+
+protocol MemoViewDelegate: AnyObject {
+    func MemoViewDidChange(_ textView: UITextView)
 }

@@ -13,7 +13,8 @@ class RoomSummaryView: UIView {
     @IBOutlet weak var roomNameLabel: UILabel!
     @IBOutlet weak var roomProfileImage: UIImageView!
     @IBOutlet weak var remainVoteTimeLabel: UILabel!
-    
+    weak var delegate:RoomSummaryViewDelegate?
+    weak var dataSource:RoomSummaryViewDataSource?
     
     override init(frame:CGRect) {
         super.init(frame: frame)
@@ -30,5 +31,16 @@ class RoomSummaryView: UIView {
         view.frame = self.bounds
         self.addSubview(view)
     }
+
+    @IBAction func SwipeAction(_ sender: UISwipeGestureRecognizer) {
+        delegate?.RoomSummaryViewSwipe(direction: sender.direction)
+    }
     
+}
+
+protocol RoomSummaryViewDelegate: AnyObject {
+    func RoomSummaryViewSwipe(direction:UISwipeGestureRecognizer.Direction)
+}
+protocol RoomSummaryViewDataSource: AnyObject {
+    func RoomSummaryView(numberOfObject: Int)
 }
