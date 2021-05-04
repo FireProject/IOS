@@ -14,6 +14,7 @@ class RoomSummaryView: UIView {
     @IBOutlet weak var roomProfileImage: UIImageView!
     @IBOutlet weak var remainVoteTimeLabel: UILabel!
     
+    
     override init(frame:CGRect) {
         super.init(frame: frame)
         setup()
@@ -29,4 +30,5 @@ class RoomSummaryView: UIView {
         view.frame = self.bounds
         self.addSubview(view)
     }
+    
 }
