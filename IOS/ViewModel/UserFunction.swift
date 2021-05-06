@@ -77,9 +77,11 @@ func getUserData() {
         let dic:NSDictionary = [snapshot.key:snapshot.value as Any]
         userData.getData(data: dic)
         if snapshot.key == "friends" {
+            print("fdsaf")
             getFriends()
         }
         if snapshot.key == "roomId" {
+            print("Fdsfsda")
             getRoomsData()
         }
     })

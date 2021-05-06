@@ -175,7 +175,6 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
         storage.reference().child("rooms").child(roomId).child("profileImage").putData(data, metadata: metaData)
-        getRoomsData()
         self.navigationController?.popViewController(animated: true)
     }
     

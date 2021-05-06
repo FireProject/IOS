@@ -58,6 +58,7 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = .black
         cell.profileImage.image = friendsDatas[indexPath.row].profileImage
         cell.nickLabel.text = friendsDatas[indexPath.row].nickname
+        cell.stateMessageLabel.text = friendsDatas[indexPath.row].stateMessage
         cell.nickLabel.textColor = .white
         return cell
     }
