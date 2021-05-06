@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09D975DBFD087BF9EABD3C21 /* Pods_IOS_IOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6814ECA26FFE1CA3467C934 /* Pods_IOS_IOSUITests.framework */; };
+		3907BFFE2643E06400501D50 /* ChattingSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907BFFD2643E06400501D50 /* ChattingSideMenuView.swift */; };
 		390895402612BE1000480F82 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3908953F2612BE1000480F82 /* ChattingViewController.swift */; };
 		391555C4260DAB85003D021A /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391555C3260DAB85003D021A /* Rooms.swift */; };
 		3918B71C2614484B00B54811 /* SearchRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918B71B2614484B00B54811 /* SearchRoomViewController.swift */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		350E49AE96982DA21D194493 /* Pods-IOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTests.debug.xcconfig"; path = "Target Support Files/Pods-IOSTests/Pods-IOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3907BFFD2643E06400501D50 /* ChattingSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingSideMenuView.swift; sourceTree = "<group>"; };
 		3908953F2612BE1000480F82 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		391555C3260DAB85003D021A /* Rooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
 		3918B71B2614484B00B54811 /* SearchRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoomViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				39CE7A262604780E00BD3CB7 /* ChattingTopBar.swift */,
 				39CE7A2B2604781500BD3CB7 /* ChattingTopBar.xib */,
 				39E53F852617384F00424149 /* ChattingMessageCell.swift */,
+				3907BFFD2643E06400501D50 /* ChattingSideMenuView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				3922F2DE261F3C11002A3E8D /* PostUserCertificationViewController.swift in Sources */,
 				39CE7A272604780E00BD3CB7 /* ChattingTopBar.swift in Sources */,
 				3918B71C2614484B00B54811 /* SearchRoomViewController.swift in Sources */,
+				3907BFFE2643E06400501D50 /* ChattingSideMenuView.swift in Sources */,
 				39500D5725F7B6D90062EFAD /* SignInImageNicknameViewcontroller.swift in Sources */,
 				39F2BD63261AC58F00243905 /* Friends.swift in Sources */,
 				39B3D63B25E37F0B003C3756 /* SceneDelegate.swift in Sources */,
