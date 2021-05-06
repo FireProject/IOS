@@ -24,6 +24,7 @@ class ChattingSideMenuView: UIView {
         
     }
     init(frame: CGRect, roomInfo:ChattingRoomInfo) {
+        self.roomInfo = roomInfo
         super.init(frame: frame)
     }
     required init?(coder: NSCoder) {
@@ -32,7 +33,20 @@ class ChattingSideMenuView: UIView {
     }
     
     private func loadView() {
+        guard let room = roomInfo else {
+            return
+        }
         
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(logoImageView)
+        
+        NSLayoutConstraint.activate([
+            logoImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            logoImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            logoImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            logoImageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.1),
+            
+        ])
     }
  
 }

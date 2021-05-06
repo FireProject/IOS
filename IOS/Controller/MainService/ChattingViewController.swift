@@ -121,6 +121,7 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         
         let menuBtn = UIButton(type: .custom)
         menuBtn.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
+        menuBtn.addTarget(self, action: #selector(chattingCollectionView), for: .touchUpInside)
         menuBtn.setBackgroundImage(#imageLiteral(resourceName: "SideMenuImage"), for: .normal)
 
         let menuBarItem = UIBarButtonItem(customView: menuBtn)
@@ -134,6 +135,11 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.topItem?.title = ""
     }
+    
+    @objc func chattingMenuAction() {
+        print("hello")
+    }
+    
     @IBAction func sendButtonAction(_ sender: Any) {
         //디비에 보내기만 할까?
         guard let text = self.messageTextFiled.text ,
