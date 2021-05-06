@@ -167,8 +167,10 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
         var tmp = userData.roomId
         tmp.append(roomId)
         
-        ref.child("users/\(masterUid)/roomId").setValue(tmp)
+        
         rref.setValue(value)
+        ref.child("users/\(masterUid)/roomId").setValue(tmp)
+        
         
         var data = Data()
         data = (self.roomImage.image?.jpegData(compressionQuality: 0.8))!

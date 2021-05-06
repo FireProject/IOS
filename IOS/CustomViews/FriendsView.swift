@@ -91,7 +91,6 @@ class FriendsView: UIView,UITableViewDelegate, UITableViewDataSource {
     }
     
     func setLayoutOfSubView() {
-        
         subView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             subView.widthAnchor.constraint(equalTo: self.widthAnchor),

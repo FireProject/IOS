@@ -50,10 +50,11 @@ class ChattingRoomInfo {
 
 
 func getRoomsData() {
+    var ref: DatabaseReference!
+    ref = Database.database().reference()
+    let storage = Storage.storage()
     for roomId in userData.roomId {
-        var ref: DatabaseReference!
-        ref = Database.database().reference()
-        let storage = Storage.storage()
+        
         ref.child("rooms").child(roomId).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let tmp = ChattingRoomInfo(roomData: value ?? NSDictionary())
@@ -70,5 +71,25 @@ func getRoomsData() {
             }
         })
     }
+}
 
+func plusRoomData(id:String) {
+    var ref: DatabaseReference!
+    ref = Database.database().reference()
+    let storage = Storage.storage()
+    ref.child("rooms").child(id).observeSingleEvent(of: .value, with: { (snapshot) in
+        let value = snapshot.value as? NSDictionary
+        let tmp = ChattingRoomInfo(roomData: value ?? NSDictionary())
+        tmp.roomId = id
+        
+        storage.reference(forURL: "gs://fire-71c1d.appspot.com/rooms/\(id)/profileImage").downloadURL { (url, error) in
+            if error != nil {
+                return
+            }
+            let data = NSData(contentsOf: url!)
+            let image = UIImage(data: data! as Data)
+            tmp.image = image!
+            roomDatas.append(tmp)
+        }
+    })
 }

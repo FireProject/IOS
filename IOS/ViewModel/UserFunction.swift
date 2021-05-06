@@ -73,19 +73,56 @@ func getUserData() {
     }
     
     //유저 정보 변경 대기
-    ref.child("users").child(user.uid).observe(.childAdded, with: { (snapshot) -> Void in
+  /*  ref.child("users").child(user.uid).observe(.childAdded, with: { (snapshot) -> Void in
         let dic:NSDictionary = [snapshot.key:snapshot.value as Any]
         userData.getData(data: dic)
+        print(snapshot.key)
         if snapshot.key == "friends" {
-            print("fdsaf")
             getFriends()
         }
         if snapshot.key == "roomId" {
-            print("Fdsfsda")
             getRoomsData()
         }
+    })*/
+    ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+        // Get user value
+        let dic:NSDictionary = snapshot.value as! NSDictionary
+        userData.getData(data: dic)
+        // ...
+    }) { (error) in
+        print(error.localizedDescription)
+    }
+    
+    
+    //친구 추가시
+    ref.child("users").child(user.uid).child("friends").observe(.childAdded, with: { (snapshot) -> Void in
+        guard let uid = snapshot.value as? String else {
+            print("error")
+            return
+        }
+        plusFriendData(uid: uid)
     })
-
+    
+    //친구 삭제시 이벤트
+    ref.child("users").child(user.uid).child("friends").observe(.childRemoved, with: { (snapshot) -> Void in
+        //not yet..
+    })
+    
+    //방 추가시
+    ref.child("users").child(user.uid).child("roomId").observe(.childAdded, with: { (snapshot) -> Void in
+        guard let roomId = snapshot.value as? String else {
+            print("error")
+            return
+        }
+        plusRoomData(id: roomId)
+    })
+    
+    //방 삭제시 이벤트
+    ref.child("users").child(user.uid).child("roomId").observe(.childRemoved, with: { (snapshot) -> Void in
+        print("방 잘가..")
+    })
+    
+    
     getUserProfileImage(uid: user.uid)
   
 }

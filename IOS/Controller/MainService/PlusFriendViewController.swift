@@ -75,6 +75,7 @@ class PlusFriendViewController : UIViewController, UITextFieldDelegate {
                 var data = userData.friends
                 data.append(uid)
                 ref.child("users").child(Auth.auth().currentUser!.uid).child("friends").setValue(data)
+                
                 isExistEmail = true
             }
             else {
@@ -86,7 +87,6 @@ class PlusFriendViewController : UIViewController, UITextFieldDelegate {
         if isExistEmail == false {
             self.warningLabel.text = "존재하지 않는 유저입니다."
         } else {
-            getFriends()
             self.dismiss(animated: true, completion: nil)
         }
     }

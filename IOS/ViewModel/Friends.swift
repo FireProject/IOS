@@ -29,11 +29,11 @@ class BurningUpFriend {
     }
 }
 
+//싹다 불러오기
 func getFriends() {
     var ref: DatabaseReference!
     ref = Database.database().reference()
     let storage = Storage.storage()
-    
     for friendUid in userData.friends {
         ref.child("users").child(friendUid).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
@@ -57,6 +57,32 @@ func getFriends() {
     }
 }
 
+func plusFriendData(uid:String) {
+    var ref: DatabaseReference!
+    ref = Database.database().reference()
+    let storage = Storage.storage()
+    ref.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+        // Get user value
+        let value = snapshot.value as? NSDictionary
+        
+        let friend = BurningUpFriend(friends: value ?? NSDictionary())
+        // ...
+        storage.reference(forURL: "gs://fire-71c1d.appspot.com/users/\(uid)/profileImage").downloadURL { (url, error) in
+            if error != nil {
+                return
+            }
+            let data = NSData(contentsOf: url!)
+            let image = UIImage(data: data! as Data)
+            friend.profileImage = image!
+            friend.uid = uid
+        }
+        friendsDatas.append(friend)
+    })  {(error) in
+        print(error.localizedDescription)
+    }
+}
+
+
 func deleteFriendData(uid:String) {
     friendsDatas = friendsDatas.filter({
         if $0.uid != uid {
@@ -72,7 +98,7 @@ func deleteFriendData(uid:String) {
             return false
         }
     })
-    print(userData.friends)
+    
     guard let uuid = Auth.auth().currentUser?.uid else {
         return
     }
