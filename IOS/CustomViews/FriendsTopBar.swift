@@ -33,7 +33,6 @@ class FriendsTopBar: UIView {
     }
     @IBAction func plusFriendsAction(_ sender: Any) {
         let nextView = UIStoryboard(name: "BurningUpMain", bundle: nil).instantiateViewController(identifier: "PlusFriendViewController")
-        nextView.modalPresentationStyle = .fullScreen
         self.navigationController.present(nextView, animated: true, completion: nil)
     }
 }

@@ -89,7 +89,7 @@ func plusRoomData(id:String) {
             let data = NSData(contentsOf: url!)
             let image = UIImage(data: data! as Data)
             tmp.image = image!
-            roomDatas.append(tmp)
         }
+        roomDatas.append(tmp)
     })
 }

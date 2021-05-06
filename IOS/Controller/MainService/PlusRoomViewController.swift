@@ -168,15 +168,15 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
         tmp.append(roomId)
         
         
-        rref.setValue(value)
-        ref.child("users/\(masterUid)/roomId").setValue(tmp)
-        
-        
         var data = Data()
         data = (self.roomImage.image?.jpegData(compressionQuality: 0.8))!
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
         storage.reference().child("rooms").child(roomId).child("profileImage").putData(data, metadata: metaData)
+ 
+        rref.setValue(value)
+        ref.child("users/\(masterUid)/roomId").setValue(tmp)
+        
         self.navigationController?.popViewController(animated: true)
     }
     

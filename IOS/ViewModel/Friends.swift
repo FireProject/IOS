@@ -74,8 +74,9 @@ func plusFriendData(uid:String) {
             let data = NSData(contentsOf: url!)
             let image = UIImage(data: data! as Data)
             friend.profileImage = image!
-            friend.uid = uid
         }
+        
+        friend.uid = uid
         friendsDatas.append(friend)
     })  {(error) in
         print(error.localizedDescription)
