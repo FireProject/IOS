@@ -115,7 +115,7 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         super.viewWillAppear(animated)
         self.navigationController?.isToolbarHidden = true
         self.navigationController?.navigationBar.backgroundColor = .clear
-        
+        navigationController?.navigationBar.barTintColor = .gray
         let roomName = currentRoom?.roomName ?? "erorr Daeho"
         self.navigationItem.title = roomName
         
@@ -187,8 +187,6 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
             cell.userNicknameLabel.text = self.userNickname[self.messages[indexPath.row].uid] ?? "Nonamed"
             cell.setMessageType(type: .otherUser)
         }
-        
-        
         
         
         
