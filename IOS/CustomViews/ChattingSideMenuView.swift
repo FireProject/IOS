@@ -7,11 +7,16 @@
 
 import Foundation
 import UIKit
-class ChattingSideMenuView: UIView {
+import FirebaseAuth
+class ChattingSideMenuView: UIView,UITableViewDelegate, UITableViewDataSource {
+
+    
     let logoImageView = UIImageView()
     let roomImageView = UIImageView()
     let roomNameLabel = UILabel()
     var tableView :UITableView?
+    let tableViewText = ["  ●  채팅방 설정" ,"  ●  공지사항"]
+    let exitButton = UIButton()
     
     weak var delegate:ChattingSideMenuViewDelegate?
     weak var dataSource:ChattingSideMenuViewDataSource?
@@ -23,32 +28,85 @@ class ChattingSideMenuView: UIView {
         loadView()
         
     }
-    init(frame: CGRect, roomInfo:ChattingRoomInfo) {
-        self.roomInfo = roomInfo
-        super.init(frame: frame)
-    }
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadView()
     }
     
-    private func loadView() {
-        guard let room = roomInfo else {
+    func loadView() {
+        self.backgroundColor = .white
+        guard let room = currentRoom else {
             return
         }
         
+        logoImageView.image = #imageLiteral(resourceName: "MainLogo")
+        roomImageView.image = room.image
+        roomImageView.layer.masksToBounds = true
+        roomImageView.layer.cornerRadius = 90
+        roomNameLabel.text = room.roomName
+        roomNameLabel.textAlignment = .center
+        roomNameLabel.textColor = .black
+        exitButton.addTarget(self, action: #selector(self.extiButtonAction), for: .touchUpInside)
+        exitButton.setImage(#imageLiteral(resourceName: "FireImage"), for: .normal)
+        exitButton.contentMode = .scaleAspectFill
+        exitButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+        
+        exitButton.setTitle("방장 위임하기", for: .normal)
+        exitButton.setTitleColor(.black, for: .normal)
+        exitButton.setTitleColor(.gray, for: .highlighted)
+        exitButton.semanticContentAttribute = .forceLeftToRight
+        
+        
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        roomImageView.translatesAutoresizingMaskIntoConstraints = false
+        roomNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        exitButton.translatesAutoresizingMaskIntoConstraints = false
+        
         self.addSubview(logoImageView)
+        self.addSubview(roomImageView)
+        self.addSubview(roomNameLabel)
+        self.addSubview(exitButton)
         
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: self.topAnchor),
-            logoImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            logoImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            logoImageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.1),
+            logoImageView.widthAnchor.constraint(equalTo: self.widthAnchor,multiplier: 0.7),
+            logoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            logoImageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.07),
             
+            roomImageView.topAnchor.constraint(equalTo: self.logoImageView.bottomAnchor),
+            roomImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            roomImageView.widthAnchor.constraint(equalTo: self.widthAnchor,multiplier: 0.7),
+            roomImageView.heightAnchor.constraint(equalTo: self.widthAnchor,multiplier: 0.7),
+            
+            roomNameLabel.topAnchor.constraint(equalTo: roomImageView.bottomAnchor),
+            roomNameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            roomNameLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7),
+            roomNameLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.07),
+            
+            exitButton.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            exitButton.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            exitButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.75),
+            exitButton.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.05)
         ])
+        
     }
  
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = tableViewText[indexPath.row]
+        return cell
+    }
+    @objc func extiButtonAction() {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        self.delegate?.exitButtonPressed(uid: uid)
+    }
 }
 
 protocol ChattingSideMenuViewDataSource : AnyObject{
@@ -57,5 +115,5 @@ protocol ChattingSideMenuViewDataSource : AnyObject{
 
 
 protocol ChattingSideMenuViewDelegate : AnyObject{
-    func exitButtonPressed(masterUid:String)
+    func exitButtonPressed(uid:String)
 }

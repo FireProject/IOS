@@ -50,9 +50,13 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
     }
     @objc func endEdit() {
         self.view.endEditing(true)
-        
+        _ = self.view.subviews.map({
+            if $0 is ChattingSideMenuView {
+                $0.removeFromSuperview()
+            }
+        })
     }
-    
+
     
     func setting() {
         guard let room = currentRoom else {
@@ -95,6 +99,11 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
     
     
     @objc func keyboardWillShow(notification: NSNotification) {
+        _ = self.view.subviews.map({
+            if $0 is ChattingSideMenuView {
+                $0.removeFromSuperview()
+            }
+        })
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= (keyboardSize.height - 20)
@@ -121,7 +130,7 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         
         let menuBtn = UIButton(type: .custom)
         menuBtn.frame = CGRect(x: 0.0, y: 0.0, width: 25, height: 25)
-        menuBtn.addTarget(self, action: #selector(chattingCollectionView), for: .touchUpInside)
+        menuBtn.addTarget(self, action: #selector(chattingMenuAction), for: .touchUpInside)
         menuBtn.setBackgroundImage(#imageLiteral(resourceName: "SideMenuImage"), for: .normal)
 
         let menuBarItem = UIBarButtonItem(customView: menuBtn)
@@ -136,8 +145,31 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         self.navigationController?.navigationBar.topItem?.title = ""
     }
     
-    @objc func chattingMenuAction() {
-        print("hello")
+    @objc func chattingMenuAction(sender: UIButton!) {
+        var alreadyHasSubView = false
+        _ = self.view.subviews.map({
+            if $0 is ChattingSideMenuView {
+                $0.removeFromSuperview()
+                alreadyHasSubView = true
+            }
+        })
+        if alreadyHasSubView == true {
+            return
+        }
+        
+        let subView = ChattingSideMenuView()
+        
+        self.view.addSubview(subView)
+        subView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            //subView.topAnchor.constraint(equalTo: self.chattingCollectionView.topAnchor),
+            subView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            subView.bottomAnchor.constraint(equalTo: self.chattingCollectionView.bottomAnchor),
+            subView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            subView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.65)
+        ])
     }
     
     @IBAction func sendButtonAction(_ sender: Any) {
@@ -171,14 +203,7 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         let cell = self.chattingCollectionView.dequeueReusableCell(withReuseIdentifier: "messageCell", for: indexPath) as! ChattingMessageCell
         cell.backgroundColor = .gray
         cell.messageLabel.text = "\(self.messages[indexPath.row].message)"
- /*       let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .left
-        paragraphStyle.firstLineHeadIndent = 10
-        paragraphStyle.headIndent = 5
-        paragraphStyle.tailIndent = 5
-        
-        let attributedString = NSAttributedString(string: self.messages[indexPath.row].message, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle,NSAttributedString.Key.foregroundColor: UIColor.white])
-        cell.messageLabel.attributedText = attributedString*/
+
         
         if self.messages[indexPath.row].uid == Auth.auth().currentUser?.uid {
             cell.userProfileImage.image = nil
