@@ -35,7 +35,7 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        stateMessageView.text = ""
+        stateMessageView.text = userData.stateMessage
         self.picker.delegate = self
 
         //이미지를 둥그렇게 설정
