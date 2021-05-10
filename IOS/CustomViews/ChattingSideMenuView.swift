@@ -107,6 +107,30 @@ class ChattingSideMenuView: UIView,UITableViewDelegate, UITableViewDataSource {
         }
         self.delegate?.exitButtonPressed(uid: uid)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let master = self.roomInfo?.masterUid,
+              let user = Auth.auth().currentUser?.uid
+              else {
+            return
+        }
+        if master != user {
+            return
+        }
+        
+        
+        let row = indexPath.row
+        switch row {
+        case 0:
+            //채팅방 설정
+            break
+        case 1:
+            //공지 설정
+            break
+        default:
+            break
+        }
+    }
 }
 
 protocol ChattingSideMenuViewDataSource : AnyObject{
@@ -116,4 +140,46 @@ protocol ChattingSideMenuViewDataSource : AnyObject{
 
 protocol ChattingSideMenuViewDelegate : AnyObject{
     func exitButtonPressed(uid:String)
+}
+class roomInfoView: UIView {
+    let roomNameLabel = UILabel()
+    let roomPeopleLabel = UILabel()
+    let voetTimeLabel = UILabel()
+    let userScoreLabel = UILabel()
+    var roomInfo: ChattingRoomInfo?
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadView()
+        
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        loadView()
+    }
+    
+    func loadView() {
+        roomInfo = currentRoom
+        if roomInfo == nil {
+            return
+        }
+    }
+    
+    func reloadData() {
+        guard let room = roomInfo else {
+            return
+        }
+        guard let userUid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        if room.masterUid == userUid {
+            roomNameLabel.text = "\(room.roomName)"
+        } else {
+            roomNameLabel.text = "\(room.roomName) (방장 이미지)"
+        }
+        
+        roomPeopleLabel.text = "채팅방 인원 (\(room.curPerson)/\(room.maxPerson))"
+        voetTimeLabel.text = "투표시간 : 매일 1시"
+        userScoreLabel.text = "내 점수"
+    }
 }
