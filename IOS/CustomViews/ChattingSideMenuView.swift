@@ -14,9 +14,10 @@ class ChattingSideMenuView: UIView,UITableViewDelegate, UITableViewDataSource {
     let logoImageView = UIImageView()
     let roomImageView = UIImageView()
     let roomNameLabel = UILabel()
-    var tableView :UITableView?
-    let tableViewText = ["  ●  채팅방 설정" ,"  ●  공지사항"]
+    var tableView = UITableView()
+    let tableViewText = ["●  채팅방 설정" ,"●  공지사항"]
     let exitButton = UIButton()
+    let roomView =  roomInfoView()
     
     weak var delegate:ChattingSideMenuViewDelegate?
     weak var dataSource:ChattingSideMenuViewDataSource?
@@ -39,11 +40,16 @@ class ChattingSideMenuView: UIView,UITableViewDelegate, UITableViewDataSource {
         guard let room = currentRoom else {
             return
         }
+        guard let userUid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        tableView.delegate = self
+        tableView.dataSource = self
         
         logoImageView.image = #imageLiteral(resourceName: "MainLogo")
         roomImageView.image = room.image
         roomImageView.layer.masksToBounds = true
-        roomImageView.layer.cornerRadius = 90
+        roomImageView.layer.cornerRadius = 63.5
         roomNameLabel.text = room.roomName
         roomNameLabel.textAlignment = .center
         roomNameLabel.textColor = .black
@@ -76,8 +82,8 @@ class ChattingSideMenuView: UIView,UITableViewDelegate, UITableViewDataSource {
             
             roomImageView.topAnchor.constraint(equalTo: self.logoImageView.bottomAnchor),
             roomImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            roomImageView.widthAnchor.constraint(equalTo: self.widthAnchor,multiplier: 0.7),
-            roomImageView.heightAnchor.constraint(equalTo: self.widthAnchor,multiplier: 0.7),
+            roomImageView.widthAnchor.constraint(equalTo: self.widthAnchor,multiplier: 0.5),
+            roomImageView.heightAnchor.constraint(equalTo: self.widthAnchor,multiplier: 0.5),
             
             roomNameLabel.topAnchor.constraint(equalTo: roomImageView.bottomAnchor),
             roomNameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -90,6 +96,32 @@ class ChattingSideMenuView: UIView,UITableViewDelegate, UITableViewDataSource {
             exitButton.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.05)
         ])
         
+        if room.masterUid == userUid {
+            tableView.translatesAutoresizingMaskIntoConstraints = false
+            roomView.translatesAutoresizingMaskIntoConstraints = false
+            self.addSubview(tableView)
+            self.addSubview(roomView)
+            NSLayoutConstraint.activate([
+                tableView.topAnchor.constraint(equalTo: roomNameLabel.bottomAnchor, constant: 10),
+                tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                tableView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.13),
+                
+                roomView.topAnchor.constraint(equalTo: tableView.bottomAnchor),
+                roomView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                roomView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                roomView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.27),
+            ])
+        } else {
+            self.addSubview(roomView)
+            roomView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                roomView.topAnchor.constraint(equalTo: roomNameLabel.bottomAnchor),
+                roomView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                roomView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                roomView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.27),
+            ])
+        }
     }
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -144,7 +176,7 @@ protocol ChattingSideMenuViewDelegate : AnyObject{
 class roomInfoView: UIView {
     let roomNameLabel = UILabel()
     let roomPeopleLabel = UILabel()
-    let voetTimeLabel = UILabel()
+    let voteTimeLabel = UILabel()
     let userScoreLabel = UILabel()
     var roomInfo: ChattingRoomInfo?
     override init(frame: CGRect) {
@@ -159,13 +191,43 @@ class roomInfoView: UIView {
     }
     
     func loadView() {
-        roomInfo = currentRoom
-        if roomInfo == nil {
-            return
-        }
+        reloadData()
+        self.backgroundColor = .gray
+        roomNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        roomPeopleLabel.translatesAutoresizingMaskIntoConstraints = false
+        voteTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+        userScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(roomNameLabel)
+        self.addSubview(roomPeopleLabel)
+        self.addSubview(voteTimeLabel)
+        self.addSubview(userScoreLabel)
+        
+        NSLayoutConstraint.activate([
+            roomNameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 5),
+            roomNameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            roomNameLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            roomNameLabel.heightAnchor.constraint(equalTo: self.heightAnchor,multiplier: 0.3),
+            
+            roomPeopleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 5),
+            roomPeopleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            roomPeopleLabel.topAnchor.constraint(equalTo: roomNameLabel.bottomAnchor),
+            roomPeopleLabel.heightAnchor.constraint(equalTo: self.heightAnchor,multiplier: 0.23),
+            
+            voteTimeLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 5),
+            voteTimeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            voteTimeLabel.topAnchor.constraint(equalTo: roomPeopleLabel.bottomAnchor),
+            voteTimeLabel.heightAnchor.constraint(equalTo: self.heightAnchor,multiplier: 0.23),
+            
+            userScoreLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 5),
+            userScoreLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            userScoreLabel.topAnchor.constraint(equalTo: voteTimeLabel.bottomAnchor),
+            userScoreLabel.heightAnchor.constraint(equalTo: self.heightAnchor,multiplier: 0.23),
+        ])
     }
     
     func reloadData() {
+        roomInfo = currentRoom
         guard let room = roomInfo else {
             return
         }
@@ -173,13 +235,12 @@ class roomInfoView: UIView {
             return
         }
         if room.masterUid == userUid {
-            roomNameLabel.text = "\(room.roomName)"
+            roomNameLabel.text = " \(room.roomName)"
         } else {
-            roomNameLabel.text = "\(room.roomName) (방장 이미지)"
+            roomNameLabel.text = " \(room.roomName) (방장 이미지)"
         }
-        
-        roomPeopleLabel.text = "채팅방 인원 (\(room.curPerson)/\(room.maxPerson))"
-        voetTimeLabel.text = "투표시간 : 매일 1시"
-        userScoreLabel.text = "내 점수"
+        roomPeopleLabel.text = " 채팅방 인원 (\(room.curPerson)/\(room.maxPerson))"
+        voteTimeLabel.text = " 투표시간 : 매일 1시"
+        userScoreLabel.text = " 내 점수"
     }
 }
