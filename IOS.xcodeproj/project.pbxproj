@@ -22,6 +22,7 @@
 		395E1BDE25F6616400616684 /* SignInEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395E1BDD25F6616400616684 /* SignInEmailViewController.swift */; };
 		396A69A8260F726900D41EFB /* ChattingViewTableClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396A69A7260F726900D41EFB /* ChattingViewTableClass.swift */; };
 		3983109C25F5034D00509D81 /* BurningUpSignInUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3983109B25F5034D00509D81 /* BurningUpSignInUp.storyboard */; };
+		398AC9CD26497BCC009ED894 /* ColorTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398AC9CC26497BCC009ED894 /* ColorTransformation.swift */; };
 		398E132225E3D14C00AE21A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */; };
 		3992A9BC261DF0CF006742D8 /* VoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3992A9BB261DF0CF006742D8 /* VoteViewController.swift */; };
 		399652B8260C272700E1B1C4 /* PlusRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399652B7260C272700E1B1C4 /* PlusRoomViewController.swift */; };
@@ -92,6 +93,7 @@
 		395E1BDD25F6616400616684 /* SignInEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailViewController.swift; sourceTree = "<group>"; };
 		396A69A7260F726900D41EFB /* ChattingViewTableClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewTableClass.swift; sourceTree = "<group>"; };
 		3983109B25F5034D00509D81 /* BurningUpSignInUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BurningUpSignInUp.storyboard; sourceTree = "<group>"; };
+		398AC9CC26497BCC009ED894 /* ColorTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTransformation.swift; sourceTree = "<group>"; };
 		398E132125E3D14C00AE21A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3992A9BB261DF0CF006742D8 /* VoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewController.swift; sourceTree = "<group>"; };
 		399652B7260C272700E1B1C4 /* PlusRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusRoomViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				39500D8825F7B8DB0062EFAD /* UserFunction.swift */,
 				391555C3260DAB85003D021A /* Rooms.swift */,
 				39F2BD62261AC58F00243905 /* Friends.swift */,
+				398AC9CC26497BCC009ED894 /* ColorTransformation.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				395E1BDE25F6616400616684 /* SignInEmailViewController.swift in Sources */,
 				39500D8925F7B8DB0062EFAD /* UserFunction.swift in Sources */,
 				39CE7A13260473D100BD3CB7 /* HomeTopBar.swift in Sources */,
+				398AC9CD26497BCC009ED894 /* ColorTransformation.swift in Sources */,
 				39DADAE22620A1B6006A9A24 /* VotePostViewController.swift in Sources */,
 				39BA700A2600DB46009CB3CE /* SideMenuView.swift in Sources */,
 				399652B8260C272700E1B1C4 /* PlusRoomViewController.swift in Sources */,

@@ -75,8 +75,11 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
         dayCycleButton.setImage(nil, for: .normal)
     }
     
+    //배경색 선택시
     func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
         self.backgroundColorButton.backgroundColor = viewController.selectedColor
+        let color = viewController.selectedColor
+        print(UIColorToHexString(uiColor: color))
     }
     
     @IBAction func cycleButtonPressed(_ sender: UIButton){
@@ -149,8 +152,9 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
         var ref: DatabaseReference!
         ref = Database.database().reference()
         let storage = Storage.storage(url: "gs://fire-71c1d.appspot.com/")
+        let backgroundColorString = UIColorToHexString(uiColor: backgroundColor)
         
-        let value = [
+        var value = [
             "roomName" : roomName,
             "masterUid" : masterUid,
             "maxPerson" : nPerson,
@@ -158,8 +162,22 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
             "voteCycle" : "monthly",
             "bannedUid" : bannedId,
             "users" : users,
-            "roomNotice" : roomNotice
+            "roomNotice" : roomNotice,
+            "backgroundColor" : backgroundColorString
         ] as [String : Any]
+        
+        switch voteCycle {
+        case .day:
+            value["voteCycle"] = "day"
+            break
+        case .month:
+            value["voteCycle"] = "month"
+            break
+        case .week:
+            value["voteCycle"] = "week"
+            break
+        }
+        
         let rref = ref.child("rooms").childByAutoId()
         guard let roomId = rref.key else {
             return
