@@ -24,7 +24,7 @@ func UIColorToHexString(uiColor:UIColor) -> String{
 
 func HexStringToUIColor(hexColor:String) -> UIColor {
     guard let intColor = Int(hexColor) else {
-        return UIColor()
+        return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
     let r = (intColor >> 16) & 0xFF
     let g = (intColor >> 8) & 0xFF

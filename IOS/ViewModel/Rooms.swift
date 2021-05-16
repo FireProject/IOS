@@ -45,6 +45,7 @@ class ChattingRoomInfo {
         maxPerson = roomData["maxPerson"] as? Int ?? 2
         curPerson = roomData["curPerson"] as? Int ?? 2
         roomName = roomData["roomName"] as? String ?? "NoNamed"
+        backgroundColor = HexStringToUIColor(hexColor: roomData["backgroundColor"] as? String ?? "0xFFFFFF")
     }
 }
 
