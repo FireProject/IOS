@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import FirebaseAuth
-import FirebaseStorage
+import Firebase
 import FirebaseDatabase
 
 class HomeTopBar: UIView {

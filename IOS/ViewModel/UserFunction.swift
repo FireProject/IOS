@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 import FirebaseAuth
-import FirebaseStorage
+import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 var userData: BurningUpUser = BurningUpUser(user: NSDictionary())
 

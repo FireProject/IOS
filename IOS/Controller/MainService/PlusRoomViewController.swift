@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import Firebase
 import FirebaseStorage
-
 enum enumVoteCycle {
     case month
     case week

@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import Firebase
 import FirebaseStorage
-
 /**
  프로필 사진과 닉네임을 설정하는 뷰 컨트롤러 View Controller setting Profile and Nickname
  
