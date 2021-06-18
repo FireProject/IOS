@@ -193,7 +193,7 @@ class PlusRoomViewController : UIViewController, UITextFieldDelegate,UIColorPick
         storage.reference().child("rooms").child(roomId).child("profileImage").putData(data, metadata: metaData)
  
         rref.setValue(value)
-        ref.child("users/\(masterUid)/roomId").setValue(tmp)
+        ref.child("users/\(masterUid)/roomIds").setValue(tmp)
         
         self.navigationController?.popViewController(animated: true)
     }

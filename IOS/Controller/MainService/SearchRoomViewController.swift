@@ -96,7 +96,7 @@ class  SearchRoomViewController :UIViewController, UITableViewDelegate, UITableV
         let users = roomDatas[indexPath.row].userUid
         ref.child("rooms").child("\(roomId)").child("users").setValue(users)
         userData.roomId.append(roomId)
-        ref.child("users").child("\(userUid)").child("roomId").setValue(userData.roomId)
+        ref.child("users").child("\(userUid)").child("roomIds").setValue(userData.roomId)
         self.roomDatas.remove(at: indexPath.row)
         self.roomTableView.reloadData()
         

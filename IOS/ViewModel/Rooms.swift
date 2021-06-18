@@ -94,3 +94,12 @@ func plusRoomData(id:String) {
         roomDatas.append(tmp)
     })
 }
+
+//Debug Function
+func CheckRoomDatas() {
+    for i in 0..<roomDatas.count {
+        let room = roomDatas[i]
+        print("roomName :\(room.roomName)")
+        print("roomID :\(room.roomId)")
+    }
+}

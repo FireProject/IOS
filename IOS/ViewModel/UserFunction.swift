@@ -24,7 +24,7 @@ class BurningUpUser {
     init(user: NSDictionary) {
         let friends = user["friends"] as? [String] ?? []
         let nickname = user["nickName"] as? String ?? "NoNamed"
-        let roomId = user["roomId"] as? [String] ?? []
+        let roomId = user["roomIds"] as? [String] ?? []
         let stateMessage = user["stateMessage"] as? String ?? ""
         
         self.friends = friends
@@ -35,7 +35,7 @@ class BurningUpUser {
     func getData(data: NSDictionary) {
         let friends = data["friends"] as? [String] ?? self.friends
         let nickname = data["nickName"] as? String ?? self.nickname
-        let roomId = data["roomId"] as? [String] ?? self.roomId
+        let roomId = data["roomIds"] as? [String] ?? self.roomId
         let stateMessage = data["stateMessage"] as? String ?? self.stateMessage
         self.friends = friends
         self.nickname = nickname
@@ -100,7 +100,7 @@ func getUserData() {
     })
     
     //방 추가시
-    ref.child("users").child(user.uid).child("roomId").observe(.childAdded, with: { (snapshot) -> Void in
+    ref.child("users").child(user.uid).child("roomIds").observe(.childAdded, with: { (snapshot) -> Void in
         guard let roomId = snapshot.value as? String else {
             print("error")
             return
@@ -110,7 +110,7 @@ func getUserData() {
     })
     
     //방 삭제시 이벤트
-    ref.child("users").child(user.uid).child("roomId").observe(.childRemoved, with: { (snapshot) -> Void in
+    ref.child("users").child(user.uid).child("roomIds").observe(.childRemoved, with: { (snapshot) -> Void in
         //not yet
     })
     
