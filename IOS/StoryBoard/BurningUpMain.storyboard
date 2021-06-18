@@ -793,6 +793,9 @@
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" backgroundImage="hand.thumbsup" catalog="system"/>
+                                <connections>
+                                    <action selector="goodButtonAction:" destination="vav-a0-Oxg" eventType="touchUpInside" id="CA9-rA-evS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvi-tm-ied">
                                 <rect key="frame" x="244.5" y="428.5" width="65" height="66"/>
@@ -802,6 +805,9 @@
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" backgroundImage="hand.thumbsdown" catalog="system"/>
+                                <connections>
+                                    <action selector="badButtonAction:" destination="vav-a0-Oxg" eventType="touchUpInside" id="fbh-iA-rhU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hM7-ck-u8s"/>
@@ -832,6 +838,8 @@
                     </view>
                     <connections>
                         <outlet property="MemoView" destination="KaV-jF-zqP" id="ydV-QA-U6l"/>
+                        <outlet property="badButton" destination="zvi-tm-ied" id="I9i-8X-tAZ"/>
+                        <outlet property="goodButton" destination="IKe-LZ-Twp" id="6Kg-MP-hH2"/>
                         <outlet property="imageView" destination="Idx-87-hPh" id="s3f-S3-bAc"/>
                     </connections>
                 </viewController>
