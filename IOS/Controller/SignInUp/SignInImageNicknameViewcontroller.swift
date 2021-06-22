@@ -157,7 +157,7 @@ class SignInImageNicknameViewcontroller: UIViewController,UIImagePickerControlle
         var data = Data()
         data = (self.profileImage.image?.jpegData(compressionQuality: 0.8))!
         let metaData = StorageMetadata()
-        metaData.contentType = "image/png"
+        metaData.contentType = "image/jpeg"
         storage.reference().child("users/\(user.uid)/profileImage.png").putData(data, metadata: metaData)
         
         ref.child("users/\(user.uid)/nickName").setValue(nickName)

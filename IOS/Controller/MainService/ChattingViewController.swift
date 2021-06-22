@@ -63,6 +63,28 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
             return
         }
         let roomId = room.roomId
+        let s = DispatchSemaphore(value: 0)
+        for uid in room.userUid {
+            Database.database().reference().child("users").child(uid).child("nickName").getData(completion: {(error, data) in
+                guard let nickName = data.value as? String else {
+                    return
+                }
+                self.userNickname[uid] = nickName
+
+            })
+            Storage.storage().reference(forURL: "gs://fire-71c1d.appspot.com/users/\(uid)/profileImage.png").downloadURL { (url, error) in
+                if error != nil {
+                    s.signal()
+                    return
+                }
+                let data = NSData(contentsOf: url!)
+                let image = UIImage(data: data! as Data)
+                self.profileImages[uid] = image
+                self.chattingCollectionView.reloadData()
+            }
+            
+        }
+
         Database.database().reference().child("message").child("\(roomId)").observe(.childAdded, with: { (snapshot) in
             let dic = snapshot.value as? NSDictionary
             guard let message = dic?["sendText"] as? String ,
@@ -77,24 +99,8 @@ class ChattingViewController:UIViewController, UICollectionViewDataSource, UICol
         })
         
         // 유저 프로필 이미지 받아오기
-        for uid in room.userUid {
-            Database.database().reference().child("users").child(uid).child("nickName").getData(completion: {(error, data) in
-                guard let nickName = data.value as? String else {
-                    return
-                }
-                self.userNickname[uid] = nickName
-                
-            })
-            Storage.storage().reference(forURL: "gs://fire-71c1d.appspot.com/users/\(uid)/profileImage").downloadURL { (url, error) in
-                if error != nil {
-                    return
-                }
-                let data = NSData(contentsOf: url!)
-                let image = UIImage(data: data! as Data)
-                self.profileImages[uid] = image
-                
-            }
-        }
+
+        
     }
     
     

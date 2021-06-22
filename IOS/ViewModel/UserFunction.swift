@@ -121,7 +121,7 @@ func getUserData() {
 
 func getUserProfileImage(uid:String) {
     let storage = Storage.storage()
-    storage.reference(forURL: "gs://fire-71c1d.appspot.com/users/\(uid)/profileImage").downloadURL { (url, error) in
+    storage.reference(forURL: "gs://fire-71c1d.appspot.com/users/\(uid)/profileImage.png").downloadURL { (url, error) in
         if error != nil {
             return
         }

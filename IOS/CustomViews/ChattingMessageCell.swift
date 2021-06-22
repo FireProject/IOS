@@ -56,7 +56,8 @@ class ChattingMessageCell: UICollectionViewCell {
         self.messageLabel.lineBreakMode = .byWordWrapping
         self.messageLabel.numberOfLines = 0
         self.messageLabel.sizeToFit()
-        
+        self.userProfileImage.layer.masksToBounds = true
+        self.userProfileImage.layer.cornerRadius = 15
         
         removeSubViews()
         switch self.messageType {

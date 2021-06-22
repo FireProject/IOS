@@ -79,10 +79,7 @@ class VotePostViewController:UIViewController {
     }
     func setUserInfo(info:VoteViewController.Certification) {
         self.userInfo = info
-        if userInfo?.uid == Auth.auth().currentUser?.uid {
-            self.badButton.isEnabled = false
-            self.goodButton.isEnabled = false
-        }
+
         setData()
     }
     @IBAction func exitButtonAction(_ sender: Any) {
